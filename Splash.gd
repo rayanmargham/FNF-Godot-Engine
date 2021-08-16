@@ -18,7 +18,6 @@ func _on_Timer_timeout():
 			$Splash.visible = true
 			$Splash/AnimationPlayer.play("Splash")
 		23:
-			print("s")
 			$Splash.visible = false
 		30:
 			get_tree().change_scene_to(intro)

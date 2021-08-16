@@ -1,8 +1,7 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://rich.gd" type="Script" id=3]
 [ext_resource path="res://mainmenu/titlescreen/alltogether/Start Screen BG art0001.png" type="Texture" id=6]
 [ext_resource path="res://mainmenu/titlescreen/alltogether/Start Screen BG art0015.png" type="Texture" id=7]
 [ext_resource path="res://mainmenu/titlescreen/alltogether/Start Screen BG art0005.png" type="Texture" id=8]
@@ -78,7 +77,6 @@
 [ext_resource path="res://mainmenu/titlescreen/pressentertobegin/Press Enter to Begin0031.png" type="Texture" id=78]
 [ext_resource path="res://mainmenu/titlescreen/pressentertobegin/Press Enter to Begin0012.png" type="Texture" id=79]
 [ext_resource path="res://mainmenu/titlescreen/pressentertobegin/Press Enter to Begin0039.png" type="Texture" id=80]
-[ext_resource path="res://enterscript.gd" type="Script" id=81]
 [ext_resource path="res://mainmenu/titlescreen/enterpressed/ENTER PRESSED0004.png" type="Texture" id=82]
 [ext_resource path="res://mainmenu/titlescreen/enterpressed/ENTER PRESSED0007.png" type="Texture" id=83]
 [ext_resource path="res://mainmenu/titlescreen/enterpressed/ENTER PRESSED0002.png" type="Texture" id=84]
@@ -92,7 +90,7 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 10 ), ExtResource( 35 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 29 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 22 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
 "speed": 24.0
 } ]
@@ -110,11 +108,26 @@ animations = [ {
 "speed": 24.0
 } ]
 
+[sub_resource type="Animation" id=4]
+resource_name = "WhiteFlash"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 2 )
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
@@ -126,7 +139,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="background" type="ColorRect" parent="."]
+[node name="BG" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -135,33 +148,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bumpin" type="AnimatedSprite" parent="."]
+[node name="Bumpin" type="AnimatedSprite" parent="."]
 position = Vector2( 469.5, 259.5 )
 scale = Vector2( 0.795552, 0.82303 )
 z_index = -2
 frames = SubResource( 1 )
-frame = 1
-playing = true
 
-[node name="enter" type="AnimatedSprite" parent="."]
+[node name="PressEnterText" type="AnimatedSprite" parent="."]
 position = Vector2( 811, 529 )
 z_index = -1
 frames = SubResource( 2 )
 frame = 40
 playing = true
-script = ExtResource( 81 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="WhiteFlash" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="ColorRect"]
-wait_time = 0.02
+[node name="WhiteFlashFade" type="AnimationPlayer" parent="WhiteFlash"]
+autoplay = "WhiteFlash"
+anims/WhiteFlash = SubResource( 4 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Version" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -42.0
@@ -171,10 +183,6 @@ custom_colors/default_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 bbcode_enabled = true
 bbcode_text = "[wave]v1.0"
 text = "v1.0"
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="timeout" from="ColorRect/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="ok" from="RichTextLabel" to="enter" method="_on_RichTextLabel_ok"]

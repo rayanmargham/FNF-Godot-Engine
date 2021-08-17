@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://AutoLoads/FPSCounter.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 133.0
+margin_bottom = 69.0
+bbcode_enabled = true
+bbcode_text = "60"
+text = "60"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

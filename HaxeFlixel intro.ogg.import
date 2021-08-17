@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HaxeFlixel intro.ogg-9171d78e2dfefa4cbc44cacb6bee7efc.oggstr"
+
+[deps]
+
+source_file="res://HaxeFlixel intro.ogg"
+dest_files=[ "res://.import/HaxeFlixel intro.ogg-9171d78e2dfefa4cbc44cacb6bee7efc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

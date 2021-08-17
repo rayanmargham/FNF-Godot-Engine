@@ -158,7 +158,7 @@ frames = SubResource( 1 )
 position = Vector2( 811, 529 )
 z_index = -1
 frames = SubResource( 2 )
-frame = 40
+frame = 29
 playing = true
 
 [node name="WhiteFlash" type="ColorRect" parent="."]
@@ -176,13 +176,13 @@ anims/WhiteFlash = SubResource( 4 )
 [node name="Version" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -42.0
-margin_right = 68.0
+margin_left = -23.1716
+margin_top = -82.1335
+margin_right = 87.8284
+margin_bottom = 45.8665
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 bbcode_enabled = true
-bbcode_text = "[wave]v1.0"
-text = "v1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

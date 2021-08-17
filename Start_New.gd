@@ -19,12 +19,14 @@ func _input(event):
 		get_tree().change_scene_to(intro)
 
 
-func _process(delta):
+func _process(_delta):
 	var time = MusicController.get_playback_position() + AudioServer.get_time_since_last_mix()
 	time -= AudioServer.get_output_latency()
 # Animation Functions
 func _generateTopWord():
-	numpicker = rand_range(0, 40)
+	swag.remove(0)
+	print(swag)
+	numpicker = rand_range(0, swag.size())
 	TopLabel.text = swag[numpicker][0]
 func _generateBottomWord():
 	BottomLabel.text = swag[numpicker][1]

@@ -1,0 +1,432 @@
+[gd_scene load_steps=104 format=2]
+
+[ext_resource path="res://Scripts/Menus/StoryModeMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow push left/arrow push left.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0001.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0003.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0002.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0004.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0007.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0008.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0027.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0028.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0014.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0016.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0006.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0004.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0013.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0012.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0001.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0022.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0018.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0024.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0021.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0005.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0008.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0003.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0005.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0029.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0010.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0019.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0006.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0020.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0007.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0013.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0023.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0007.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0010.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0005.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0008.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0012.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0011.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0011.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0009.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0015.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0025.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0022.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0002.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0003.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=47]
+[ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=48]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow left/arrow left.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/normal/NORMAL.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow right/arrow right.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow push right/arrow push right.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0006.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0002.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0013.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0010.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0014.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0015.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0017.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0018.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0019.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0020.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0009.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0023.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0001.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0016.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0024.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0004.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0025.png" type="Texture" id=69]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0017.png" type="Texture" id=70]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_ui/BF idle dance white0011.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0012.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0026.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0009.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0014.png" type="Texture" id=75]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0026.png" type="Texture" id=76]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/bf_hey/BF HEY!!0021.png" type="Texture" id=77]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/gf_ui/GF Dancing Beat WHITE0030.png" type="Texture" id=78]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/hard/HARD.png" type="Texture" id=79]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/easy/EASY.png" type="Texture" id=80]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0003.png" type="Texture" id=81]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0013.png" type="Texture" id=82]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0014.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0011.png" type="Texture" id=84]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0001.png" type="Texture" id=85]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0009.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0002.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0006.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0007.png" type="Texture" id=89]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0008.png" type="Texture" id=90]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0010.png" type="Texture" id=91]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0004.png" type="Texture" id=92]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0012.png" type="Texture" id=93]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/dad_ui/Dad idle dance BLACK LINE0005.png" type="Texture" id=94]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 47 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 49 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 80 ), ExtResource( 50 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Hop"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 852.909, 410 ), Vector2( 852.909, 422 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.758 ), Vector2( 0.757576, 0.757576 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.133333 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+use_filter = true
+font_data = ExtResource( 48 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 7 ), ExtResource( 23 ), ExtResource( 41 ), ExtResource( 56 ), ExtResource( 71 ), ExtResource( 38 ), ExtResource( 15 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 54 ), ExtResource( 46 ), ExtResource( 68 ), ExtResource( 36 ), ExtResource( 53 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 63 ), ExtResource( 27 ), ExtResource( 40 ), ExtResource( 72 ), ExtResource( 32 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 12 ), ExtResource( 70 ), ExtResource( 19 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 77 ), ExtResource( 44 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 43 ), ExtResource( 73 ) ],
+"loop": false,
+"name": "hey",
+"speed": 24.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 45 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 34 ), ExtResource( 8 ), ExtResource( 74 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 75 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 76 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 26 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 85 ), ExtResource( 87 ), ExtResource( 81 ), ExtResource( 92 ), ExtResource( 94 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 86 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 93 ), ExtResource( 82 ), ExtResource( 83 ) ],
+"loop": true,
+"name": "dad",
+"speed": 5.0
+} ]
+
+[node name="StoryModeMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MainLayer" type="CanvasLayer" parent="."]
+
+[node name="BGBlack" type="ColorRect" parent="MainLayer"]
+margin_right = 1039.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TracksLabel" type="Label" parent="MainLayer"]
+margin_left = 104.0
+margin_top = 412.0
+margin_right = 218.0
+margin_bottom = 442.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+text = "TRACKS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrackList" type="VBoxContainer" parent="MainLayer/TracksLabel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -156.0
+margin_top = 46.0
+margin_right = 154.0
+margin_bottom = 141.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Track1" type="Label" parent="MainLayer/TracksLabel/TrackList"]
+margin_right = 310.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+text = "Track1"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Track2" type="Label" parent="MainLayer/TracksLabel/TrackList"]
+margin_top = 33.0
+margin_right = 310.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+text = "Track2"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Track3" type="Label" parent="MainLayer/TracksLabel/TrackList"]
+margin_top = 66.0
+margin_right = 310.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+text = "Track3"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftArrow" type="AnimatedSprite" parent="MainLayer"]
+position = Vector2( 703.5, 420.969 )
+scale = Vector2( 0.8125, 0.8125 )
+frames = SubResource( 2 )
+
+[node name="RightArrow" type="AnimatedSprite" parent="MainLayer"]
+position = Vector2( 995, 420 )
+scale = Vector2( 0.813, 0.813 )
+frames = SubResource( 3 )
+
+[node name="DIfficulty" type="AnimatedSprite" parent="MainLayer"]
+position = Vector2( 852.909, 422 )
+scale = Vector2( 0.757576, 0.757576 )
+frames = SubResource( 4 )
+
+[node name="Hop" type="AnimationPlayer" parent="MainLayer/DIfficulty"]
+anims/Hop = SubResource( 8 )
+
+[node name="Weeks" type="VBoxContainer" parent="MainLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -258.0
+margin_top = 388.0
+margin_right = 155.0
+margin_bottom = 948.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="Label" parent="MainLayer/Weeks"]
+margin_right = 413.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 9 )
+text = "TUTORIAL"
+align = 1
+valign = 1
+
+[node name="Week1" type="Label" parent="MainLayer/Weeks"]
+margin_top = 87.0
+margin_right = 413.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 1"
+align = 1
+valign = 1
+
+[node name="Week2" type="Label" parent="MainLayer/Weeks"]
+margin_top = 174.0
+margin_right = 413.0
+margin_bottom = 257.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 2"
+align = 1
+valign = 1
+
+[node name="Week3" type="Label" parent="MainLayer/Weeks"]
+margin_top = 261.0
+margin_right = 413.0
+margin_bottom = 344.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 3"
+align = 1
+valign = 1
+
+[node name="Week4" type="Label" parent="MainLayer/Weeks"]
+margin_top = 348.0
+margin_right = 413.0
+margin_bottom = 431.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 4"
+align = 1
+valign = 1
+
+[node name="Week5" type="Label" parent="MainLayer/Weeks"]
+margin_top = 435.0
+margin_right = 413.0
+margin_bottom = 518.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 5"
+align = 1
+valign = 1
+
+[node name="Week6" type="Label" parent="MainLayer/Weeks"]
+margin_top = 522.0
+margin_right = 413.0
+margin_bottom = 605.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 6"
+align = 1
+valign = 1
+
+[node name="Week7" type="Label" parent="MainLayer/Weeks"]
+margin_top = 609.0
+margin_right = 413.0
+margin_bottom = 692.0
+custom_fonts/font = SubResource( 9 )
+text = "WEEK 7"
+align = 1
+valign = 1
+
+[node name="FrontLayer" type="CanvasLayer" parent="."]
+
+[node name="BGYellow" type="ColorRect" parent="FrontLayer"]
+margin_left = 1.0
+margin_top = 44.0
+margin_right = 1039.0
+margin_bottom = 374.0
+color = Color( 1, 0.921569, 0.160784, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Boyfriend" type="AnimatedSprite" parent="FrontLayer"]
+position = Vector2( 484.438, 209.435 )
+scale = Vector2( 0.733841, 0.733841 )
+frames = SubResource( 5 )
+frame = 1
+
+[node name="Girlfriend" type="AnimatedSprite" parent="FrontLayer"]
+position = Vector2( 815, 187 )
+scale = Vector2( 0.41821, 0.41821 )
+frames = SubResource( 6 )
+frame = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Opponent" type="AnimatedSprite" parent="FrontLayer"]
+position = Vector2( 154.63, 214.296 )
+scale = Vector2( 0.361352, 0.361352 )
+frames = SubResource( 7 )
+animation = "dad"
+frame = 9
+speed_scale = 6.0
+
+[node name="LetterBlocker" type="ColorRect" parent="FrontLayer"]
+margin_left = 238.0
+margin_top = -4.0
+margin_right = 703.0
+margin_bottom = 44.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

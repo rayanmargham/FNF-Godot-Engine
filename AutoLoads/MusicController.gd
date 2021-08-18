@@ -19,12 +19,20 @@ signal _on_one_Beat # Emitted on every beat
 signal _on_half_Beat # Emitted on every half beat (runs two times on every beat)
 
 #===============Public Functions===========
-func play_music(param1, param2):
-	var target = load(param1)
+func Play_music(song = "freakyMenu"):
+	#Type the sound you want and it will search it for you
+	
+	var target = null
+	match song:
+		"freakyMenu":
+			target = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
+		_:
+			print("ERROR: Could not play song: ", song)
+			return
 	$Music.stream = target
-	$Music.autoplay = param2
 	$Music.play()
-func stop_music():
+	
+func Stop_music():
 	$Music.stop()
 func get_playback_position():
 	return $Music.get_playback_position()

@@ -1,24 +1,31 @@
 extends Node
 
+########################################
+# This Autoload is for managing sound
+# and easy sound playing.
+########################################
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func play_sound(param1, param2):
-	var target = load(param1)
-	$Sound.stream = target
-	$Sound.autoplay = param2
-	$Sound.play()
-
-func stop_sound():
-	$Sound.stop()
+func Play_sound(sound = "SplashSound"):
+	#Type the sound you want and it will search it for you
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var target = null
+	match sound:
+		"cancelmenu":
+			target = load("res://Assets/Menus/Music&Sounds/cancelMenu.wav")
+		"confirmMenu":
+			target = load("res://Assets/Menus/Music&Sounds/confirmMenu.wav")
+		"cancelmenu":
+			target = load("res://Assets/Menus/Music&Sounds/cancelmenu.wav")
+		"scrollMenu":
+			target = load("res://Assets/Menus/Music&Sounds/scrollMenu.wav")
+		"SplashSound":
+			target = load("res://Assets/Menus/Music&Sounds/SplashSound.wav")
+		_:
+			print("ERROR: Could not play sound: ", sound)
+			return
+	$Sound.stream = target
+	$Sound.play()
+	
+func Stop_sound():
+	$Sound.stop()
+

@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+}
+
+[application]
+
+config/name="FNF-Godot-Edition"
+run/main_scene="res://Scenes/Menus/Splash.tscn"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://Misc/icon.png"
+
+[autoload]
+
+FpsCounter="*res://AutoLoads/FPSCounter.tscn"
+MusicController="*res://AutoLoads/Music Controller.tscn"
+SceneLoader="*res://AutoLoads/SceneLoader.tscn"
+SoundController="*res://AutoLoads/SoundController.tscn"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[physics]
+
+common/enable_pause_aware_picking=true

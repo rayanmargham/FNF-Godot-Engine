@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/freakyMenu.ogg-f3c609226ec5da4166ab7ac46503dc54.oggstr"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/freakyMenu.ogg"
+dest_files=[ "res://.import/freakyMenu.ogg-f3c609226ec5da4166ab7ac46503dc54.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -18,8 +18,18 @@ var week_Tracks = [
 	["PICO", "PHILLY", "BLAMMED"],
 	["SATIN-PANTIES", "HIGH", "MILF"],
 	["COCOA", "EGGNOG", "WINTER-HORRORLAND"],
-	["SEMPAI", "ROSES", "THORNS"],
+	["SENPAI", "ROSES", "THORNS"],
 	["CUM", "CUM", "CUM"]
+]
+var week_Titles = [
+	["Tutorial"],
+	["daddy cum"],
+	["spooky"],
+	["go pico"],
+	["big boobies"],
+	["chirmstas"],
+	["hate simulator"],
+	["CumMan"]
 ]
 enum difficulty {
 	EASY,
@@ -111,7 +121,21 @@ func _process(_delta):
 	match Selected_Week:
 		0:
 			$FrontLayer/Opponent.hide()
+			$"FrontLayer/Track Title".text = week_Titles[0][0]
 		1:
 			$FrontLayer/Opponent.show()
+			$"FrontLayer/Track Title".text = week_Titles[1][0]
+		2:
+			$"FrontLayer/Track Title".text = week_Titles[2][0]
+		3:
+			$"FrontLayer/Track Title".text = week_Titles[3][0]
+		4:
+			$"FrontLayer/Track Title".text = week_Titles[4][0]
+		5:
+			$"FrontLayer/Track Title".text = week_Titles[5][0]
+		6:
+			$"FrontLayer/Track Title".text = week_Titles[6][0]
+		7:
+			$"FrontLayer/Track Title".text = week_Titles[7][0]
 	$MainLayer/Weeks.rect_position.y = lerp($MainLayer/Weeks.rect_position.y, Initial_Weeks_Container_Position.y-Selected_Week*87, 0.2 )
 

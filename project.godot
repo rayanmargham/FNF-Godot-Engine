@@ -19,6 +19,10 @@ run/main_scene="res://Scenes/Menus/Splash.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Misc/icon.png"
 
+[audio]
+
+default_bus_layout="res://Scenes/Menus/default_bus_layout.tres"
+
 [autoload]
 
 FpsCounter="*res://AutoLoads/FPSCounter.tscn"
@@ -30,6 +34,14 @@ SoundController="*res://AutoLoads/SoundController.tscn"
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[input]
+
+I={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

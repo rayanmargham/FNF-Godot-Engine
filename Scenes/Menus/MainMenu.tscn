@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/MenuButtons/optionsbasic/options basic0009.png" type="Texture" id=2]
@@ -40,6 +40,10 @@
 [ext_resource path="res://Assets/Menus/AnimatedSprites/MenuButtons/storymodewhite/story mode white0003.png" type="Texture" id=38]
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBGBlue.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBGMagenta.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=41]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 41 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -96,31 +100,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.25992
+margin_top = -19.8413
+margin_right = 340.26
+margin_bottom = 20.1587
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[color=red]Press I to Connect To [wave][rainbow]Funkin' WFC"
+text = "Press I to Connect To Funkin' WFC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="background" type="AnimatedSprite" parent="."]
 position = Vector2( 512, 362 )
-z_index = -1
+z_index = -3
 frames = SubResource( 1 )
 speed_scale = 1.5
 
 [node name="Storymode" type="AnimatedSprite" parent="."]
 position = Vector2( 510, 110 )
-z_index = -1
+z_index = -3
 frames = SubResource( 2 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="Freeplay" type="AnimatedSprite" parent="."]
 position = Vector2( 505, 276 )
-z_index = -1
+z_index = -3
 frames = SubResource( 3 )
-frame = 8
+frame = 6
 playing = true
 
 [node name="options" type="AnimatedSprite" parent="."]
 position = Vector2( 500, 460 )
-z_index = -1
+z_index = -3
 frames = SubResource( 4 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="ExitTimer" type="Timer" parent="."]

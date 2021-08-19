@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Scripts/Menus/StoryModeMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow push left/arrow push left.png" type="Texture" id=2]
@@ -197,6 +197,10 @@ animations = [ {
 "name": "dad",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 47 )
 
 [node name="StoryModeMenu" type="Control"]
 anchor_right = 1.0
@@ -404,6 +408,9 @@ position = Vector2( 484.438, 209.435 )
 scale = Vector2( 0.733841, 0.733841 )
 frames = SubResource( 7 )
 frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Girlfriend" type="AnimatedSprite" parent="FrontLayer"]
 position = Vector2( 815, 187 )
@@ -421,6 +428,9 @@ frames = SubResource( 9 )
 animation = "dad"
 frame = 9
 speed_scale = 6.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="LetterBlocker" type="ColorRect" parent="FrontLayer"]
 margin_left = 238.0
@@ -430,5 +440,21 @@ margin_bottom = 44.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Track Title" type="Label" parent="FrontLayer"]
+modulate = Color( 1, 1, 1, 0.698039 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -161.5
+margin_top = 4.0
+margin_right = 161.5
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 10 )
+text = "DADDY DEAREST poo"
+align = 1
+uppercase = true
+__meta__ = {
 "_edit_use_anchors_": false
 }

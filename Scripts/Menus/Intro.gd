@@ -13,7 +13,6 @@ var Quote:Array # 0 is top word, 1 is bottom word
 func _ready():
 	randomize()
 	Quote = _Load_Random_Quote() # Set Quote after calling randomize
-	
 	# Start music
 	MusicController.Play_music("freakyMenu")
 

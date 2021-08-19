@@ -3,7 +3,7 @@ extends Control
 #=============Variables=============
 var selected_Button = 0 # 0 - 2
 onready var initial_BG_offset = $background.position.y
-
+var disable = false
 #=============Private Functions=============
 func _input(event):
 	if event.is_action_pressed("ui_down"):
@@ -21,6 +21,10 @@ func _input(event):
 		set_process(false)
 		$background.playing = true
 		$ExitTimer.start()
+	if event.is_action_pressed("I"):
+		if disable == false:
+			print("NOTICE: NOTHING HERE FOR NOW")
+			disable = true
 
 func _process(_delta):
 	# Scroll the BG

@@ -61,7 +61,6 @@ func _input(event):
 		if lock == false:
 			SoundController.Play_sound("scrollMenu")
 			Selected_Week = posmod(Selected_Week+1, 8)
-	
 
 	# Enter and Cancel
 	if event.is_action_pressed("ui_cancel"):
@@ -109,6 +108,10 @@ func _process(_delta):
 			$MainLayer/Weeks.get_child(i).modulate.a = 0.5
 		
 		
-		
+	match Selected_Week:
+		0:
+			$FrontLayer/Opponent.hide()
+		1:
+			$FrontLayer/Opponent.show()
 	$MainLayer/Weeks.rect_position.y = lerp($MainLayer/Weeks.rect_position.y, Initial_Weeks_Container_Position.y-Selected_Week*87, 0.2 )
 

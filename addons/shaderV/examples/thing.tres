@@ -1,0 +1,88 @@
+[gd_resource type="VisualShader" load_steps=7 format=2]
+
+[ext_resource path="res://addons/shaderV/uv/animated/tilingNoffsetAnimated.gd" type="Script" id=1]
+
+[sub_resource type="VisualShaderNodeCustom" id=1]
+default_input_values = [ 1, Vector3( 0, 0, 0 ), 2, 0.0 ]
+initialized = true
+script = ExtResource( 1 )
+
+[sub_resource type="VisualShaderNodeInput" id=2]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=3]
+constant = 0.1
+
+[sub_resource type="VisualShaderNodeInput" id=4]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeTexture" id=5]
+source = 2
+
+[resource]
+code = "shader_type canvas_item;
+
+
+// TilingAndOffsetUVAnimated
+
+vec2 tilingNoffsetAnimatedFunc(vec2 _uv_tN0A, float _t1me_tN0A, vec2 _offset_tN0A){
+	return vec2(mod((_uv_tN0A.x + _offset_tN0A.x * _t1me_tN0A), 1.0), mod((_uv_tN0A.y + _offset_tN0A.y * _t1me_tN0A), 1.0));
+}
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:3
+	vec3 n_out3p0 = vec3(UV, 0.0);
+
+// Scalar:15
+	float n_out15p0 = 0.100000;
+
+// Input:14
+	float n_out14p0 = TIME;
+
+// TilingAndOffsetUVAnimated:13
+	vec3 n_out13p0;
+	{
+		n_out13p0.xy = n_out13p0.xy + tilingNoffsetAnimatedFunc(n_out3p0.xy, n_out14p0, vec3(n_out15p0).xy);
+	}
+
+// Texture:5
+	vec3 n_out5p0;
+	float n_out5p1;
+	{
+		vec4 _tex_read = texture(TEXTURE, n_out13p0.xy);
+		n_out5p0 = _tex_read.rgb;
+		n_out5p1 = _tex_read.a;
+	}
+
+// Output:0
+	COLOR.rgb = n_out5p0;
+	COLOR.a = n_out5p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -207.3, -81.875 )
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2( 540, 0 )
+nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/position = Vector2( -120, -40 )
+nodes/fragment/5/node = SubResource( 5 )
+nodes/fragment/5/position = Vector2( 340, 0 )
+nodes/fragment/13/node = SubResource( 1 )
+nodes/fragment/13/position = Vector2( 60, 0 )
+nodes/fragment/14/node = SubResource( 2 )
+nodes/fragment/14/position = Vector2( -140, 120 )
+nodes/fragment/15/node = SubResource( 3 )
+nodes/fragment/15/position = Vector2( -160, 40 )
+nodes/fragment/connections = PoolIntArray( 5, 0, 0, 0, 5, 1, 0, 1, 3, 0, 13, 0, 13, 0, 5, 0, 15, 0, 13, 1, 14, 0, 13, 2 )

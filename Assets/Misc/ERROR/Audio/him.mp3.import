@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/him.mp3-e8f776317e115b689217521cc5c24ded.mp3str"
+
+[deps]
+
+source_file="res://Assets/Misc/ERROR/Audio/him.mp3"
+dest_files=[ "res://.import/him.mp3-e8f776317e115b689217521cc5c24ded.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

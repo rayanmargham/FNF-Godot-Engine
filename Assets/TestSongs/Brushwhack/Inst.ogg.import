@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Inst.ogg-52aea80ceb943fe5ba57e7d696476251.oggstr"
+
+[deps]
+
+source_file="res://Assets/TestSongs/Brushwhack/Inst.ogg"
+dest_files=[ "res://.import/Inst.ogg-52aea80ceb943fe5ba57e7d696476251.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

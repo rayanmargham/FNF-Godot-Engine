@@ -1,6 +1,6 @@
 [gd_scene load_steps=91 format=2]
 
-[ext_resource path="res://FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menus/TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0018.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0020.png" type="Texture" id=4]
@@ -160,7 +160,7 @@ animation = "Bumpin"
 position = Vector2( 811, 529 )
 z_index = -1
 frames = SubResource( 2 )
-frame = 22
+frame = 12
 speed_scale = 3.0
 playing = true
 

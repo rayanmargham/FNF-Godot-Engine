@@ -42,10 +42,10 @@
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBGMagenta.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=41]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 41 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
@@ -53,7 +53,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 33 ) ],
 "loop": true,
@@ -66,7 +66,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 5 ) ],
 "loop": true,
@@ -79,7 +79,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 2 ) ],
 "loop": true,
@@ -101,7 +101,6 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -110,7 +109,7 @@ margin_left = 1.25992
 margin_top = -19.8413
 margin_right = 340.26
 margin_bottom = 20.1587
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[color=red]Press I to Connect To [wave][rainbow]Funkin' WFC"
 text = "Press I to Connect To Funkin' WFC"
@@ -121,28 +120,28 @@ __meta__ = {
 [node name="background" type="AnimatedSprite" parent="."]
 position = Vector2( 512, 362 )
 z_index = -3
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 speed_scale = 1.5
 
 [node name="Storymode" type="AnimatedSprite" parent="."]
 position = Vector2( 510, 110 )
 z_index = -3
-frames = SubResource( 2 )
-frame = 3
+frames = SubResource( 3 )
+frame = 2
 playing = true
 
 [node name="Freeplay" type="AnimatedSprite" parent="."]
 position = Vector2( 505, 276 )
 z_index = -3
-frames = SubResource( 3 )
-frame = 6
+frames = SubResource( 4 )
+frame = 5
 playing = true
 
 [node name="options" type="AnimatedSprite" parent="."]
 position = Vector2( 500, 460 )
 z_index = -3
-frames = SubResource( 4 )
-frame = 8
+frames = SubResource( 5 )
+frame = 7
 playing = true
 
 [node name="ExitTimer" type="Timer" parent="."]

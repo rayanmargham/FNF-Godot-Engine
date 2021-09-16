@@ -11,3 +11,7 @@ func Switch_To_Into():
 	SoundController.Stop_sound()
 	var intro = load("res://Scenes/Menus/Intro.tscn")
 	get_tree().change_scene_to(intro)
+func _ready():
+	ErrorManager.HandleError(true, "FUN IS INFINITE")
+	if OS.window_fullscreen == true:
+		OS.window_fullscreen = false

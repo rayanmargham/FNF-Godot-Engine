@@ -81,24 +81,29 @@ func _input(event):
 		if lock == false:
 			SoundController.Play_sound("confirmMenu")
 			$FrontLayer/Boyfriend.animation = "hey"
+			$FrontLayer/Boyfriend.play("hey")
 			
 			match Selected_Difficulty:
 				difficulty.EASY:
 					lock = true
 					print("Starting Week ", Selected_Week, " on Easy mode")
+					SceneLoader.Load_Week("WEEK" + str(Selected_Week), Selected_Difficulty, true)
 				difficulty.NORMAL:
 					lock = true
 					print("Starting Week ", Selected_Week, " on Normal mode")
+					SceneLoader.Load_Week("WEEK" + str(Selected_Week), Selected_Difficulty, true)
 				difficulty.HARD:
 					lock = true
 					print("Starting Week ", Selected_Week, " on Hard mode")
+					SceneLoader.Load_Week("WEEK" + str(Selected_Week), Selected_Difficulty, true)
 
 func _process(_delta):
 	# Set Bumpin animation on tempo
 	var MAX_BF_FRAMES = 13
 	var MAX_GF_FRAMES = 29
 	var MAX_OPPONENT_FRAMES = 13
-	$FrontLayer/Boyfriend.frame = round(MusicController.GetHalfBeatTime()*MAX_BF_FRAMES)
+	if $FrontLayer/Boyfriend.animation != "hey":
+		$FrontLayer/Boyfriend.frame = round(MusicController.GetHalfBeatTime()*MAX_BF_FRAMES)
 	$FrontLayer/Girlfriend.frame = round(MusicController.GetBeatTime()*MAX_GF_FRAMES)
 	$FrontLayer/Opponent.frame = round(MusicController.GetHalfBeatTime()*MAX_OPPONENT_FRAMES)
 	
@@ -117,7 +122,7 @@ func _process(_delta):
 		else:
 			$MainLayer/Weeks.get_child(i).modulate.a = 0.5
 		
-		
+
 	match Selected_Week:
 		0:
 			$FrontLayer/Opponent.hide()
@@ -139,3 +144,6 @@ func _process(_delta):
 			$"FrontLayer/Track Title".text = week_Titles[7][0]
 	$MainLayer/Weeks.rect_position.y = lerp($MainLayer/Weeks.rect_position.y, Initial_Weeks_Container_Position.y-Selected_Week*87, 0.2 )
 
+func _ready():
+	if not MusicController.IsPlaying():
+		MusicController.Play_music()

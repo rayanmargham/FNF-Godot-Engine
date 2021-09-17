@@ -1,4 +1,4 @@
-[gd_scene load_steps=311 format=2]
+[gd_scene load_steps=312 format=2]
 
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0005.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/up/GF Up Note0005.png" type="Texture" id=2]
@@ -307,6 +307,7 @@
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0009.png" type="Texture" id=305]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/right/BF NOTE RIGHT0051.png" type="Texture" id=306]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0003.png" type="Texture" id=307]
+[ext_resource path="res://Scripts/GamePlay/ARROWSYSTEM/PlayerInput.gd" type="Script" id=308]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -420,7 +421,7 @@ position = Vector2( 680, 380 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="gf" type="AnimatedSprite" parent="."]
@@ -464,3 +465,6 @@ margin_left = 680.0
 margin_top = 130.0
 margin_right = 870.0
 margin_bottom = 164.0
+
+[node name="PlayerInput" type="Node" parent="."]
+script = ExtResource( 308 )

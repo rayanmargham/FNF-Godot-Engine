@@ -254,7 +254,7 @@ shader_param/aberration = 0.03
 shader_param/brightness = 1.4
 shader_param/discolor = true
 shader_param/warp_amount = 0.407
-shader_param/clip_warp = true
+shader_param/clip_warp = false
 shader_param/vignette_intensity = 0.4
 shader_param/vignette_opacity = 0.5
 
@@ -290,15 +290,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CRT" type="ColorRect" parent="."]
-material = SubResource( 3 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -314,6 +305,15 @@ margin_bottom = 32.5
 custom_fonts/font = ExtResource( 2 )
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CRT" type="ColorRect" parent="."]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

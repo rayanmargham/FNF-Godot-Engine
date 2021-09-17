@@ -1,7 +1,8 @@
 extends Node
 
-onready var player_health = 1.00
+onready var health = 1.00 setget set_health
 onready var song_score = 0
+onready var combo = 0
 onready var note_ratings = {
 	"sicks" : 0,
 	"goods" : 0,
@@ -16,10 +17,23 @@ export var note_ms_timings = {
 	"shit" : 166
 }
 
-func _ready():
-	note_ratings.goods += 1
-	print(note_ratings)
-	print(_check_note_rating(-100))
+func _input(event):
+	var note = ""
+	if Input.is_action_just_pressed("note_up"): note = "up"
+	elif Input.is_action_just_pressed("note_down"): note = "down"
+	elif Input.is_action_just_pressed("note_left"): note = "left"
+	elif Input.is_action_just_pressed("note_right"): note = "right"
+	else: return
+	
+	# ======================================================
+	# INSERT CODE TO CHECK FOR THE PROXIMITY OF NOTES ON THE SONG
+	# ======================================================
+	
+	# This doesn't actually check for notes yet, it just returns "SICK!"
+	var rating = _check_note_rating(0)
+	increment_score(rating)
+	if ["good", "sick"].has(rating): good_note_hit()
+	print(rating)
 
 # TODO: I have no idea what "ts" is, I believe it's related to replays
 func _check_note_rating(ms, ts = 1):
@@ -29,5 +43,23 @@ func _check_note_rating(ms, ts = 1):
 	elif timing <= note_ms_timings.get("bad"): return "bad"
 	elif timing <= note_ms_timings.get("shit"): return "shit"
 
-func increment_score():
-	pass
+# This could probably be optimized.
+func increment_score(rating):
+	match rating:
+		"sick":
+			health += 0.04
+			song_score += 350
+		"good":
+			song_score += 200
+		"bad":
+			health -= 0.03
+		"shit":
+			health -= 0.06
+			song_score -= 300
+
+# THIS IS INCOMPLETE.
+func good_note_hit():
+	combo += 1
+
+func set_health(new_value):
+	health = clamp(0, new_value, 2)

@@ -27,6 +27,7 @@ func _process(delta):
 		#for debug purposes
 		$DEBUG/Frame.text = "FRAME TIME: " + str(MusicController.GetBeatTime())
 		$DEBUG/GFCURRENT.text = "GF's CURRENT FRAME: " + str($gf.frame)
+		$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
 	else:
 		#resets text
 		$DEBUG/Frame.text = ""

@@ -6,7 +6,7 @@ var times := []
 # Frames per second
 var fps := 0
 # DEBUG VAR THAT CAN BE ACCESSED FROM EVERYWHERE
-var debug = false
+var debug = true
 
 func _process(_delta: float) -> void:
 	var now := OS.get_ticks_msec()

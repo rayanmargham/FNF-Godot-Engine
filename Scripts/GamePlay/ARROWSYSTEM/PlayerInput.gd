@@ -2,6 +2,10 @@ extends Node
 
 onready var health = 1.00 setget set_health
 onready var song_score = 0
+signal up
+signal down
+signal left
+signal right
 onready var combo = 0
 onready var note_ratings = {
 	"sicks" : 0,
@@ -28,8 +32,9 @@ func _input(event):
 	# ======================================================
 	# INSERT CODE TO CHECK FOR THE PROXIMITY OF NOTES ON THE SONG
 	# ======================================================
-	
+	emit_signal(note)
 	# This doesn't actually check for notes yet, it just returns "SICK!"
+	
 	var rating = _check_note_rating(0)
 	increment_score(rating)
 	if ["good", "sick"].has(rating): good_note_hit()

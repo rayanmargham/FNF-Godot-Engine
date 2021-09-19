@@ -583,6 +583,7 @@ FpsCounter="*res://AutoLoads/FPSCounter.tscn"
 MusicController="*res://AutoLoads/Music Controller.tscn"
 SceneLoader="*res://AutoLoads/SceneLoader.tscn"
 SoundController="*res://AutoLoads/SoundController.tscn"
+Mapper="*res://AutoLoads/Mapper.gd"
 
 [display]
 

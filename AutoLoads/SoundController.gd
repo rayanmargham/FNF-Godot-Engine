@@ -18,6 +18,9 @@ func Play_sound(sound = "SplashSound"):
 			target = load("res://Assets/Menus/Music&Sounds/scrollMenu.wav")
 		"SplashSound":
 			target = load("res://Assets/Menus/Music&Sounds/SplashSound.wav")
+		"Alert":
+			target = load("res://Assets/Menus/Music&Sounds/Alert.wav")
+			$Sound.volume_db = 10
 		_:
 			print("ERROR: Could not play sound: ", sound)
 			return

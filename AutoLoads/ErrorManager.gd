@@ -38,7 +38,17 @@ func HandleError(ErrorScreen,ErrorMessage):
 			var dat = loadjson()
 			dat.Fun += 1
 	else:
-		OS.alert(ErrorMessage, "Oopsie!")
+		var dialog = AcceptDialog.new()
+		dialog.pause_mode = dialog.PAUSE_MODE_PROCESS
+		get_tree().paused = true
+		dialog.dialog_text = ErrorMessage + "\nPress OK To Ignore This\nPress Reload to Reload The Game"
+		dialog.window_title = "Oops!"
+		dialog.add_button("Reload", true, "lmao")
+		dialog.connect("custom_action", self, "_what")
+		dialog.connect("confirmed", self, "_oof")
+		add_child(dialog)
+		dialog.popup_centered()
+		SoundController.Play_sound("Alert")
 func savejson(da):
 	var file = File.new()
 	var error = file.open(save_path, File.WRITE)
@@ -55,3 +65,9 @@ func loadjson():
 	data = dat
 	file.close()
 	return dat
+
+func _what(what):
+	get_tree().paused = false
+	SceneLoader.ResetGame()
+func _oof():
+	get_tree().paused = false

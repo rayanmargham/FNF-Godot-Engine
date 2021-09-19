@@ -30,3 +30,9 @@ func Load_Week(week, difficulty = "normal", transition = true):
 		get_tree().change_scene_to(scenetoload)
 	else:
 		$transition/AnimationPlayer.play("in")
+func ResetGame():
+	get_tree().change_scene("res://Scenes/Menus/Splash.tscn")
+	MusicController.Stop_music()
+	SoundController.Stop_sound()
+	SceneLoader.isweek = false
+	Mapper.json = ""

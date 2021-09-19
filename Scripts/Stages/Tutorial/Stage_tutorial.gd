@@ -8,7 +8,10 @@ func _ready():
 	# sets gf's frame to 0 just incase
 	$gf.frame = 0
 	#plays one of the test songs
-	MusicController.Play_music("Brushwhack", 215)
+	Mapper.loadmap("res://Assets//JSON&Tsext_Files/TestJson/tutorial-hard.json", false)
+	var file = File.new()
+	if file.file_exists(Mapper.json_path):
+		MusicController.Play_music(Mapper.json.song.song, Mapper.json.song.bpm)
 	#curstep allows you to keep track of your position in the song which allows you to do cool things like change bpm in
 	#a area of the song
 func _process(delta):
@@ -32,3 +35,4 @@ func _process(delta):
 		#resets text
 		$DEBUG/Frame.text = ""
 		$DEBUG/GFCURRENT.text = ""
+

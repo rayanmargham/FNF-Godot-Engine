@@ -36,6 +36,8 @@ func HandleError(ErrorScreen,ErrorMessage):
 	if ErrorScreen == true:
 		MESSAGE = ErrorMessage
 		var ERRORSCREEN = load("res://Scenes/ErrorScreen/Error.tscn")
+		if MusicController.playing == true:
+			MusicController.Stop_music()
 		get_tree().change_scene_to(ERRORSCREEN)
 		var file = File.new()
 		if file.file_exists(save_path):
@@ -47,6 +49,12 @@ func HandleError(ErrorScreen,ErrorMessage):
 			createjson(data)
 			var dat = loadjson()
 			dat.Fun += 1
+		if ErrorMessage == "FUN IS INFINITE FUN IS INFINITE FUN IS INFINITE":
+				data.Fun = 666 # HE WHO IS HAS NOT
+				# HE HAS DIED
+				# THEY HAVE DIED
+				# EVERYTHING IS DEAD
+				# NOTHING IS REAL
 	else:
 		dialog.dialog_text = ErrorMessage + "\nPress OK To Ignore This\nPress Reload to Reload The Game"
 		get_tree().paused = true

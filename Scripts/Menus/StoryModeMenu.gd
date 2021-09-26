@@ -23,13 +23,13 @@ var week_Tracks = [
 ]
 var week_Titles = [
 	["Tutorial"],
-	["daddy cum"],
-	["spooky"],
-	["go pico"],
-	["big boobies"],
-	["chirmstas"],
-	["hate simulator"],
-	["CumMan"]
+	["Daddy Dearest"],
+	["Skid and Pump"],
+	["Pico"],
+	["Mummy Mearest"],
+	["Red Snow"],
+	["Hate Simulator"],
+	["Tankman's Cum Session"]
 ]
 enum difficulty {
 	EASY,
@@ -142,6 +142,7 @@ func _process(_delta):
 			$"FrontLayer/Track Title".text = week_Titles[6][0]
 		7:
 			$"FrontLayer/Track Title".text = week_Titles[7][0]
+			$"FrontLayer/Track Title".rect_position.x = 300
 	$MainLayer/Weeks.rect_position.y = lerp($MainLayer/Weeks.rect_position.y, Initial_Weeks_Container_Position.y-Selected_Week*87, 0.2 )
 
 func _ready():

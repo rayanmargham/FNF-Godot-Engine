@@ -3,6 +3,8 @@ extends Control
 onready var mes = ErrorManager.MESSAGE
 onready var Texturerect = $CanvasLayer/TextureRect
 onready var richtext = $CanvasLayer/RichTextLabel
+var heis = false
+var random = RandomNumberGenerator.new()
 func _ready():
 	Texturerect.visible = false
 	richtext.visible = false
@@ -14,7 +16,8 @@ func _ready():
 	yield(get_tree().create_timer(2), "timeout")
 	if ErrorManager.data.Fun > 10:
 		MusicController.Play_music("ERROR")
-		$TextureRect.visible = true
+		Texturerect.visible = true
+		heis = true
 	richtext.visible = true
 	
 	if ErrorManager.data.Fun == 10:
@@ -32,7 +35,9 @@ func _ready():
 			richtext.bbcode_text = """[shake][center]
 
 	""" + mes + "\n-LINUX TEAM"
-
+func _process(delta):
+	if heis == true:
+		OS.window_position = Vector2(OS.window_position.x + random.randi_range(-1, 1), OS.window_position.y + random.randi_range(-1, 1))
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()

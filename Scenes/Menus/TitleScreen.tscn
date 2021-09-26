@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=139 format=2]
 
 [ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menus/TitleScreen.gd" type="Script" id=2]
@@ -140,11 +140,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 1 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 100 ), ExtResource( 114 ), ExtResource( 105 ), ExtResource( 101 ), ExtResource( 103 ), ExtResource( 131 ), ExtResource( 113 ), ExtResource( 123 ), ExtResource( 104 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 125 ), ExtResource( 120 ), ExtResource( 124 ), ExtResource( 126 ), ExtResource( 110 ), ExtResource( 96 ), ExtResource( 102 ), ExtResource( 127 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 118 ), ExtResource( 115 ), ExtResource( 111 ) ],
 "loop": true,
@@ -152,7 +152,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 107 ), ExtResource( 109 ), ExtResource( 97 ), ExtResource( 116 ), ExtResource( 129 ), ExtResource( 98 ), ExtResource( 122 ), ExtResource( 128 ), ExtResource( 108 ), ExtResource( 92 ), ExtResource( 99 ), ExtResource( 130 ), ExtResource( 93 ), ExtResource( 112 ), ExtResource( 91 ) ],
 "loop": true,
@@ -160,7 +160,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 35 ), ExtResource( 31 ), ExtResource( 68 ), ExtResource( 49 ), ExtResource( 73 ), ExtResource( 79 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 64 ), ExtResource( 50 ), ExtResource( 74 ), ExtResource( 45 ), ExtResource( 82 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 67 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 70 ), ExtResource( 36 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 46 ), ExtResource( 81 ), ExtResource( 83 ), ExtResource( 55 ), ExtResource( 77 ), ExtResource( 51 ), ExtResource( 38 ), ExtResource( 84 ), ExtResource( 72 ), ExtResource( 65 ), ExtResource( 78 ), ExtResource( 69 ), ExtResource( 52 ), ExtResource( 85 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 66 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 57 ) ],
 "loop": true,
@@ -173,9 +173,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "WhiteFlash"
-length = 2.0
+[sub_resource type="Animation" id=6]
+resource_name = "EnterFlash"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -183,7 +182,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -228,7 +242,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -42.0
 margin_right = 68.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 bbcode_enabled = true
 bbcode_text = "[wave]v1.0"
@@ -243,12 +257,12 @@ layer = 0
 [node name="gf" type="AnimatedSprite" parent="gflayer"]
 position = Vector2( 723.122, 318.702 )
 scale = Vector2( 0.813583, 0.813583 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 
 [node name="logo" type="AnimatedSprite" parent="."]
 position = Vector2( 284, 212 )
 scale = Vector2( 0.801136, 0.801136 )
-frames = SubResource( 5 )
+frames = SubResource( 4 )
 frame = 13
 
 [node name="Tween" type="Tween" parent="logo"]
@@ -258,8 +272,8 @@ frame = 13
 [node name="PressEnterText" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 812, 530 )
 z_index = -1
-frames = SubResource( 6 )
-frame = 28
+frames = SubResource( 5 )
+frame = 39
 speed_scale = 3.0
 playing = true
 
@@ -269,11 +283,11 @@ layer = 2
 [node name="WhiteFlash" type="ColorRect" parent="Flash"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WhiteFlashFade" type="AnimationPlayer" parent="Flash/WhiteFlash"]
 autoplay = "WhiteFlash"
-anims/WhiteFlash = SubResource( 2 )
+anims/EnterFlash = SubResource( 6 )
+anims/WhiteFlash = SubResource( 7 )

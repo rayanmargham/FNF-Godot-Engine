@@ -4,6 +4,7 @@ extends Control
 var selected_Button = 0 # 0 - 2
 onready var initial_BG_offset = $background.position.y
 var disable = false
+var button_disable = false
 #=============Private Functions=============
 func _input(event):
 	if event.is_action_pressed("ui_down"):
@@ -18,7 +19,7 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		SoundController.Play_sound("confirmMenu")
 		set_process_input(false)
-		set_process(false)
+		button_disable = true
 		$background.playing = true
 		$ExitTimer.start()
 	if event.is_action_pressed("I"):
@@ -29,20 +30,20 @@ func _input(event):
 func _process(_delta):
 	# Scroll the BG
 	$background.position.y = lerp($background.position.y, initial_BG_offset - selected_Button * 50, 0.1)
-	
-	match selected_Button:
-		0:
-			$Storymode.animation = "selected"
-			$Freeplay.animation = "default"
-			$options.animation = "default"
-		1:
-			$Storymode.animation = "default"
-			$Freeplay.animation = "selected"
-			$options.animation = "default"
-		2:
-			$Storymode.animation = "default"
-			$Freeplay.animation = "default"
-			$options.animation = "selected"
+	if button_disable == false:
+		match selected_Button:
+			0:
+				$Storymode.animation = "selected"
+				$Freeplay.animation = "default"
+				$options.animation = "default"
+			1:
+				$Storymode.animation = "default"
+				$Freeplay.animation = "selected"
+				$options.animation = "default"
+			2:
+				$Storymode.animation = "default"
+				$Freeplay.animation = "default"
+				$options.animation = "selected"
 
 func _on_ExitTimer_timeout():
 	match selected_Button:

@@ -320,70 +320,70 @@ __meta__ = {
 
 [node name="Tutorial" type="Label" parent="MainLayer/Weeks"]
 margin_right = 413.0
-margin_bottom = 2.0
+margin_bottom = 83.0
 custom_fonts/font = SubResource( 6 )
 text = "TUTORIAL"
 align = 1
 valign = 1
 
 [node name="Week1" type="Label" parent="MainLayer/Weeks"]
-margin_top = 6.0
+margin_top = 87.0
 margin_right = 413.0
-margin_bottom = 8.0
+margin_bottom = 170.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 1"
 align = 1
 valign = 1
 
 [node name="Week2" type="Label" parent="MainLayer/Weeks"]
-margin_top = 12.0
+margin_top = 174.0
 margin_right = 413.0
-margin_bottom = 14.0
+margin_bottom = 257.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 2"
 align = 1
 valign = 1
 
 [node name="Week3" type="Label" parent="MainLayer/Weeks"]
-margin_top = 18.0
+margin_top = 261.0
 margin_right = 413.0
-margin_bottom = 20.0
+margin_bottom = 344.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 3"
 align = 1
 valign = 1
 
 [node name="Week4" type="Label" parent="MainLayer/Weeks"]
-margin_top = 24.0
+margin_top = 348.0
 margin_right = 413.0
-margin_bottom = 26.0
+margin_bottom = 431.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 4"
 align = 1
 valign = 1
 
 [node name="Week5" type="Label" parent="MainLayer/Weeks"]
-margin_top = 30.0
+margin_top = 435.0
 margin_right = 413.0
-margin_bottom = 32.0
+margin_bottom = 518.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 5"
 align = 1
 valign = 1
 
 [node name="Week6" type="Label" parent="MainLayer/Weeks"]
-margin_top = 36.0
+margin_top = 522.0
 margin_right = 413.0
-margin_bottom = 38.0
+margin_bottom = 605.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 6"
 align = 1
 valign = 1
 
 [node name="Week7" type="Label" parent="MainLayer/Weeks"]
-margin_top = 42.0
+margin_top = 609.0
 margin_right = 413.0
-margin_bottom = 44.0
+margin_bottom = 692.0
 custom_fonts/font = SubResource( 6 )
 text = "WEEK 7"
 align = 1
@@ -447,9 +447,9 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.698039 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -161.5
+margin_left = -177.5
 margin_top = 4.0
-margin_right = 161.5
+margin_right = 145.5
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 10 )
 text = "DADDY DEAREST poo"

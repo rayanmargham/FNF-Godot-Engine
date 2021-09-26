@@ -31,35 +31,43 @@ func Play_music(song = "freakyMenu", bpm = 102):
 			target = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
 			FREAKY_BPM = bpm
 			Freaky_BPS = 60.0/float(FREAKY_BPM)
-			playing = true
 			curStep = 0
 			halfCurStep = 0
+			playing = true
 		"Pro":
 			target = load("res://Assets/Pro/Music&Sounds/KickBack.mp3")
 			FREAKY_BPM = bpm
 			Freaky_BPS = 60.0/float(FREAKY_BPM)
-			playing = true
 			curStep = 0
 			halfCurStep = 0
+			playing = true
 		"Brushwhack":
 			target = load("res://Assets/TestSongs/Brushwhack/Inst.ogg")
 			FREAKY_BPM = bpm
 			Freaky_BPS = 60.0/float(FREAKY_BPM)
-			playing = true
 			curStep = 0
 			halfCurStep = 0
+			playing = true
 		"ERROR":
 			target = load("res://Assets/Misc/ERROR/Audio/him.mp3")
 			FREAKY_BPM = bpm
 			Freaky_BPS = 60.0/float(FREAKY_BPM)
-			playing = true
 			curStep = 0
 			halfCurStep = 0
+			playing = true
+		"Tutorial":
+			target = load("res://Assets/Songs/Tutorial/Tutorial_Inst.ogg")
+			FREAKY_BPM = bpm
+			Freaky_BPS = 60.0/float(FREAKY_BPM)
+			curStep = 0
+			halfCurStep = 0
+			playing = true
 		_:
 			playing = false
 			curStep = 0
 			halfCurStep = 0
 			print("ERROR: Could not play song: ", song)
+			ErrorManager.HandleError(false, "Could Not Play Song!")
 			return
 	$Music.stream = target
 	$Music.play()

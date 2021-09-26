@@ -1,11 +1,13 @@
 extends Control
 
 onready var mes = ErrorManager.MESSAGE
+onready var Texturerect = $CanvasLayer/TextureRect
+onready var richtext = $CanvasLayer/RichTextLabel
 func _ready():
-	$TextureRect.visible = false
-	$RichTextLabel.visible = false
-	
-	$RichTextLabel.bbcode_text = """[shake][center]ERROR
+	Texturerect.visible = false
+	richtext.visible = false
+	print(ErrorManager.data.Fun)
+	richtext.bbcode_text = """[shake][center]ERROR
 
 """ + mes + "\nYOU MAY EXIT NOW"
 	FpsCounter.HideCounter()
@@ -13,18 +15,23 @@ func _ready():
 	if ErrorManager.data.Fun > 10:
 		MusicController.Play_music("ERROR")
 		$TextureRect.visible = true
-	$RichTextLabel.visible = true
+	richtext.visible = true
 	
 	if ErrorManager.data.Fun == 10:
 		MusicController.Stop_music()
-		$RichTextLabel.bbcode_text = "[center]..."
-		$TextureRect.visible = false
+		richtext.bbcode_text = "[center]..."
+		Texturerect.visible = false
 		yield(get_tree().create_timer(5), "timeout")
 		get_tree().quit()
 	elif ErrorManager.data.Fun >= 10:
-		$RichTextLabel.bbcode_text = """[shake][center]
+		if mes != "FUN IS INFINITE FUN IS INFINITE FUN IS INFINITE":
+			richtext.bbcode_text = """[shake][center]
 
-""" + mes + "\nFUN IS INFINITE"
+	""" + mes + "\nFUN IS INFINITE"
+		else:
+			richtext.bbcode_text = """[shake][center]
+
+	""" + mes + "\n-LINUX TEAM"
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

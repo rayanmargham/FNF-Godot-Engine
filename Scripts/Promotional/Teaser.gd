@@ -23,8 +23,12 @@ func _sussy():
 func _process(delta):
 	if MusicController.halfCurStep == 15:
 		$Label.text = "NO JOKE"
-	if MusicController.halfCurStep == 30:
+	if MusicController.halfCurStep == 30 or MusicController.halfCurStep == 31:
+		$Camera2D.zoom -= Vector2(0.01, 0.01)
 		$Label.text = "YOOO"
+	if MusicController.halfCurStep == 32:
+		$Camera2D.zoom = Vector2(1, 1)
+		$Label.text = ""
 	if abs(MusicController.get_playback_position() - 6) < 0.1 and s == false:
 		s = true
 		g = 0

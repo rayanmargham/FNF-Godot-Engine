@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menus/TitleScreen.gd" type="Script" id=2]
@@ -86,6 +86,51 @@
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/PressEnterToBegin/Press Enter to Begin0030.png" type="Texture" id=84]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/PressEnterToBegin/Press Enter to Begin0036.png" type="Texture" id=85]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/PressEnterToBegin/Press Enter to Begin0014.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0001.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0002.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0003.png" type="Texture" id=89]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0004.png" type="Texture" id=90]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0015.png" type="Texture" id=91]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0010.png" type="Texture" id=92]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0013.png" type="Texture" id=93]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0016.png" type="Texture" id=94]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0017.png" type="Texture" id=95]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0023.png" type="Texture" id=96]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0003.png" type="Texture" id=97]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0006.png" type="Texture" id=98]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0011.png" type="Texture" id=99]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0005.png" type="Texture" id=100]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0008.png" type="Texture" id=101]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0024.png" type="Texture" id=102]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0009.png" type="Texture" id=103]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0013.png" type="Texture" id=104]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0007.png" type="Texture" id=105]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0026.png" type="Texture" id=106]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0001.png" type="Texture" id=107]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0009.png" type="Texture" id=108]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0002.png" type="Texture" id=109]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0022.png" type="Texture" id=110]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0030.png" type="Texture" id=111]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0014.png" type="Texture" id=112]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0011.png" type="Texture" id=113]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0006.png" type="Texture" id=114]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0029.png" type="Texture" id=115]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0004.png" type="Texture" id=116]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0015.png" type="Texture" id=117]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0028.png" type="Texture" id=118]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0014.png" type="Texture" id=119]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0019.png" type="Texture" id=120]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0027.png" type="Texture" id=121]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0007.png" type="Texture" id=122]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0012.png" type="Texture" id=123]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0020.png" type="Texture" id=124]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0018.png" type="Texture" id=125]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0021.png" type="Texture" id=126]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0025.png" type="Texture" id=127]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0008.png" type="Texture" id=128]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0005.png" type="Texture" id=129]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0012.png" type="Texture" id=130]
+[ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0010.png" type="Texture" id=131]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -95,7 +140,27 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 100 ), ExtResource( 114 ), ExtResource( 105 ), ExtResource( 101 ), ExtResource( 103 ), ExtResource( 131 ), ExtResource( 113 ), ExtResource( 123 ), ExtResource( 104 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 125 ), ExtResource( 120 ), ExtResource( 124 ), ExtResource( 126 ), ExtResource( 110 ), ExtResource( 96 ), ExtResource( 102 ), ExtResource( 127 ), ExtResource( 106 ), ExtResource( 121 ), ExtResource( 118 ), ExtResource( 115 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 107 ), ExtResource( 109 ), ExtResource( 97 ), ExtResource( 116 ), ExtResource( 129 ), ExtResource( 98 ), ExtResource( 122 ), ExtResource( 128 ), ExtResource( 108 ), ExtResource( 92 ), ExtResource( 99 ), ExtResource( 130 ), ExtResource( 93 ), ExtResource( 112 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 35 ), ExtResource( 31 ), ExtResource( 68 ), ExtResource( 49 ), ExtResource( 73 ), ExtResource( 79 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 64 ), ExtResource( 50 ), ExtResource( 74 ), ExtResource( 45 ), ExtResource( 82 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 67 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 70 ), ExtResource( 36 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 46 ), ExtResource( 81 ), ExtResource( 83 ), ExtResource( 55 ), ExtResource( 77 ), ExtResource( 51 ), ExtResource( 38 ), ExtResource( 84 ), ExtResource( 72 ), ExtResource( 65 ), ExtResource( 78 ), ExtResource( 69 ), ExtResource( 52 ), ExtResource( 85 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 66 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 57 ) ],
 "loop": true,
@@ -108,7 +173,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "WhiteFlash"
 length = 2.0
 tracks/0/type = "value"
@@ -124,10 +189,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=4]
-size = 30
-font_data = ExtResource( 1 )
-
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,46 +202,33 @@ __meta__ = {
 }
 
 [node name="BG" type="ColorRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -513.0
+margin_top = -301.0
+margin_right = 511.0
+margin_bottom = 299.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bumpin" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 469.5, 259.5 )
 scale = Vector2( 0.795552, 0.82303 )
 z_index = -2
 frames = SubResource( 1 )
 animation = "Bumpin"
 
-[node name="PressEnterText" type="AnimatedSprite" parent="."]
-position = Vector2( 811, 529 )
-z_index = -1
-frames = SubResource( 2 )
-frame = 12
-speed_scale = 3.0
-playing = true
-
-[node name="WhiteFlash" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WhiteFlashFade" type="AnimationPlayer" parent="WhiteFlash"]
-autoplay = "WhiteFlash"
-anims/WhiteFlash = SubResource( 3 )
-
 [node name="Version" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -42.0
 margin_right = 68.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 bbcode_enabled = true
 bbcode_text = "[wave]v1.0"
@@ -188,3 +236,44 @@ text = "v1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="gflayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="gf" type="AnimatedSprite" parent="gflayer"]
+position = Vector2( 723.122, 318.702 )
+scale = Vector2( 0.813583, 0.813583 )
+frames = SubResource( 4 )
+
+[node name="logo" type="AnimatedSprite" parent="."]
+position = Vector2( 284, 212 )
+scale = Vector2( 0.801136, 0.801136 )
+frames = SubResource( 5 )
+frame = 13
+
+[node name="Tween" type="Tween" parent="logo"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PressEnterText" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 812, 530 )
+z_index = -1
+frames = SubResource( 6 )
+frame = 28
+speed_scale = 3.0
+playing = true
+
+[node name="Flash" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="WhiteFlash" type="ColorRect" parent="Flash"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteFlashFade" type="AnimationPlayer" parent="Flash/WhiteFlash"]
+autoplay = "WhiteFlash"
+anims/WhiteFlash = SubResource( 2 )

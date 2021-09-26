@@ -4,11 +4,13 @@ var scene = null
 var target
 var diff = "none"
 var isweek = false
+var failed = false
+onready var animationplayer = $CanvasLayer/AnimationPlayer
 func Load(param1):
 	scene = param1
 	diff = "none"
 	isweek = false
-	$transition/AnimationPlayer.play("in")
+	animationplayer.play("in")
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "in":
 		if isweek == true:
@@ -17,8 +19,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if ResourceLoader.exists(scene):
 			print("nice im real")
 			get_tree().change_scene_to(scenetoload)
-			$transition/AnimationPlayer.play("out")
+			animationplayer.play("out")
+			failed = false
 		else:
+			failed = true
+			print("failed")
 			ErrorManager.HandleError(true, "Could Not Load JSON!")
 			
 func Load_Week(week, difficulty = "normal", transition = true):
@@ -29,7 +34,7 @@ func Load_Week(week, difficulty = "normal", transition = true):
 		var scenetoload = load(scene)
 		get_tree().change_scene_to(scenetoload)
 	else:
-		$transition/AnimationPlayer.play("in")
+		animationplayer.play("in")
 func ResetGame():
 	get_tree().change_scene("res://Scenes/Menus/Splash.tscn")
 	MusicController.Stop_music()

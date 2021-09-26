@@ -11,16 +11,20 @@ func Play_sound(sound = "SplashSound"):
 	var target = null
 	match sound:
 		"cancelMenu":
+			$Sound.volume_db = 1
 			target = load("res://Assets/Menus/Music&Sounds/cancelMenu.wav")
 		"confirmMenu":
+			$Sound.volume_db = 1
 			target = load("res://Assets/Menus/Music&Sounds/confirmMenu.wav")
 		"scrollMenu":
+			$Sound.volume_db = 1
 			target = load("res://Assets/Menus/Music&Sounds/scrollMenu.wav")
 		"SplashSound":
+			$Sound.volume_db = 1
 			target = load("res://Assets/Menus/Music&Sounds/SplashSound.wav")
 		"Alert":
 			target = load("res://Assets/Menus/Music&Sounds/Alert.wav")
-			$Sound.volume_db = 10
+			$Sound.volume_db = 30
 		_:
 			print("ERROR: Could not play sound: ", sound)
 			return

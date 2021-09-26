@@ -10,9 +10,19 @@ var save_path = SAVE_DIR + "FUN.json"
 var data = {
 	"Fun" : 0
 }
+var dialog = AcceptDialog.new()
+var canvaslayer = CanvasLayer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	var dir = Directory.new()
+	add_child(canvaslayer)
+	dialog.add_button("Reload", true, "lmao")
+	dialog.connect("custom_action", self, "_what")
+	dialog.connect("confirmed", self, "_oof")
+	canvaslayer.layer = 1
+	dialog.pause_mode = dialog.PAUSE_MODE_PROCESS
+	dialog.popup_exclusive = true
 	if !dir.dir_exists(SAVE_DIR):
 		dir.make_dir_recursive(SAVE_DIR)
 func createjson(dat):
@@ -38,15 +48,12 @@ func HandleError(ErrorScreen,ErrorMessage):
 			var dat = loadjson()
 			dat.Fun += 1
 	else:
-		var dialog = AcceptDialog.new()
-		dialog.pause_mode = dialog.PAUSE_MODE_PROCESS
-		get_tree().paused = true
 		dialog.dialog_text = ErrorMessage + "\nPress OK To Ignore This\nPress Reload to Reload The Game"
+		get_tree().paused = true
 		dialog.window_title = "Oops!"
-		dialog.add_button("Reload", true, "lmao")
-		dialog.connect("custom_action", self, "_what")
-		dialog.connect("confirmed", self, "_oof")
-		add_child(dialog)
+		if canvaslayer.get_child_count() == 0:
+			canvaslayer.add_child(dialog)
+		
 		dialog.popup_centered()
 		SoundController.Play_sound("Alert")
 func savejson(da):
@@ -67,7 +74,9 @@ func loadjson():
 	return dat
 
 func _what(what):
+	canvaslayer.remove_child(dialog)
 	get_tree().paused = false
 	SceneLoader.ResetGame()
 func _oof():
+	canvaslayer.remove_child(dialog)
 	get_tree().paused = false

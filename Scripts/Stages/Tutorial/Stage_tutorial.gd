@@ -4,11 +4,13 @@ extends Node2D
 const MAX_GF_FRAMES = 29
 # use this if you wanna have bf be in sync in the music with his animation speed (not very pog)
 const MAX_BF_FRAMES = 13
+onready var gf = $gf
+onready var bf = $bf
 func _ready():
 	# sets gf's frame to 0 just incase
-	$gf.frame = 0
+	gf.frame = 0
 	#plays one of the test songs
-	Mapper.loadmap("res://Assets//JSON&Tsext_Files/TestJson/tutorial-hard.json", false)
+	Mapper.loadmap("res://Assets//JSON&Text_Files/TestJson/tutorial-hard.json", false)
 	var file = File.new()
 	if file.file_exists(Mapper.json_path):
 		MusicController.Play_music(Mapper.json.song.song, Mapper.json.song.bpm)
@@ -17,7 +19,8 @@ func _ready():
 func _process(delta):
 	if MusicController.IsPlaying() == true:
 		# gf's frames are synced to the beat with the musiccontroller/conducter
-		$gf.frame = round(MusicController.GetBeatTime() * MAX_GF_FRAMES)
+		if gf.animation == "default":
+			gf.frame = round(MusicController.GetBeatTime() * MAX_GF_FRAMES)
 		#print("GF's CURRENT FRAME" + str($gf.frame))
 		#print("FRAME TIME:" + str(MusicController.GetBeatTime()))
 		# example of what you can do with curstep
@@ -26,6 +29,7 @@ func _process(delta):
 #			# smoothly changes gf's frames
 #			if $gf.frame == 0 or $gf.frame == 10:
 #				MusicController.ChangeBPM(350)
+		
 	if FpsCounter.debug == true:
 		#for debug purposes
 		$DEBUG/Frame.text = "FRAME TIME: " + str(MusicController.GetBeatTime())
@@ -35,4 +39,3 @@ func _process(delta):
 		#resets text
 		$DEBUG/Frame.text = ""
 		$DEBUG/GFCURRENT.text = ""
-

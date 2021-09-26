@@ -27,7 +27,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, -2, -2 ),
+"transitions": PoolRealArray( 1, 0.403422, -16 ),
 "update": 0,
 "values": [ Vector2( 0, 608 ), Vector2( 0, 568 ), Vector2( 0, 576 ) ]
 }
@@ -40,7 +40,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,8 +53,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LineEdit"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/LineEdit"]
 anims/down = SubResource( 1 )
 anims/up = SubResource( 2 )
 
-[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_entered" from="CanvasLayer/LineEdit" to="." method="_on_LineEdit_text_entered"]

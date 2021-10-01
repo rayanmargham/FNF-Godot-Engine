@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/toby.wav-5b93b0f3c7ea19d9757dd93b21fb7ab6.sample"
+
+[deps]
+
+source_file="res://Misc/FirstUse/Music/toby.wav"
+dest_files=[ "res://.import/toby.wav-5b93b0f3c7ea19d9757dd93b21fb7ab6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

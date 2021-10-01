@@ -2,7 +2,7 @@
 
 [ext_resource path="res://AutoLoads/SceneLoader.gd" type="Script" id=2]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 // Ranges from 0 to 1 over the course of the transition.
@@ -22,8 +22,8 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/progress = 0.0
 shader_param/diamondPixelSize = 20.0
 
@@ -62,6 +62,7 @@ tracks/0/keys = {
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,7 +72,7 @@ __meta__ = {
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource( 6 )
+material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

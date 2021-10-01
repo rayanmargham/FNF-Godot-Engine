@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ui_button_hover.wav-f285ee86e690901450451126225d12da.sample"
+
+[deps]
+
+source_file="res://Misc/FirstUse/Sounds/ui_button_hover.wav"
+dest_files=[ "res://.import/ui_button_hover.wav-f285ee86e690901450451126225d12da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

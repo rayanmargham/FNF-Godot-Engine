@@ -567,7 +567,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FNF-Godot-Edition"
-run/main_scene="res://Scenes/Menus/Splash.tscn"
+run/main_scene="res://Scenes/Menus/FirstUse.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Misc/iconOG.png"
 config/windows_native_icon="res://Misc/icon.ico"

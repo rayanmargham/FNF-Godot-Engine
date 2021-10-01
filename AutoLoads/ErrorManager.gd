@@ -7,8 +7,10 @@ extends Node
 const SAVE_DIR = "user://FNF/"
 var MESSAGE = "FUN IS INFINITE"
 var save_path = SAVE_DIR + "FUN.json"
+var donealready = false
 var data = {
-	"Fun" : 0
+	"Fun" : 0,
+	"Done": 0,
 }
 var dialog = AcceptDialog.new()
 var canvaslayer = CanvasLayer.new()
@@ -25,6 +27,29 @@ func _ready():
 	dialog.popup_exclusive = true
 	if !dir.dir_exists(SAVE_DIR):
 		dir.make_dir_recursive(SAVE_DIR)
+	var file = File.new()
+	if file.file_exists(save_path):
+		print("hello?")
+		var dat = loadjson()
+		if dat.Done == 0:
+			dat.Done += 1
+			print("its false")
+			donealready = false
+		else:
+			print("its true")
+			donealready = true
+		savejson(data)
+	else:
+		createjson(data)
+		var dat = loadjson()
+		if dat.Done == 0:
+			print("false")
+			dat.Done += 1
+			donealready = false
+		else:
+			print("true")
+			donealready = true
+		savejson(data)
 func createjson(dat):
 	var file = File.new()
 	var error = file.open(save_path, File.WRITE)
@@ -88,3 +113,8 @@ func _what(what):
 func _oof():
 	canvaslayer.remove_child(dialog)
 	get_tree().paused = false
+func reset_done():
+	var dat = loadjson()
+	dat.Done = 0
+	donealready = false
+	savejson(data)

@@ -62,6 +62,13 @@ func Play_music(song = "freakyMenu", bpm = 102):
 			curStep = 0
 			halfCurStep = 0
 			playing = true
+		"Before The Story":
+			target = load("res://Misc/FirstUse/Music/toby.wav")
+			FREAKY_BPM = bpm
+			Freaky_BPS = 60.0/float(FREAKY_BPM)
+			curStep = 0
+			halfCurStep = 0
+			playing = true
 		_:
 			playing = false
 			curStep = 0

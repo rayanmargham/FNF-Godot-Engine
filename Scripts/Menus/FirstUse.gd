@@ -68,6 +68,7 @@ func _on_Yes_button_up():
 		$CanvasLayer2/No.disabled = true
 		disabled = true
 		MusicController.Stop_music()
+		ErrorManager.up_done()
 		SoundController.connect("playing_done", self, "_go")
 		SoundController.connect("playing_done_2", self, "_go")
 		

@@ -44,12 +44,10 @@ func _ready():
 		var dat = loadjson()
 		if dat.Done == 0:
 			print("false")
-			dat.Done += 1
 			donealready = false
 		else:
 			print("true")
 			donealready = true
-		savejson(data)
 func createjson(dat):
 	var file = File.new()
 	var error = file.open(save_path, File.WRITE)
@@ -117,4 +115,7 @@ func reset_done():
 	var dat = loadjson()
 	dat.Done = 0
 	donealready = false
+	savejson(data)
+func up_done():
+	data.Done += 1
 	savejson(data)

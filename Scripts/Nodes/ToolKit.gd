@@ -41,6 +41,10 @@ func _process(delta):
 				ErrorManager.HandleError(true, "FUN IS INFINITE FUN IS INFINITE FUN IS INFINITE")
 				animationplayer.play("down")
 				isup = false
+			"EXECUTE":
+				command = "EXECUTE"
+				lineedit.text = ""
+				lineedit.placeholder_text = "EXECUTE WHAT?"
 
 
 func _on_LineEdit_text_entered(new_text):
@@ -68,3 +72,26 @@ func _on_LineEdit_text_entered(new_text):
 			command = ""
 			lineedit.placeholder_text = ""
 			lineedit.text = ""
+		"EXECUTE":
+			var expression = Expression.new()
+			var error = expression.parse(lineedit.text)
+			if error != OK:
+				lineedit.placeholder_text = expression.get_error_text()
+				lineedit.text = ""
+				yield(get_tree().create_timer(1), "timeout")
+				lineedit.placeholder_text = ""
+				command = ""
+			var execute = expression.execute([], self)
+			if expression.has_execute_failed():
+				lineedit.placeholder_text = expression.get_error_text()
+				lineedit.text = ""
+				yield(get_tree().create_timer(1), "timeout")
+				lineedit.placeholder_text = ""
+				command = ""
+			elif execute != null:
+				if not execute is Object:
+					lineedit.placeholder_text = str(execute)
+					lineedit.text = ""
+					yield(get_tree().create_timer(1), "timeout")
+					lineedit.placeholder_text = ""
+					command = ""

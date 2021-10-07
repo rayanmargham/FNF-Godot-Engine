@@ -4,50 +4,77 @@ extends Node
 # This Autoload is for managing sound
 # and easy sound playing.
 ########################################
-signal playing_done
-signal playing_done_2
+var sound_array = []
+signal finished_sound
+#var search_num = 0
 func _ready():
-	$Sound.connect("finished", self, "_perform_1")
-	$Sound2.connect("finished", self, "_perform_2")
+	pass
 func Play_sound(sound = "SplashSound"):
 	#Type the sound you want and it will search it for you
 	
 	var target = null
+	var volume = 0
+	var temp_name = ""
 	match sound:
 		"cancelMenu":
-			$Sound.volume_db = 1
+			temp_name = sound
+			#this are 1
 			target = load("res://Assets/Menus/Music&Sounds/cancelMenu.wav")
 		"confirmMenu":
-			$Sound.volume_db = 1
+			temp_name = sound
+			#this are 1
 			target = load("res://Assets/Menus/Music&Sounds/confirmMenu.wav")
 		"scrollMenu":
-			$Sound.volume_db = 1
+			temp_name = sound
+			#this are 1
 			target = load("res://Assets/Menus/Music&Sounds/scrollMenu.wav")
 		"SplashSound":
-			$Sound.volume_db = 1
+			temp_name = sound
+			#this are 1
 			target = load("res://Assets/Menus/Music&Sounds/SplashSound.wav")
 		"Alert":
 			target = load("res://Assets/Menus/Music&Sounds/Alert.wav")
+			# go on 30
 			$Sound.volume_db = 30
 		"first_button_hover":
+			temp_name = sound
 			target = load("res://Misc/FirstUse/Sounds/ui_button_hover.wav")
 		"first_button_selected":
+			temp_name = sound
 			target = load("res://Misc/FirstUse/Sounds/ui_button_selected.wav")
 		"first_done":
+			temp_name = sound
 			target = load("res://Misc/FirstUse/Sounds/ui_done.wav")
 		_:
 			print("ERROR: Could not play sound: ", sound)
 			return
-	if $Sound.playing == true:
-		$Sound2.stream = target
-		$Sound2.play()
-	elif $Sound.playing == false:
-		$Sound.stream = target
-		$Sound.play()
-func Stop_sound():
-	$Sound.stop()
-
-func _perform_1():
-	emit_signal("playing_done")
-func _perform_2():
-	emit_signal("playing_done_2")
+	var temp_sound = AudioStreamPlayer.new()
+	var sound_info = []
+	temp_sound.stream = target
+	temp_sound.volume_db = volume
+	sound_info.append(temp_sound)
+	# name should be at 1 in the sound info array
+	# you can just search for them lol
+	sound_info.append(temp_name)
+	sound_array.append(sound_info)
+	add_child(temp_sound)
+	temp_sound.play()
+	yield(temp_sound,"finished")
+	emit_signal("finished_sound")
+	remove_child(temp_sound)
+	sound_array.erase(sound_info)
+func Stop_sound(thingtofind = "SplashSound"):
+	var search_num = 0
+	if sound_array.size() != 0:
+		while sound_array[search_num][1] != thingtofind and search_num <= sound_array.size():
+			search_num += 1
+		sound_array[search_num][0].stop()
+		sound_array.remove(search_num)
+func Stop_all():
+	var search_num = 0
+	if sound_array.size() != 0:
+		while search_num <= sound_array.size():
+			if sound_array[search_num][0]:
+				remove_child(sound_array[search_num][0])
+				sound_array.remove(search_num)
+			search_num += 1

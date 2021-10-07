@@ -23,11 +23,7 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event):
 	if event.is_action_pressed("J"):
 		if SceneLoader.isweek == false:
-			print("DEBUG RESTART")
-			get_tree().change_scene("res://Scenes/Menus/Splash.tscn")
-			MusicController.Stop_music()
-			SoundController.Stop_sound()
-			SceneLoader.isweek = false
+			SceneLoader.ResetGame()
 		else:
 			if debug == false:
 				print("DEBUG IS NOW ON")

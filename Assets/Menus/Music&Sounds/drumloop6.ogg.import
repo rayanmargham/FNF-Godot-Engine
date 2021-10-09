@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drumloop6.ogg-5bba66a156d28ccaa05941c6b0f94955.oggstr"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/drumloop6.ogg"
+dest_files=[ "res://.import/drumloop6.ogg-5bba66a156d28ccaa05941c6b0f94955.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

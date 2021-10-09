@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/synthloop.ogg-acd45f82b5b624193839e28611c9c21b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/synthloop.ogg"
+dest_files=[ "res://.import/synthloop.ogg-acd45f82b5b624193839e28611c9c21b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

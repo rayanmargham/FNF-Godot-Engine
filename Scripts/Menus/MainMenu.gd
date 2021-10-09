@@ -24,7 +24,8 @@ func _input(event):
 		$ExitTimer.start()
 	if event.is_action_pressed("I"):
 		if disable == false:
-			print("NOTICE: NOTHING HERE FOR NOW")
+			MusicController.Stop_music()
+			SceneLoader.Load("res://Scenes/Menus/Connection.tscn")
 			disable = true
 
 func _process(_delta):

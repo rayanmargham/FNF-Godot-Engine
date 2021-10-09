@@ -644,3 +644,7 @@ DEBUG_KEY={
 [physics]
 
 common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://Scenes/Menus/Connection_ENV.tres"

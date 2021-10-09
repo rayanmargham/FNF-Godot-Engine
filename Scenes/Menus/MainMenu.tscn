@@ -127,21 +127,21 @@ speed_scale = 1.5
 position = Vector2( 510, 110 )
 z_index = -3
 frames = SubResource( 3 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="Freeplay" type="AnimatedSprite" parent="."]
 position = Vector2( 505, 276 )
 z_index = -3
 frames = SubResource( 4 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="options" type="AnimatedSprite" parent="."]
 position = Vector2( 500, 460 )
 z_index = -3
 frames = SubResource( 5 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="ExitTimer" type="Timer" parent="."]

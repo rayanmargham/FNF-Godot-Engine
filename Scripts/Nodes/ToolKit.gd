@@ -7,6 +7,7 @@ extends Control
 
 var isup = false
 var command = ""
+# warnings-disable
 onready var animationplayer = $CanvasLayer/LineEdit/AnimationPlayer
 onready var lineedit = $CanvasLayer/LineEdit
 # Called when the node enters the scene tree for the first time.

@@ -14,6 +14,7 @@ var data = {
 }
 var dialog = AcceptDialog.new()
 var canvaslayer = CanvasLayer.new()
+# warnings-disable
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	

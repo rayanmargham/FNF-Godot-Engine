@@ -1,0 +1,8 @@
+[gd_resource type="Environment" format=2]
+
+[resource]
+background_mode = 1
+fog_sun_amount = 0.62
+fog_depth_begin = 0.0
+fog_depth_end = 0.0
+fog_depth_curve = 0.00285954

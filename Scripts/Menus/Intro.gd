@@ -5,7 +5,7 @@ extends Control
 onready var TopLabel = get_node("TopLabel")
 onready var BottomLabel = get_node("BottomLabel")
 var TitleMenu_scn = preload("res://Scenes/Menus/TitleScreen.tscn")
-
+# warnings-disable
 # Data
 var Quote:Array # 0 is top word, 1 is bottom word
 

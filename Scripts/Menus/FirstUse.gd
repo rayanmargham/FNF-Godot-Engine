@@ -7,13 +7,14 @@ extends Control
 var disabled = false
 var next = false
 const MAX_LOGO_FRAMES = 15
+# warnings-disable
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	FpsCounter.HideCounter()
 	if ErrorManager.donealready == true:
 		SceneLoader.ResetGame()
 	else:
-		MusicController.Play_music("Before The Story", 65)
+		MusicController.Play_music("SynthLoop2")
 		$AnimationPlayer.play("FadeIn")
 
 
@@ -69,8 +70,7 @@ func _on_Yes_button_up():
 		disabled = true
 		MusicController.Stop_music()
 		ErrorManager.up_done()
-		SoundController.connect("playing_done", self, "_go")
-		SoundController.connect("playing_done_2", self, "_go")
+		SoundController.connect("finished_sound", self, "_go")
 		
 
 func _go():

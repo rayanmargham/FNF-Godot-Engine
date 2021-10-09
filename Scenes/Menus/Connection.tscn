@@ -1,22 +1,69 @@
-[gd_scene format=2]
+[gd_scene load_steps=18 format=2]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[ext_resource path="res://Scripts/Menus/Connection.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0010.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0002.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0011.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0003.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0009.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0013.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0005.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0001.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0012.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0014.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0006.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0008.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0004.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Menus/Connection_ENV.tres" type="Environment" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[node name="Control" type="Spatial"]
+script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="BG" type="CanvasLayer" parent="."]
 layer = -2
 
-[node name="ColorRect" type="ColorRect" parent="BG"]
+[node name="Connection" type="CanvasLayer" parent="."]
+
+[node name="BF" type="AnimatedSprite" parent="Connection"]
+position = Vector2( 512, 400 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+frame = 4
+playing = true
+
+[node name="BG" type="Control" parent="Connection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Connection" type="CanvasLayer" parent="."]
+[node name="3D" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 0.999793, -0.0203317, 0, 0.0203317, 0.999793, 0, -0.826981, 0.388064 )
+environment = ExtResource( 16 )
+current = true
+
+[node name="CSGBox" type="CSGBox" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065434, -2.49215, -2.57656 )
+width = 33.8501
+depth = 5.70689
+
+[node name="SpotLight" type="SpotLight" parent="3D"]
+transform = Transform( 1, 0, 0, 0, -0.0643581, 0.997927, 0, -0.997927, -0.0643581, 0, 0.613451, -2.76986 )
+light_color = Color( 0.843137, 0.729412, 0.423529, 1 )
+spot_range = 2.9

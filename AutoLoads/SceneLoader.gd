@@ -6,6 +6,7 @@ var diff = "none"
 var isweek = false
 var failed = false
 onready var animationplayer = $CanvasLayer/AnimationPlayer
+# warnings-disable
 func Load(param1):
 	scene = param1
 	diff = "none"

@@ -5,6 +5,7 @@ extends Control
 ########################################
 
 # Animation Triggers
+# warnings-disable
 func Play_Sound():
 	SoundController.Play_sound("SplashSound")
 func Switch_To_Into():

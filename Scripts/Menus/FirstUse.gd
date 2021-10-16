@@ -10,10 +10,10 @@ const MAX_LOGO_FRAMES = 15
 # warnings-disable
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	FpsCounter.HideCounter()
 	if ErrorManager.donealready == true:
 		SceneLoader.ResetGame()
 	else:
+		FpsCounter.HideCounter()
 		MusicController.Play_music("SynthLoop2")
 		$AnimationPlayer.play("FadeIn")
 

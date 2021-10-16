@@ -32,6 +32,14 @@ func _unhandled_input(event):
 				print("DEBUG IS NOW OFF")
 				debug = false
 func HideCounter():
-	$CanvasLayer/RichTextLabel.hide()
+	if $CanvasLayer/Tween.is_active() == false:
+		$CanvasLayer/Tween.interpolate_property($CanvasLayer/RichTextLabel, "modulate:a", 1, 0, 0.3, Tween.TRANS_QUAD, Tween.EASE_IN)
+		$CanvasLayer/Tween.start()
+	else:
+		$CanvasLayer/RichTextLabel.modulate.a = 0
 func ShowCounter():
-	$CanvasLayer/RichTextLabel.show()
+	if $CanvasLayer/Tween.is_active() == false:
+		$CanvasLayer/Tween.interpolate_property($CanvasLayer/RichTextLabel, "modulate:a", 0, 1, 0.3, Tween.TRANS_QUAD, Tween.EASE_IN)
+		$CanvasLayer/Tween.start()
+	else:
+		$CanvasLayer/RichTextLabel.modulate.a = 1

@@ -31,11 +31,12 @@ func Play_sound(sound = "SplashSound"):
 		"SplashSound":
 			temp_name = sound
 			#this are 1
+			volume = 20
 			target = load("res://Assets/Menus/Music&Sounds/SplashSound.wav")
 		"Alert":
 			target = load("res://Assets/Menus/Music&Sounds/Alert.wav")
 			# go on 30
-			$Sound.volume_db = 30
+			volume = 30
 		"first_button_hover":
 			temp_name = sound
 			target = load("res://Misc/FirstUse/Sounds/ui_button_hover.wav")

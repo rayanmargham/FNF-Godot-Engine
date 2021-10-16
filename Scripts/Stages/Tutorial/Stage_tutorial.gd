@@ -29,12 +29,11 @@ func _process(delta):
 #			# smoothly changes gf's frames
 #			if $gf.frame == 0 or $gf.frame == 10:
 #				MusicController.ChangeBPM(350)
-		
+	$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
 	if FpsCounter.debug == true:
 		#for debug purposes
 		$DEBUG/Frame.text = "FRAME TIME: " + str(MusicController.GetBeatTime())
 		$DEBUG/GFCURRENT.text = "GF's CURRENT FRAME: " + str($gf.frame)
-		$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
 	else:
 		#resets text
 		$DEBUG/Frame.text = ""

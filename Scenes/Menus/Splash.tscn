@@ -74,7 +74,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "loadend"
 length = 0.6
 tracks/0/type = "value"
@@ -218,7 +218,7 @@ tracks/4/keys = {
 } ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -247,7 +247,7 @@ texture = ExtResource( 2 )
 [node name="Event_Anim" type="AnimationPlayer" parent="Splash"]
 autoplay = "Splash"
 anims/Splash = SubResource( 1 )
-anims/loadend = SubResource( 4 )
+anims/loadend = SubResource( 2 )
 anims/loadstart = SubResource( 3 )
 
 [node name="Label" type="Label" parent="."]
@@ -259,7 +259,7 @@ margin_left = -47.5001
 margin_top = -14.5
 margin_right = 47.5001
 margin_bottom = 14.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "linux"

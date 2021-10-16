@@ -16,10 +16,14 @@ func Switch_To_Into():
 func transition_to_start():
 	$Splash/Event_Anim.play("loadstart")
 func start_load():
+	var rand = RandomNumberGenerator.new()
+	rand.randomize()
+	var waittime = rand.randf_range(0.005, 0.020)
+	print(waittime)
 	while $ProgressBar.value != 100:
 		$ProgressBar.value += 5
 		# loading stuff for future
-		yield(get_tree().create_timer(0.01), "timeout")
+		yield(get_tree().create_timer(waittime), "timeout")
 	print("done")
 	$Splash/Event_Anim.play("loadend")
 func _ready():

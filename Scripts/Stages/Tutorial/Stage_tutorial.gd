@@ -10,7 +10,8 @@ func _ready():
 	# sets gf's frame to 0 just incase
 	gf.frame = 0
 	#plays one of the test songs
-	Mapper.loadmap("res://Assets//JSON&Text_Files/TestJson/tutorial-hard.json", false)
+	print("loaded stage")
+	Mapper.loadmap("res://Assets/JSON&Text_Files/TestJson/tutorial-hard.json", false)
 	var file = File.new()
 	if file.file_exists(Mapper.json_path):
 		MusicController.Play_music(Mapper.json.song.song, Mapper.json.song.bpm)

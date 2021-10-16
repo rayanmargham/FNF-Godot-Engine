@@ -81,6 +81,7 @@ func HandleError(ErrorScreen,ErrorMessage):
 				# NOTHING IS REAL
 	else:
 		dialog.dialog_text = ErrorMessage + "\nPress OK To Ignore This\nPress Reload to Reload The Game"
+		print(ErrorMessage)
 		get_tree().paused = true
 		dialog.window_title = "Oops!"
 		if canvaslayer.get_child_count() == 0:

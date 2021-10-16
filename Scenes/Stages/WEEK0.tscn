@@ -269,14 +269,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 161 ), ExtResource( 66 ), ExtResource( 135 ), ExtResource( 75 ), ExtResource( 11 ), ExtResource( 191 ), ExtResource( 302 ), ExtResource( 108 ), ExtResource( 10 ), ExtResource( 90 ), ExtResource( 33 ), ExtResource( 59 ), ExtResource( 94 ), ExtResource( 279 ), ExtResource( 130 ) ],
-"loop": false,
-"name": "left",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 110 ), ExtResource( 28 ), ExtResource( 159 ), ExtResource( 43 ), ExtResource( 301 ), ExtResource( 171 ), ExtResource( 243 ), ExtResource( 197 ), ExtResource( 149 ), ExtResource( 111 ), ExtResource( 220 ), ExtResource( 146 ), ExtResource( 37 ), ExtResource( 251 ), ExtResource( 297 ), ExtResource( 230 ) ],
 "loop": false,
 "name": "right",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 161 ), ExtResource( 66 ), ExtResource( 135 ), ExtResource( 75 ), ExtResource( 11 ), ExtResource( 191 ), ExtResource( 302 ), ExtResource( 108 ), ExtResource( 10 ), ExtResource( 90 ), ExtResource( 33 ), ExtResource( 59 ), ExtResource( 94 ), ExtResource( 279 ), ExtResource( 130 ) ],
+"loop": false,
+"name": "left",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 64 ), ExtResource( 151 ), ExtResource( 207 ), ExtResource( 222 ), ExtResource( 39 ), ExtResource( 150 ), ExtResource( 125 ), ExtResource( 211 ), ExtResource( 298 ), ExtResource( 166 ), ExtResource( 263 ), ExtResource( 21 ), ExtResource( 3 ) ],
@@ -297,14 +297,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 179 ), ExtResource( 46 ), ExtResource( 276 ), ExtResource( 248 ), ExtResource( 71 ), ExtResource( 32 ), ExtResource( 52 ), ExtResource( 4 ), ExtResource( 156 ), ExtResource( 22 ), ExtResource( 78 ), ExtResource( 89 ), ExtResource( 172 ), ExtResource( 131 ), ExtResource( 176 ) ],
-"loop": false,
-"name": "left",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 57 ), ExtResource( 152 ), ExtResource( 87 ), ExtResource( 69 ), ExtResource( 5 ), ExtResource( 18 ), ExtResource( 177 ), ExtResource( 116 ), ExtResource( 79 ), ExtResource( 160 ), ExtResource( 204 ), ExtResource( 242 ), ExtResource( 83 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "right",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 179 ), ExtResource( 46 ), ExtResource( 276 ), ExtResource( 248 ), ExtResource( 71 ), ExtResource( 32 ), ExtResource( 52 ), ExtResource( 4 ), ExtResource( 156 ), ExtResource( 22 ), ExtResource( 78 ), ExtResource( 89 ), ExtResource( 172 ), ExtResource( 131 ), ExtResource( 176 ) ],
+"loop": false,
+"name": "left",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 180 ), ExtResource( 209 ), ExtResource( 307 ), ExtResource( 299 ), ExtResource( 67 ), ExtResource( 236 ), ExtResource( 31 ), ExtResource( 148 ), ExtResource( 109 ), ExtResource( 127 ), ExtResource( 277 ), ExtResource( 187 ), ExtResource( 29 ), ExtResource( 113 ), ExtResource( 256 ), ExtResource( 140 ), ExtResource( 107 ), ExtResource( 225 ), ExtResource( 247 ), ExtResource( 250 ), ExtResource( 268 ), ExtResource( 280 ), ExtResource( 258 ), ExtResource( 295 ), ExtResource( 73 ), ExtResource( 34 ), ExtResource( 106 ), ExtResource( 246 ), ExtResource( 226 ), ExtResource( 245 ) ],
@@ -330,14 +330,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 163 ), ExtResource( 175 ), ExtResource( 223 ), ExtResource( 212 ), ExtResource( 96 ), ExtResource( 217 ), ExtResource( 214 ), ExtResource( 181 ), ExtResource( 235 ), ExtResource( 169 ), ExtResource( 269 ), ExtResource( 137 ), ExtResource( 155 ), ExtResource( 188 ), ExtResource( 196 ), ExtResource( 93 ) ],
-"loop": false,
-"name": "left",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 193 ), ExtResource( 85 ), ExtResource( 238 ), ExtResource( 265 ), ExtResource( 91 ), ExtResource( 271 ), ExtResource( 144 ), ExtResource( 164 ), ExtResource( 95 ), ExtResource( 53 ), ExtResource( 213 ), ExtResource( 74 ), ExtResource( 264 ), ExtResource( 51 ), ExtResource( 134 ), ExtResource( 219 ), ExtResource( 80 ), ExtResource( 201 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "right",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 163 ), ExtResource( 175 ), ExtResource( 223 ), ExtResource( 212 ), ExtResource( 96 ), ExtResource( 217 ), ExtResource( 214 ), ExtResource( 181 ), ExtResource( 235 ), ExtResource( 169 ), ExtResource( 269 ), ExtResource( 137 ), ExtResource( 155 ), ExtResource( 188 ), ExtResource( 196 ), ExtResource( 93 ) ],
+"loop": false,
+"name": "left",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 86 ), ExtResource( 157 ), ExtResource( 240 ), ExtResource( 203 ), ExtResource( 291 ), ExtResource( 237 ), ExtResource( 252 ), ExtResource( 30 ), ExtResource( 128 ), ExtResource( 173 ), ExtResource( 119 ), ExtResource( 170 ), ExtResource( 292 ) ],
@@ -384,7 +384,7 @@ position = Vector2( 680, 380 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="gf" type="AnimatedSprite" parent="."]

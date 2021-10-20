@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AutoLoads/PauseMenuController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menus/Music&Sounds/breakfast.ogg" type="AudioStream" id=2]
+
+[node name="Control" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.537255 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

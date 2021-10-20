@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/breakfast.ogg-f982e65f03583268f2b4c83943914dcf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/breakfast.ogg"
+dest_files=[ "res://.import/breakfast.ogg-f982e65f03583268f2b4c83943914dcf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

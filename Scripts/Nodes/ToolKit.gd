@@ -18,11 +18,10 @@ func _input(event):
 		if event.is_action_pressed("DEBUG_KEY"):
 			if isup == false:
 				animationplayer.play("up")
-				lineedit.grab_click_focus()
+				lineedit.grab_focus()
 				isup = true
 			elif isup == true:
 				animationplayer.play("down")
-				lineedit.grab_focus()
 				isup = false
 func _process(delta):
 	if command == "":

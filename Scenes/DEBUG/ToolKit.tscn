@@ -50,6 +50,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 8.0
 margin_bottom = 32.0
+caret_blink = true
+caret_blink_speed = 0.1
 __meta__ = {
 "_edit_use_anchors_": false
 }

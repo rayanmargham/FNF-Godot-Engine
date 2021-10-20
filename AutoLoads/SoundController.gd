@@ -9,11 +9,12 @@ signal finished_sound
 #var search_num = 0
 func _ready():
 	pass
+
 func Play_sound(sound = "SplashSound"):
 	#Type the sound you want and it will search it for you
 	
 	var target = null
-	var volume = 0
+	var volume = 0.5
 	var temp_name = ""
 	match sound:
 		"cancelMenu":

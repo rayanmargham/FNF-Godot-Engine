@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Menus/Dev_Connection.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/UAV-OSD-Mono.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Menus/Connection_ENV.tres" type="Environment" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "float"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4 ),
+"transitions": PoolRealArray( -2, -2, 0.5 ),
+"update": 0,
+"values": [ Vector2( 330, 270 ), Vector2( 330, 300 ), Vector2( 330, 270 ) ]
+}
+
+[node name="Control" type="Spatial"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Connection" type="CanvasLayer" parent="."]
+
+[node name="BG" type="Control" parent="Connection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Connection"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -182.0
+margin_top = -10.1361
+margin_right = 182.0
+margin_bottom = 15.8639
+custom_fonts/normal_font = SubResource( 1 )
+text = "DEV MODE FUNKIN' WFC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Connection/RichTextLabel"]
+autoplay = "float"
+anims/float = SubResource( 2 )
+
+[node name="3D" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 0.999793, -0.0203317, 0, 0.0203317, 0.999793, 0, -0.826981, 0.388064 )
+environment = ExtResource( 16 )
+current = true
+
+[node name="CSGBox" type="CSGBox" parent="3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065434, -2.49215, -2.57656 )
+width = 33.8501
+depth = 5.70689
+
+[node name="SpotLight" type="SpotLight" parent="3D"]
+transform = Transform( 1, 0, 0, 0, -0.0643581, 0.997927, 0, -0.997927, -0.0643581, 0, 0.613451, -2.76986 )
+light_color = Color( 0.843137, 0.729412, 0.423529, 1 )
+spot_range = 2.9

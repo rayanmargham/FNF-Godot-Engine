@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/go_man_go.wav-09824de85efd7fed39e28e28dcf76a4c.sample"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/strums/go_man_go.wav"
+dest_files=[ "res://.import/go_man_go.wav-09824de85efd7fed39e28e28dcf76a4c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

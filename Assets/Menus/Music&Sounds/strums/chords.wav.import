@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chords.wav-a4d2c622e4932eb1e32aa32f34fe28ea.sample"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/strums/chords.wav"
+dest_files=[ "res://.import/chords.wav-a4d2c622e4932eb1e32aa32f34fe28ea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

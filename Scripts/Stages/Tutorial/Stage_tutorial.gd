@@ -22,6 +22,22 @@ func _process(delta):
 		# gf's frames are synced to the beat with the musiccontroller/conducter
 		if gf.animation == "default":
 			gf.frame = round(MusicController.GetBeatTime() * MAX_GF_FRAMES)
+		if round($"spotlight left".rotation_degrees) == -4:
+			if $"spotlight left/Tween".is_active() == false:
+				$"spotlight left/Tween".interpolate_property($"spotlight left", "rotation", deg2rad(-4), deg2rad(-26), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+				$"spotlight left/Tween".start()
+		elif round($"spotlight left".rotation_degrees) == -26:
+			if $"spotlight left/Tween".is_active() == false:
+				$"spotlight left/Tween".interpolate_property($"spotlight left", "rotation", deg2rad(-26), deg2rad(-4), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+				$"spotlight left/Tween".start()
+		if round($"spotlight right".rotation_degrees) == 26:
+			if $"spotlight right/Tween".is_active() == false:
+				$"spotlight right/Tween".interpolate_property($"spotlight right", "rotation", deg2rad(26), deg2rad(4), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+				$"spotlight right/Tween".start()
+		elif round($"spotlight right".rotation_degrees) == 4:
+			if $"spotlight right/Tween".is_active() == false:
+				$"spotlight right/Tween".interpolate_property($"spotlight right", "rotation", deg2rad(4), deg2rad(26), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+				$"spotlight right/Tween".start()
 		#print("GF's CURRENT FRAME" + str($gf.frame))
 		#print("FRAME TIME:" + str(MusicController.GetBeatTime()))
 		# example of what you can do with curstep

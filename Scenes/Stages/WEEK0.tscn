@@ -1,4 +1,4 @@
-[gd_scene load_steps=270 format=2]
+[gd_scene load_steps=271 format=2]
 
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0005.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/up/GF Up Note0005.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/left/BF NOTE LEFT0005.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Stages/Tutorial/Stage_tutorial.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/up/BF NOTE UP0010.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Stages/Backgrounds/Tutorial_BG/stage_light.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0014.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/right/GF Right Note0006.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0001.png" type="Texture" id=19]
@@ -269,14 +270,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 110 ), ExtResource( 28 ), ExtResource( 159 ), ExtResource( 43 ), ExtResource( 301 ), ExtResource( 171 ), ExtResource( 243 ), ExtResource( 197 ), ExtResource( 149 ), ExtResource( 111 ), ExtResource( 220 ), ExtResource( 146 ), ExtResource( 37 ), ExtResource( 251 ), ExtResource( 297 ), ExtResource( 230 ) ],
-"loop": false,
-"name": "right",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 161 ), ExtResource( 66 ), ExtResource( 135 ), ExtResource( 75 ), ExtResource( 11 ), ExtResource( 191 ), ExtResource( 302 ), ExtResource( 108 ), ExtResource( 10 ), ExtResource( 90 ), ExtResource( 33 ), ExtResource( 59 ), ExtResource( 94 ), ExtResource( 279 ), ExtResource( 130 ) ],
 "loop": false,
 "name": "left",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 110 ), ExtResource( 28 ), ExtResource( 159 ), ExtResource( 43 ), ExtResource( 301 ), ExtResource( 171 ), ExtResource( 243 ), ExtResource( 197 ), ExtResource( 149 ), ExtResource( 111 ), ExtResource( 220 ), ExtResource( 146 ), ExtResource( 37 ), ExtResource( 251 ), ExtResource( 297 ), ExtResource( 230 ) ],
+"loop": false,
+"name": "right",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 64 ), ExtResource( 151 ), ExtResource( 207 ), ExtResource( 222 ), ExtResource( 39 ), ExtResource( 150 ), ExtResource( 125 ), ExtResource( 211 ), ExtResource( 298 ), ExtResource( 166 ), ExtResource( 263 ), ExtResource( 21 ), ExtResource( 3 ) ],
@@ -297,14 +298,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 57 ), ExtResource( 152 ), ExtResource( 87 ), ExtResource( 69 ), ExtResource( 5 ), ExtResource( 18 ), ExtResource( 177 ), ExtResource( 116 ), ExtResource( 79 ), ExtResource( 160 ), ExtResource( 204 ), ExtResource( 242 ), ExtResource( 83 ), ExtResource( 9 ), ExtResource( 6 ) ],
-"loop": false,
-"name": "right",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 179 ), ExtResource( 46 ), ExtResource( 276 ), ExtResource( 248 ), ExtResource( 71 ), ExtResource( 32 ), ExtResource( 52 ), ExtResource( 4 ), ExtResource( 156 ), ExtResource( 22 ), ExtResource( 78 ), ExtResource( 89 ), ExtResource( 172 ), ExtResource( 131 ), ExtResource( 176 ) ],
 "loop": false,
 "name": "left",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 57 ), ExtResource( 152 ), ExtResource( 87 ), ExtResource( 69 ), ExtResource( 5 ), ExtResource( 18 ), ExtResource( 177 ), ExtResource( 116 ), ExtResource( 79 ), ExtResource( 160 ), ExtResource( 204 ), ExtResource( 242 ), ExtResource( 83 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "right",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 180 ), ExtResource( 209 ), ExtResource( 307 ), ExtResource( 299 ), ExtResource( 67 ), ExtResource( 236 ), ExtResource( 31 ), ExtResource( 148 ), ExtResource( 109 ), ExtResource( 127 ), ExtResource( 277 ), ExtResource( 187 ), ExtResource( 29 ), ExtResource( 113 ), ExtResource( 256 ), ExtResource( 140 ), ExtResource( 107 ), ExtResource( 225 ), ExtResource( 247 ), ExtResource( 250 ), ExtResource( 268 ), ExtResource( 280 ), ExtResource( 258 ), ExtResource( 295 ), ExtResource( 73 ), ExtResource( 34 ), ExtResource( 106 ), ExtResource( 246 ), ExtResource( 226 ), ExtResource( 245 ) ],
@@ -330,14 +331,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 193 ), ExtResource( 85 ), ExtResource( 238 ), ExtResource( 265 ), ExtResource( 91 ), ExtResource( 271 ), ExtResource( 144 ), ExtResource( 164 ), ExtResource( 95 ), ExtResource( 53 ), ExtResource( 213 ), ExtResource( 74 ), ExtResource( 264 ), ExtResource( 51 ), ExtResource( 134 ), ExtResource( 219 ), ExtResource( 80 ), ExtResource( 201 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "right",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 163 ), ExtResource( 175 ), ExtResource( 223 ), ExtResource( 212 ), ExtResource( 96 ), ExtResource( 217 ), ExtResource( 214 ), ExtResource( 181 ), ExtResource( 235 ), ExtResource( 169 ), ExtResource( 269 ), ExtResource( 137 ), ExtResource( 155 ), ExtResource( 188 ), ExtResource( 196 ), ExtResource( 93 ) ],
 "loop": false,
 "name": "left",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 193 ), ExtResource( 85 ), ExtResource( 238 ), ExtResource( 265 ), ExtResource( 91 ), ExtResource( 271 ), ExtResource( 144 ), ExtResource( 164 ), ExtResource( 95 ), ExtResource( 53 ), ExtResource( 213 ), ExtResource( 74 ), ExtResource( 264 ), ExtResource( 51 ), ExtResource( 134 ), ExtResource( 219 ), ExtResource( 80 ), ExtResource( 201 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "right",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 86 ), ExtResource( 157 ), ExtResource( 240 ), ExtResource( 203 ), ExtResource( 291 ), ExtResource( 237 ), ExtResource( 252 ), ExtResource( 30 ), ExtResource( 128 ), ExtResource( 173 ), ExtResource( 119 ), ExtResource( 170 ), ExtResource( 292 ) ],
@@ -366,37 +367,70 @@ position = Vector2( 510, 279 )
 scale = Vector2( 0.333141, 0.35067 )
 z_index = -3
 texture = ExtResource( 233 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="stagefront" type="Sprite" parent="."]
 position = Vector2( 511.95, 495 )
 scale = Vector2( 0.400039, 0.361015 )
 z_index = -3
 texture = ExtResource( 296 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="curtains" type="Sprite" parent="."]
 position = Vector2( 519.957, 272.25 )
 scale = Vector2( 0.400034, 0.428214 )
 z_index = -3
 texture = ExtResource( 63 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="spotlight left" type="Sprite" parent="."]
+position = Vector2( 163.502, 115 )
+rotation = -0.0698132
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
+
+[node name="Tween" type="Tween" parent="spotlight left"]
+
+[node name="spotlight right" type="Sprite" parent="."]
+position = Vector2( 860, 115 )
+rotation = 0.453786
+scale = Vector2( -0.3, 0.3 )
+texture = ExtResource( 14 )
+
+[node name="Tween" type="Tween" parent="spotlight right"]
 
 [node name="bf" type="AnimatedSprite" parent="."]
 position = Vector2( 680, 380 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 6
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="gf" type="AnimatedSprite" parent="."]
 position = Vector2( 494, 306 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -2
 frames = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 300 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="dad" type="AnimatedSprite" parent="."]
 visible = false
@@ -405,11 +439,15 @@ scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 3 )
 frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DEBUG" type="Control" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -419,6 +457,7 @@ margin_top = 115.0
 margin_right = 830.0
 margin_bottom = 155.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -427,6 +466,9 @@ margin_left = 680.0
 margin_top = 130.0
 margin_right = 870.0
 margin_bottom = 164.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Score" type="RichTextLabel" parent="DEBUG"]
 margin_left = 680.0
@@ -435,6 +477,7 @@ margin_right = 830.0
 margin_bottom = 185.0
 text = "Score: 0"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

@@ -14,7 +14,9 @@ func Load(param1):
 	animationplayer.play("in")
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "in":
-		if isweek == true:
+		print(diff)
+		if diff != "none":
+			isweek = true
 			MusicController.Stop_music()
 		var scenetoload = load(scene)
 		if ResourceLoader.exists(scene):
@@ -27,10 +29,15 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			print("failed")
 			ErrorManager.HandleError(true, "Could Not Load JSON!")
 			
-func Load_Week(week, difficulty = "normal", transition = true):
+func Load_Week(week, difficulty = 1, transition = true):
 	scene = "res://Scenes/Stages/" + week + ".tscn"
-	diff = difficulty
-	isweek = true
+	match difficulty:
+		0:
+			diff = "easy"
+		1:
+			diff = "normal"
+		2:
+			diff = "hard"
 	if transition == false:
 		var scenetoload = load(scene)
 		get_tree().change_scene_to(scenetoload)

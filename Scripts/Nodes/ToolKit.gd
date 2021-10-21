@@ -7,6 +7,7 @@ extends Control
 
 var isup = false
 var command = ""
+var password = "fard"
 # warnings-disable
 onready var animationplayer = $CanvasLayer/LineEdit/AnimationPlayer
 onready var lineedit = $CanvasLayer/LineEdit
@@ -45,6 +46,10 @@ func _process(delta):
 				command = "EXECUTE"
 				lineedit.text = ""
 				lineedit.placeholder_text = "EXECUTE WHAT?"
+			"CONNECT TO WFC":
+				command = "WFC"
+				lineedit.text = ""
+				lineedit.placeholder_text = "PASSWORD?"
 
 
 func _on_LineEdit_text_entered(new_text):
@@ -52,7 +57,7 @@ func _on_LineEdit_text_entered(new_text):
 		"SCENE":
 			match lineedit.text:
 				"WEEK0":
-					SceneLoader.Load_Week(lineedit.text, "normal", true)
+					SceneLoader.Load_Week(lineedit.text)
 					isup = false
 					animationplayer.play("down")
 					lineedit.placeholder_text = "LOADED SCENE"
@@ -72,6 +77,17 @@ func _on_LineEdit_text_entered(new_text):
 			command = ""
 			lineedit.placeholder_text = ""
 			lineedit.text = ""
+		"WFC":
+			if lineedit.text == password:
+				SceneLoader.Load("res://Scenes/Menus/Dev_Connection.tscn")
+				isup = false
+				animationplayer.play("down")
+			else:
+				lineedit.text = ""
+				lineedit.placeholder_text = "INVAILD PASSWORD"
+				yield(get_tree().create_timer(1), "timeout")
+				command = ""
+				lineedit.placeholder_text = ""
 		"EXECUTE":
 			var expression = Expression.new()
 			var error = expression.parse(lineedit.text)

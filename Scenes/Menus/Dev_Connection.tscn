@@ -13,7 +13,7 @@ resource_name = "float"
 length = 1.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
+tracks/0/path = NodePath("FG:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7, 1.4 ),
 "transitions": PoolRealArray( -2, -2, 0.5 ),
 "update": 0,
-"values": [ Vector2( 330, 270 ), Vector2( 330, 300 ), Vector2( 330, 270 ) ]
+"values": [ Vector2( 256, 270 ), Vector2( 256, 300 ), Vector2( 256, 270 ) ]
 }
 
 [node name="Control" type="Spatial"]
@@ -44,22 +44,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Connection"]
+[node name="FG" type="Control" parent="Connection"]
+margin_left = 256.0
+margin_top = 270.0
+margin_right = 768.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Connection/FG"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -182.0
-margin_top = -10.1361
-margin_right = 182.0
-margin_bottom = 15.8639
+margin_left = -175.0
+margin_right = 175.0
+margin_bottom = 202.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "DEV MODE FUNKIN' WFC"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Connection/RichTextLabel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Connection"]
 autoplay = "float"
 anims/float = SubResource( 2 )
 
@@ -79,3 +85,5 @@ depth = 5.70689
 transform = Transform( 1, 0, 0, 0, -0.0643581, 0.997927, 0, -0.997927, -0.0643581, 0, 0.613451, -2.76986 )
 light_color = Color( 0.843137, 0.729412, 0.423529, 1 )
 spot_range = 2.9
+
+[connection signal="tree_exiting" from="." to="." method="_on_Control_tree_exiting"]

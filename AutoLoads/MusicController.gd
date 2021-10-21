@@ -20,7 +20,7 @@ var already_on_half_frame_beat = false
 #===============Signals===========
 signal _on_one_Beat # Emitted on every beat
 signal _on_half_Beat # Emitted on every half beat (runs two times on every beat)
-
+#warnings-disable
 #===============Public Functions===========
 func Play_music(song = "freakyMenu", bpm = 102, position = 0, curstep = 0, halfcurstep = 0):
 	#Type the sound you want and it will search it for you

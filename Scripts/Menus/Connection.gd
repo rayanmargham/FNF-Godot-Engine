@@ -27,3 +27,17 @@ func _ready():
 	man_player.stream = load("res://Assets/Menus/Music&Sounds/strums/go_man_go.wav")
 	chords_player.play(19)
 	bass_player.play(19)
+	FpsCounter.HideCounter()
+	WFC.Connect_To_WFC(true)
+	WFC.connect("connected", self, "connected_to_server")
+	WFC.connect("failed", self, "failed_to_connect")
+func connected_to_server():
+	yield(get_tree().create_timer(1), "timeout")
+	$Connection/RichTextLabel.bbcode_text = "[center]CONNECTED"
+	$Connection/RichTextLabel/AnimationPlayer.play("Connected")
+
+func failed_to_connect():
+	yield(get_tree().create_timer(1), "timeout")
+	$Connection/RichTextLabel.bbcode_text = "[center]FAILED"
+func _on_Control_tree_exiting():
+	WFC.Disconnect_From_WFC()

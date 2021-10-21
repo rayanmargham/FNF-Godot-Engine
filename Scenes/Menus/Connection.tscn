@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Menus/Connection.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0010.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0008.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0004.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Menus/Connection_ENV.tres" type="Environment" id=16]
+[ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,6 +25,42 @@ animations = [ {
 "name": "default",
 "speed": 24.0
 } ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 17 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Connected"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.5 ),
+"transitions": PoolRealArray( 0.5, 0.5, -2, 2 ),
+"update": 0,
+"values": [ Vector2( 320, 216 ), Vector2( 320, 216 ), Vector2( 220, 216 ), Vector2( 1020, 216 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Control" type="Spatial"]
 script = ExtResource( 1 )
@@ -40,7 +77,7 @@ layer = -2
 position = Vector2( 512, 400 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="BG" type="Control" parent="Connection"]
@@ -50,6 +87,28 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Connection"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 216.0
+margin_right = 192.0
+margin_bottom = 408.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]CONNECTING
+"
+text = "CONNECTING
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Connection/RichTextLabel"]
+anims/Connected = SubResource( 4 )
+anims/Start = SubResource( 3 )
 
 [node name="3D" type="Spatial" parent="."]
 

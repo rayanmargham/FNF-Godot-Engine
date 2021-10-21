@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fard.wav-9702c861945c8d81384aeedafda800ff.sample"
+
+[deps]
+
+source_file="res://Assets/Menus/Music&Sounds/fard.wav"
+dest_files=[ "res://.import/fard.wav-9702c861945c8d81384aeedafda800ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 [node name="Vocals" type="AudioStreamPlayer" parent="."]
 
 [node name="Countdown_Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="BPM_Debug" type="Control" parent="."]
 anchor_right = 1.0

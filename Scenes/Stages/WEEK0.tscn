@@ -1,4 +1,4 @@
-[gd_scene load_steps=271 format=2]
+[gd_scene load_steps=273 format=2]
 
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0005.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/up/GF Up Note0005.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scripts/Stages/Tutorial/Stage_tutorial.gd" type="Script" id=12]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/up/BF NOTE UP0010.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Stages/Backgrounds/Tutorial_BG/stage_light.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Stages/RhythmSystem/countdown/go.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0014.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/right/GF Right Note0006.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Stages/Characters/Boyfriend/down/BF NOTE DOWN0001.png" type="Texture" id=19]
@@ -268,6 +269,22 @@
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/fear/GF FEAR0003.png" type="Texture" id=311]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/fear/GF FEAR0002.png" type="Texture" id=312]
 
+[sub_resource type="Animation" id=4]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 110 ), ExtResource( 28 ), ExtResource( 159 ), ExtResource( 43 ), ExtResource( 301 ), ExtResource( 171 ), ExtResource( 243 ), ExtResource( 197 ), ExtResource( 149 ), ExtResource( 111 ), ExtResource( 220 ), ExtResource( 146 ), ExtResource( 37 ), ExtResource( 251 ), ExtResource( 297 ), ExtResource( 230 ) ],
@@ -281,7 +298,7 @@ animations = [ {
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 64 ), ExtResource( 151 ), ExtResource( 207 ), ExtResource( 222 ), ExtResource( 39 ), ExtResource( 150 ), ExtResource( 125 ), ExtResource( 211 ), ExtResource( 298 ), ExtResource( 166 ), ExtResource( 263 ), ExtResource( 21 ), ExtResource( 3 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
 "speed": 24.0
 }, {
@@ -362,6 +379,15 @@ script = ExtResource( 12 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="Countdown" type="Sprite" parent="HUD"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Countdown"]
+anims/fade = SubResource( 4 )
+
 [node name="stageback" type="Sprite" parent="."]
 position = Vector2( 510, 279 )
 scale = Vector2( 0.333141, 0.35067 )
@@ -410,8 +436,6 @@ position = Vector2( 680, 380 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 1 )
-frame = 1
-playing = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -421,6 +445,7 @@ position = Vector2( 494, 306 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -2
 frames = SubResource( 2 )
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -465,3 +490,7 @@ __meta__ = {
 
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource( 308 )
+
+[node name="Countdown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Countdown" to="." method="_on_Countdown_timeout"]

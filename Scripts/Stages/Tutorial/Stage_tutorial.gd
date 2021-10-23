@@ -2,20 +2,24 @@ extends Node2D
 
 # incase gf glitches for a sec set the max frames to 28
 const MAX_GF_FRAMES = 29
+var g = 0
 # use this if you wanna have bf be in sync in the music with his animation speed (not very pog)
 const MAX_BF_FRAMES = 13
 onready var gf = $gf
 onready var bf = $bf
+var can = false
 func _ready():
 	# sets gf's frame to 0 just incase
-	gf.frame = 0
+	gf.frame = 13
 	#plays one of the test songs
 	print("loaded stage")
 	Mapper.loadmap("res://Assets/JSON&Text_Files/TestJson/tutorial-hard.json", false)
 	var file = File.new()
 	if file.file_exists(Mapper.json_path):
-		var song = load("res://Assets/Songs/" + Mapper.json.song.song + "/" + "Inst.ogg")
-		MusicController.play_song(song, Mapper.json.song.bpm)
+		can = true
+		$Countdown.wait_time = 60 / Mapper.json.song.bpm
+		print(60 / Mapper.json.song.bpm)
+		$Countdown.start()
 	#curstep allows you to keep track of your position in the song which allows you to do cool things like change bpm in
 	#a area of the song
 func _process(delta):
@@ -49,3 +53,35 @@ func _process(delta):
 #			if $gf.frame == 0 or $gf.frame == 10:
 #				MusicController.ChangeBPM(350)
 	$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
+
+
+func _on_Countdown_timeout():
+	match g:
+		0:
+			print("3")
+			SoundController.Play_sound("intro3")
+		1:
+			SoundController.Play_sound("intro2")
+			$HUD/Countdown.texture = load("res://Assets/Stages/RhythmSystem/countdown/ready.png")
+			$HUD/Countdown/AnimationPlayer.play("fade")
+		2:
+			SoundController.Play_sound("intro1")
+			$HUD/Countdown.texture = load("res://Assets/Stages/RhythmSystem/countdown/set.png")
+			$HUD/Countdown/AnimationPlayer.play("fade")
+		3:
+			SoundController.Play_sound("introGo")
+			$HUD/Countdown.texture = load("res://Assets/Stages/RhythmSystem/countdown/go.png")
+			$HUD/Countdown/AnimationPlayer.play("fade")
+		4:
+			$Countdown.stop()
+			if can == true:
+				var song = load("res://Assets/Songs/" + Mapper.json.song.song + "/" + "Inst.ogg")
+				MusicController.play_song(song, Mapper.json.song.bpm)
+				MusicController.connect("quarter_hit", self, "_on_quarter_hit")
+	g += 1
+func _on_quarter_hit(quarter):
+	bf_idle()
+func bf_idle():
+	if bf.animation == "default":
+		bf.frame = 0
+		bf.play("default")

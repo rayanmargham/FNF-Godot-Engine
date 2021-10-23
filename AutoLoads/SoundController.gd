@@ -25,6 +25,18 @@ func Play_sound(sound = "SplashSound"):
 			temp_name = sound
 			#this are 1
 			target = load("res://Assets/Menus/Music&Sounds/confirmMenu.wav")
+		"intro3":
+			temp_name = sound
+			target = load("res://Assets/Stages/RhythmSystem/countdown/intro3.ogg")
+		"intro2":
+			temp_name = sound
+			target = load("res://Assets/Stages/RhythmSystem/countdown/intro2.ogg")
+		"intro1":
+			temp_name = sound
+			target = load("res://Assets/Stages/RhythmSystem/countdown/intro1.ogg")
+		"introGo":
+			temp_name = sound
+			target = load("res://Assets/Stages/RhythmSystem/countdown/introGo.ogg")
 		"scrollMenu":
 			temp_name = sound
 			#this are 1

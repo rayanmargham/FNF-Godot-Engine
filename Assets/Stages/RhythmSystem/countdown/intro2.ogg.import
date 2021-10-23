@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/intro2.ogg-3c71290d99cc02337b91c4fd65209cc2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Stages/RhythmSystem/countdown/intro2.ogg"
+dest_files=[ "res://.import/intro2.ogg-3c71290d99cc02337b91c4fd65209cc2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -14,7 +14,8 @@ func _ready():
 		SceneLoader.ResetGame()
 	else:
 		FpsCounter.HideCounter()
-		MusicController.Play_music("SynthLoop2")
+		var synth = load("res://Assets/Menus/Music&Sounds/drumloop6.ogg")
+		MusicController.play_song(synth, 100)
 		$AnimationPlayer.play("FadeIn")
 
 
@@ -68,7 +69,7 @@ func _on_Yes_button_up():
 		$CanvasLayer2/Yes.disabled = true
 		$CanvasLayer2/No.disabled = true
 		disabled = true
-		MusicController.Stop_music()
+		MusicController.stop_song()
 		ErrorManager.up_done()
 		SoundController.connect("finished_sound", self, "_go")
 		
@@ -84,7 +85,7 @@ func _on_No_button_up():
 	$CanvasLayer2/Yes.disabled = true
 	$CanvasLayer2/No.disabled = true
 	yield(get_tree().create_timer(0.2), "timeout")
-	MusicController.Stop_music()
+	MusicController.stop_song()
 	if $BG/ColorRect.color != Color.black:
 		$AnimationPlayer.play_backwards("TOS")
 	else:

@@ -14,14 +14,16 @@ func _ready():
 	Mapper.loadmap("res://Assets/JSON&Text_Files/TestJson/tutorial-hard.json", false)
 	var file = File.new()
 	if file.file_exists(Mapper.json_path):
-		MusicController.Play_music(Mapper.json.song.song, Mapper.json.song.bpm)
+		var song = load("res://Assets/Songs/" + Mapper.json.song.song + "/" + "Inst.ogg")
+		MusicController.play_song(song, Mapper.json.song.bpm)
 	#curstep allows you to keep track of your position in the song which allows you to do cool things like change bpm in
 	#a area of the song
 func _process(delta):
-	if MusicController.IsPlaying() == true:
+	if MusicController.playing == true:
 		# gf's frames are synced to the beat with the musiccontroller/conducter
 		if gf.animation == "default":
-			gf.frame = round(MusicController.GetBeatTime() * MAX_GF_FRAMES)
+			gf.frame = round(MusicController.get_beat_time() * MAX_GF_FRAMES)
+		######--WARNING SHITTY CODE ALERT--######
 		if round($"spotlight left".rotation_degrees) == -4:
 			if $"spotlight left/Tween".is_active() == false:
 				$"spotlight left/Tween".interpolate_property($"spotlight left", "rotation", deg2rad(-4), deg2rad(-26), 1.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
@@ -47,11 +49,3 @@ func _process(delta):
 #			if $gf.frame == 0 or $gf.frame == 10:
 #				MusicController.ChangeBPM(350)
 	$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
-	if FpsCounter.debug == true:
-		#for debug purposes
-		$DEBUG/Frame.text = "FRAME TIME: " + str(MusicController.GetBeatTime())
-		$DEBUG/GFCURRENT.text = "GF's CURRENT FRAME: " + str($gf.frame)
-	else:
-		#resets text
-		$DEBUG/Frame.text = ""
-		$DEBUG/GFCURRENT.text = ""

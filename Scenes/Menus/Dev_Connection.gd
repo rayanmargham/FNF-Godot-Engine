@@ -9,7 +9,8 @@ extends Spatial
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	FpsCounter.HideCounter()
-	MusicController.Play_music("Brushwhack")
+	var brush = load("res://Assets/TestSongs/Brushwhack/Inst.ogg")
+	MusicController.play_song(brush, 198)
 	WFC.Connect_To_WFC(true)
 	WFC.connect("connected", self, "connected_to_server")
 	WFC.connect("failed", self, "failed_to_connect")

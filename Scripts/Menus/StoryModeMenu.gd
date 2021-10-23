@@ -39,6 +39,7 @@ enum difficulty {
 var Selected_Week = week.TUTORIAL
 var Selected_Difficulty = difficulty.NORMAL 
 var lock = false
+var opponent = "dad"
 # Scrolling variable
 onready var Initial_Weeks_Container_Position = $MainLayer/Weeks.rect_position
 
@@ -97,16 +98,18 @@ func _input(event):
 					print("Starting Week ", Selected_Week, " on Hard mode")
 					SceneLoader.Load_Week("WEEK" + str(Selected_Week), Selected_Difficulty, true)
 
+
 func _process(_delta):
 	# Set Bumpin animation on tempo
+	# old way of idle (does not work with new conducter)
 	var MAX_BF_FRAMES = 13
 	var MAX_GF_FRAMES = 29
 	var MAX_OPPONENT_FRAMES = 13
+#
 	if $FrontLayer/Boyfriend.animation != "hey":
-		$FrontLayer/Boyfriend.frame = round(MusicController.GetHalfBeatTime()*MAX_BF_FRAMES)
-	$FrontLayer/Girlfriend.frame = round(MusicController.GetBeatTime()*MAX_GF_FRAMES)
-	$FrontLayer/Opponent.frame = round(MusicController.GetHalfBeatTime()*MAX_OPPONENT_FRAMES)
-	
+		$FrontLayer/Boyfriend.frame = round(MusicController.get_half_beat_time()*MAX_BF_FRAMES)
+	$FrontLayer/Opponent.frame = round(MusicController.get_half_beat_time()*MAX_OPPONENT_FRAMES)
+	$FrontLayer/Girlfriend.frame = round(MusicController.get_beat_time()*MAX_GF_FRAMES)
 	# Set Track Labels
 	$MainLayer/TracksLabel/TrackList/Track1.text = week_Tracks[Selected_Week][0]
 	$MainLayer/TracksLabel/TrackList/Track2.text = week_Tracks[Selected_Week][1]
@@ -146,5 +149,6 @@ func _process(_delta):
 	$MainLayer/Weeks.rect_position.y = lerp($MainLayer/Weeks.rect_position.y, Initial_Weeks_Container_Position.y-Selected_Week*87, 0.2 )
 
 func _ready():
-	if not MusicController.IsPlaying():
-		MusicController.Play_music()
+	if not MusicController.playing:
+		var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
+		MusicController.play_song(freaky, 102)

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Promotional/Teaser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Intro.tres" type="DynamicFont" id=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:text")
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "values": [ "SOON", "", "SOON", "", "SOON", "" ]
 }
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=2]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
@@ -249,8 +249,8 @@ void fragment()
 	COLOR = text;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.082
@@ -309,14 +309,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/flash = SubResource( 3 )
+anims/flash = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 301 )
 current = true
 
 [node name="CRT" type="ColorRect" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

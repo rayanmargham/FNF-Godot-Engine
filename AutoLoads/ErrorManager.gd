@@ -61,7 +61,7 @@ func HandleError(ErrorScreen,ErrorMessage):
 		MESSAGE = ErrorMessage
 		var ERRORSCREEN = load("res://Scenes/ErrorScreen/Error.tscn")
 		if MusicController.playing == true:
-			MusicController.Stop_music()
+			MusicController.stop_song()
 		get_tree().change_scene_to(ERRORSCREEN)
 		var file = File.new()
 		if file.file_exists(save_path):

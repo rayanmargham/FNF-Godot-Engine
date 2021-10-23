@@ -6,22 +6,13 @@ var prevent = false
 var rotateamount = 7
 func _ready():
 	if MusicController.playing == false:
-		MusicController.Play_music()
+		var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
+		MusicController.play_song(freaky, 102)
 func _process(_delta):
 	if MusicController.playing == true:
 		# Bumpin animation
-		$gflayer/gf.frame = round(MusicController.GetBeatTime() * MAX_BUMPIN_FRAMES)
-		$logo.frame = round(MusicController.GetHalfBeatTime() * MAX_LOGO_FRAMES)
-		if round(MusicController.GetBeatTime()) == 1:
-			if prevent == false:
-				$logo/Tween.interpolate_property($logo, "rotation_degrees", rotateamount, -rotateamount, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT)
-				$logo/Tween.start()
-				prevent = true
-		else:
-			if prevent == true:
-				$logo/Tween.interpolate_property($logo, "rotation_degrees", -rotateamount, rotateamount, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT)
-				$logo/Tween.start()
-				prevent = false
+		$gflayer/gf.frame = round(MusicController.get_beat_time() * MAX_BUMPIN_FRAMES)
+		$logo.frame = round(MusicController.get_half_beat_time() * MAX_LOGO_FRAMES)
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):

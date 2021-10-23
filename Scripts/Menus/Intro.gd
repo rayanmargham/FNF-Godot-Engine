@@ -14,7 +14,8 @@ func _ready():
 	randomize()
 	Quote = _Load_Random_Quote() # Set Quote after calling randomize
 	# Start music
-	MusicController.Play_music("freakyMenu")
+	var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
+	MusicController.play_song(freaky, 102)
 
 func _input(event):
 	# Skip intro if pressed Enter

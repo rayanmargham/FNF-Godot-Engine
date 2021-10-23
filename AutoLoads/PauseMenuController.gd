@@ -36,7 +36,7 @@ func _input(event):
 							BG.visible = false
 							$AudioStreamPlayer.stop()
 							get_tree().paused = false
-							MusicController.Stop_music()
+							MusicController.stop_song()
 							SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
 						menuitems.RESTART:
 							$fard.play()

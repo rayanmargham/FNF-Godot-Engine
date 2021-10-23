@@ -24,7 +24,7 @@ func _input(event):
 		$ExitTimer.start()
 	if event.is_action_pressed("I"):
 		if disable == false:
-			MusicController.Stop_music()
+			MusicController.stop_song()
 			SceneLoader.Load("res://Scenes/Menus/Connection.tscn")
 			disable = true
 

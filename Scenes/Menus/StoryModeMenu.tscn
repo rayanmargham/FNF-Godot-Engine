@@ -193,7 +193,7 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 85 ), ExtResource( 87 ), ExtResource( 81 ), ExtResource( 92 ), ExtResource( 94 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 86 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 93 ), ExtResource( 82 ), ExtResource( 83 ) ],
-"loop": true,
+"loop": false,
 "name": "dad",
 "speed": 5.0
 } ]
@@ -416,7 +416,7 @@ __meta__ = {
 position = Vector2( 815, 187 )
 scale = Vector2( 0.41821, 0.41821 )
 frames = SubResource( 8 )
-frame = 3
+frame = 26
 __meta__ = {
 "_edit_lock_": true
 }
@@ -426,8 +426,9 @@ position = Vector2( 154.63, 214.296 )
 scale = Vector2( 0.361352, 0.361352 )
 frames = SubResource( 9 )
 animation = "dad"
-frame = 9
+frame = 13
 speed_scale = 6.0
+playing = true
 __meta__ = {
 "_edit_lock_": true
 }

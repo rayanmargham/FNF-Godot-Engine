@@ -15,13 +15,14 @@ func _ready():
 	FpsCounter.HideCounter()
 	yield(get_tree().create_timer(2), "timeout")
 	if ErrorManager.data.Fun > 10:
-		MusicController.Play_music("ERROR")
+		var his = load("res://Assets/Misc/ERROR/Audio/him.mp3")
+		MusicController.play_song(his, 100)
 		Texturerect.visible = true
 		heis = true
 	richtext.visible = true
 	
 	if ErrorManager.data.Fun == 10:
-		MusicController.Stop_music()
+		MusicController.stop_song()
 		richtext.bbcode_text = "[center]..."
 		Texturerect.visible = false
 		yield(get_tree().create_timer(5), "timeout")

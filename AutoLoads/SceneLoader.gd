@@ -17,7 +17,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		print(diff)
 		if diff != "none":
 			isweek = true
-			MusicController.Stop_music()
+			MusicController.stop_song()
 		var scenetoload = load(scene)
 		if ResourceLoader.exists(scene):
 			print("nice im real")
@@ -45,7 +45,7 @@ func Load_Week(week, difficulty = 1, transition = true):
 		animationplayer.play("in")
 func ResetGame():
 	get_tree().change_scene("res://Scenes/Menus/Splash.tscn")
-	MusicController.Stop_music()
+	MusicController.stop_song()
 	SoundController.Stop_all()
 	SceneLoader.isweek = false
 	Mapper.json = ""

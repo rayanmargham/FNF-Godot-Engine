@@ -28,7 +28,7 @@ func _ready():
 	chords_player.play(19)
 	bass_player.play(19)
 	FpsCounter.HideCounter()
-	WFC.Connect_To_WFC(true)
+	WFC.Connect_To_WFC(false)
 	WFC.connect("connected", self, "connected_to_server")
 	WFC.connect("failed", self, "failed_to_connect")
 func connected_to_server():

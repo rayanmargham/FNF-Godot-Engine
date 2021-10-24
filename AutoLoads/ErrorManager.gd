@@ -63,6 +63,7 @@ func HandleError(ErrorScreen,ErrorMessage):
 		if MusicController.playing == true:
 			MusicController.stop_song()
 		get_tree().change_scene_to(ERRORSCREEN)
+		SceneLoader.isweek = false
 		var file = File.new()
 		if file.file_exists(save_path):
 			print("great!")

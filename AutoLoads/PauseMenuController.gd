@@ -12,12 +12,13 @@ enum menuitems {
 	RESTART,
 	BACKTOMENU
 }
+var disabled = false
 var selected_menu_item = menuitems.CONTINUE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	FpsCounter.pause_mode = FpsCounter.PAUSE_MODE_PROCESS
 func _input(event):
-		if SceneLoader.isweek == true:
+		if SceneLoader.isweek == true and disabled == false:
 			if event.is_action_pressed("ui_accept"):
 				if h == false:
 					h = true

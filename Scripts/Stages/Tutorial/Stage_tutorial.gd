@@ -13,6 +13,7 @@ func _ready():
 	gf.frame = 13
 	#plays one of the test songs
 	print("loaded stage")
+	PauseMenuController.disabled = true
 	Mapper.loadmap("res://Assets/JSON&Text_Files/TestJson/tutorial-hard.json", false)
 	var file = File.new()
 	if file.file_exists(Mapper.json_path):
@@ -78,6 +79,7 @@ func _on_Countdown_timeout():
 				var song = load("res://Assets/Songs/" + Mapper.json.song.song + "/" + "Inst.ogg")
 				MusicController.play_song(song, Mapper.json.song.bpm)
 				MusicController.connect("quarter_hit", self, "_on_quarter_hit")
+				PauseMenuController.disabled = false
 	g += 1
 func _on_quarter_hit(quarter):
 	bf_idle()

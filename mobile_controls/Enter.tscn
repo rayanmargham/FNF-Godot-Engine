@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="Enter" type="TouchScreenButton" parent="."]
+action = "ui_accept"

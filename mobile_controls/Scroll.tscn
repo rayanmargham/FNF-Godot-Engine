@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Stages/RhythmSystem/Arrows/up press0001.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Stages/RhythmSystem/Arrows/green.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Stages/RhythmSystem/Arrows/blue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Stages/RhythmSystem/Arrows/down press0001.png" type="Texture" id=4]
+[ext_resource path="res://mobile_controls/Handler.gd" type="Script" id=5]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 5 )
+
+[node name="Up" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 128, 288 )
+scale = Vector2( 0.623, 0.623 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 1 )
+action = "ui_up"
+
+[node name="Down" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 128, 479 )
+scale = Vector2( 0.623, 0.623 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+action = "ui_down"

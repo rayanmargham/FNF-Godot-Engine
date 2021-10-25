@@ -16,10 +16,12 @@ func _process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		SoundController.Play_sound("confirmMenu")
-		$Flash/WhiteFlash/WhiteFlashFade.play("EnterFlash")
-		$CanvasLayer/PressEnterText.animation = "selected"
-		yield(get_node("Flash/WhiteFlash/WhiteFlashFade"), "animation_finished")
-		SceneLoader.Load("res://Scenes/Menus/MainMenu.tscn")
+		if prevent == false:
+			prevent = true
+			SoundController.Play_sound("confirmMenu")
+			$Flash/WhiteFlash/WhiteFlashFade.play("EnterFlash")
+			$CanvasLayer/PressEnterText.animation = "selected"
+			yield(get_node("Flash/WhiteFlash/WhiteFlashFade"), "animation_finished")
+			SceneLoader.Load("res://Scenes/Menus/MainMenu.tscn")
 
 

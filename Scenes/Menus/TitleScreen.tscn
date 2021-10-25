@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menus/TitleScreen.gd" type="Script" id=2]
@@ -131,6 +131,7 @@
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0005.png" type="Texture" id=129]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0012.png" type="Texture" id=130]
 [ext_resource path="res://Assets/Stages/Characters/Girlfriend/idle/GF Dancing Beat0010.png" type="Texture" id=131]
+[ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=132]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -273,7 +274,7 @@ frame = 13
 position = Vector2( 812, 530 )
 z_index = -1
 frames = SubResource( 5 )
-frame = 17
+frame = 40
 speed_scale = 3.0
 playing = true
 
@@ -291,3 +292,5 @@ __meta__ = {
 autoplay = "WhiteFlash"
 anims/EnterFlash = SubResource( 6 )
 anims/WhiteFlash = SubResource( 7 )
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 132 )]

@@ -265,7 +265,7 @@ func _process(delta):
 			set("last_" + note_name, cur_beat)
 			
 			if note_name == "quarter" && FpsCounter.debug:
-				#print(cur_beat)
+				print(cur_beat)
 				$BPM_Debug/Tween.stop_all()
 				$BPM_Debug/Tween.interpolate_property($BPM_Debug/Polygon2D, "scale",
 													Vector2(70, 70), Vector2(60, 60), get_seconds_per_beat())

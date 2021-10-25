@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Scripts/Menus/StoryModeMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow push left/arrow push left.png" type="Texture" id=2]
@@ -97,6 +97,7 @@
 [ext_resource path="res://mobile_controls/Scroll_Hoz.tscn" type="PackedScene" id=95]
 [ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=96]
 [ext_resource path="res://mobile_controls/Scroll.tscn" type="PackedScene" id=97]
+[ext_resource path="res://mobile_controls/GoBack.tscn" type="PackedScene" id=98]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -468,3 +469,5 @@ __meta__ = {
 [node name="CanvasLayer2" parent="." instance=ExtResource( 97 )]
 
 [node name="CanvasLayer3" parent="." instance=ExtResource( 95 )]
+
+[node name="CanvasLayer4" parent="." instance=ExtResource( 98 )]

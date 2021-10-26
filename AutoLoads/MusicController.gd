@@ -143,7 +143,7 @@ enum Directions {LEFT, DOWN, UP, RIGHT}
 const SAFE_FRAMES = 10
 # SAFE_ZONE: the amount of time (in seconds, assuming 60 FPS)
 #			 before / after the note to be considered a valid hit.
-const SAFE_ZONE = SAFE_FRAMES / 60.0
+const SAFE_ZONE = (SAFE_FRAMES / 60.0) * 1000 # safe frames in ms
 # COUNTDOWN_CONSTANT: the # of beats before a level song plays
 #						(for the 321GO! sequence).
 const COUNTDOWN_CONSTANT = -4
@@ -155,6 +155,9 @@ var bpm: float = 60
 var beat_time = 0 # lerpable value
 var half_beat_time = 0 # lerpable value for a half beat
 var scroll_speed = 1
+var debug_bpm = false
+var crochet = ((60 / bpm) * 1000) # beats in ms
+var stepCrochet = crochet / 4 # steps in ms
 
 var song_position: float = 0 # in seconds
 # time_begin: the exact timestamp (since engine launch / last pause in microseconds)
@@ -179,7 +182,7 @@ var last_sixteenth_before_change = 0
 var DEBUG = FpsCounter.debug
 
 func _ready():
-	$BPM_Debug.visible = DEBUG
+	$BPM_Debug.visible = debug_bpm
 	set_process(false)
 	# template for how a song must be loaded
 	#var tut = load("res://Assets/Songs/Tutorial/Tutorial_Inst.ogg")
@@ -192,6 +195,8 @@ func play_song(song, bpm_, vocals_ = null, scroll_speed_ = 1):
 	stream = song
 	bpm = bpm_
 	scroll_speed = scroll_speed_
+	crochet = ((60 / bpm) * 1000)
+	stepCrochet = crochet / 4
 	
 	if vocals:
 		vocals.stream = vocals_
@@ -215,7 +220,7 @@ func play_song(song, bpm_, vocals_ = null, scroll_speed_ = 1):
 	if vocals_:
 		vocals.play()
 	
-	if FpsCounter.debug:
+	if FpsCounter.debug and debug_bpm:
 		$BPM_Debug/Label.text = str(bpm)
 	
 	set_process(true)
@@ -264,7 +269,7 @@ func _process(delta):
 			emit_signal(note_name + "_hit", cur_beat)
 			set("last_" + note_name, cur_beat)
 			
-			if note_name == "quarter" && FpsCounter.debug:
+			if note_name == "quarter" && FpsCounter.debug && debug_bpm:
 				print(cur_beat)
 				$BPM_Debug/Tween.stop_all()
 				$BPM_Debug/Tween.interpolate_property($BPM_Debug/Polygon2D, "scale",
@@ -356,6 +361,8 @@ func change_bpm(bpm_):
 	last_bpm_change = song_position
 	
 	bpm = bpm_
+	crochet = ((60 / bpm) * 1000)
+	stepCrochet = crochet / 4
 	
-	if FpsCounter.debug:
+	if FpsCounter.debug && debug_bpm:
 		$BPM_Debug/Label.text = str(bpm)

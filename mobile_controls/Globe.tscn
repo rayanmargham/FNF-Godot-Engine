@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/mobile_icons/Icons/globe.png" type="Texture" id=1]
+[ext_resource path="res://mobile_controls/Handler.gd" type="Script" id=2]
+[ext_resource path="res://Assets/mobile_icons/Pressed Icons/globe.png" type="Texture" id=3]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 2 )
+
+[node name="Globe" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( 904, 264 )
+scale = Vector2( 0.147, 0.147 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 3 )
+action = "I"

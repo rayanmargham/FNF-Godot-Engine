@@ -53,7 +53,6 @@ func _process(delta):
 #			# smoothly changes gf's frames
 #			if $gf.frame == 0 or $gf.frame == 10:
 #				MusicController.ChangeBPM(350)
-	$DEBUG/Score.text = "Score: " + str($PlayerInput.song_score)
 
 
 func _on_Countdown_timeout():

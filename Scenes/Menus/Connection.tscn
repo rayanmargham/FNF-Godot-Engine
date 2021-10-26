@@ -30,7 +30,7 @@ animations = [ {
 size = 32
 font_data = ExtResource( 17 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Connected"
 length = 2.0
 tracks/0/type = "value"
@@ -46,8 +46,7 @@ tracks/0/keys = {
 "values": [ Vector2( 320, 216 ), Vector2( 320, 216 ), Vector2( 220, 216 ), Vector2( 1020, 216 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Start"
+[sub_resource type="Animation" id=4]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -77,7 +76,7 @@ layer = -2
 position = Vector2( 512, 400 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="BG" type="Control" parent="Connection"]
@@ -107,8 +106,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Connection/RichTextLabel"]
-anims/Connected = SubResource( 4 )
-anims/Start = SubResource( 3 )
+anims/Connected = SubResource( 3 )
+anims/Start = SubResource( 4 )
 
 [node name="3D" type="Spatial" parent="."]
 

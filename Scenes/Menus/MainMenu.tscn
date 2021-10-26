@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/MenuButtons/optionsbasic/options basic0009.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://mobile_controls/Scroll.tscn" type="PackedScene" id=42]
 [ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=43]
 [ext_resource path="res://mobile_controls/GoBack.tscn" type="PackedScene" id=44]
+[ext_resource path="res://mobile_controls/Globe.tscn" type="PackedScene" id=45]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 41 )
@@ -154,5 +155,7 @@ one_shot = true
 [node name="CanvasLayer3" parent="." instance=ExtResource( 43 )]
 
 [node name="CanvasLayer4" parent="." instance=ExtResource( 44 )]
+
+[node name="CanvasLayer5" parent="." instance=ExtResource( 45 )]
 
 [connection signal="timeout" from="ExitTimer" to="." method="_on_ExitTimer_timeout"]

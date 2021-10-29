@@ -8,6 +8,7 @@ const MAX_BF_FRAMES = 13
 onready var gf = $gf
 onready var bf = $bf
 var can = false
+var zoom = Vector2(0.7, 0.7) # change this if needed
 func _ready():
 	# sets gf's frame to 0 just incase
 	gf.frame = 13
@@ -79,10 +80,13 @@ func _on_Countdown_timeout():
 				MusicController.play_song(song, Mapper.json.song.bpm)
 				MusicController.connect("quarter_hit", self, "_on_quarter_hit")
 				PauseMenuController.disabled = false
+				$bf.play("default")
 	g += 1
 func _on_quarter_hit(quarter):
-	bf_idle()
-func bf_idle():
-	if bf.animation == "default":
-		bf.frame = 0
-		bf.play("default")
+#	bf_idle() # animation goes bad for higher speed songs not gonna sync up his animation
+	$Camera/Tween.interpolate_property($Camera, "zoom", zoom - Vector2(0.008, 0.008), zoom, 0.2, Tween.TRANS_BACK, Tween.EASE_IN)
+	$Camera/Tween.start()
+#func bf_idle():
+#	if bf.animation == "default":
+#		bf.frame = 0
+#		bf.play("default")

@@ -8,7 +8,7 @@
 ##===============Variables===========
 #var FREAKY_BPM:int = 102
 #var Freaky_BPS = 60.0/float(FREAKY_BPM)
-#
+# this code was written by me and it sucks
 #var playing = false # keeps track of if a song is being played
 #var curStep = 0 #Keeps track of the number of beats passed
 #var halfCurStep = 0# more accurate
@@ -150,7 +150,7 @@ const COUNTDOWN_CONSTANT = -4
 
 onready var vocals = $Vocals
 onready var countdown_timer = $Countdown_Timer
-
+# code from fnf vr reewritten 
 var bpm: float = 60
 var beat_time = 0 # lerpable value
 var half_beat_time = 0 # lerpable value for a half beat

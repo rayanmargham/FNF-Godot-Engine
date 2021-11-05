@@ -94,7 +94,7 @@ margin_top = 225.0
 margin_right = 2.0
 margin_bottom = -310.0
 custom_fonts/font = SubResource( 1 )
-text = "MADE USING"
+text = "CREATED BY"
 align = 1
 valign = 1
 uppercase = true
@@ -110,7 +110,6 @@ margin_right = 2.0
 margin_bottom = -250.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.247059, 0.580392, 1, 1 )
-text = "GODOT"
 align = 1
 valign = 1
 uppercase = true
@@ -119,7 +118,6 @@ __meta__ = {
 }
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-autoplay = "Intro"
 anims/Intro = SubResource( 2 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 3 )]

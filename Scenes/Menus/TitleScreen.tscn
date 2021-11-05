@@ -246,8 +246,8 @@ margin_right = 68.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 bbcode_enabled = true
-bbcode_text = "[wave]v1.0"
-text = "v1.0"
+bbcode_text = "[wave][rainbow freq=0.1]v1.1"
+text = "v1.1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -274,7 +274,7 @@ frame = 13
 position = Vector2( 812, 530 )
 z_index = -1
 frames = SubResource( 5 )
-frame = 40
+frame = 8
 speed_scale = 3.0
 playing = true
 

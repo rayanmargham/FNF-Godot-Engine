@@ -1,0 +1,303 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/sparrowatlas_editor/theme/theme.tres" type="Theme" id=1]
+
+[node name="Dock" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 220, 245 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -55.4623 ]
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contrast" type="Panel" parent="Panel"]
+visible = false
+self_modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+anchor_right = 1.0
+margin_left = 21.0
+margin_top = 24.0
+margin_right = -9.0
+margin_bottom = 73.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contrast2" type="Panel" parent="Panel"]
+visible = false
+self_modulate = Color( 0.862745, 0.862745, 0.862745, 1 )
+anchor_right = 1.0
+margin_left = 21.0
+margin_top = 113.0
+margin_right = -9.0
+margin_bottom = 213.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title0" type="Label" parent="Panel"]
+margin_left = 21.1697
+margin_top = 27.094
+margin_right = 78.1697
+margin_bottom = 47.094
+text = "Sprite"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title1" type="Label" parent="Panel"]
+margin_left = 21.1697
+margin_top = 50.6525
+margin_right = 78.1697
+margin_bottom = 70.6525
+text = "Sheet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="Panel"]
+margin_left = 4.24264
+margin_top = 3.53554
+margin_right = 82.2426
+margin_bottom = 23.5355
+text = "Credentials"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title3" type="Label" parent="Panel"]
+margin_left = 4.24264
+margin_top = 96.4344
+margin_right = 83.2426
+margin_bottom = 116.434
+text = "Animation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title4" type="Label" parent="Panel"]
+margin_left = 21.1697
+margin_top = 140.0
+margin_right = 78.1697
+margin_bottom = 160.0
+text = "Prefix"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title5" type="Label" parent="Panel"]
+margin_left = 21.1697
+margin_top = 187.158
+margin_right = 78.1697
+margin_bottom = 207.158
+text = "Offset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title6" type="Label" parent="Panel"]
+self_modulate = Color( 1, 0.952941, 0.14902, 1 )
+margin_left = 80.1559
+margin_top = 187.158
+margin_right = 137.156
+margin_bottom = 207.158
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title7" type="Label" parent="Panel"]
+self_modulate = Color( 1, 0.952941, 0.14902, 1 )
+margin_left = 80.1559
+margin_top = 212.303
+margin_right = 137.156
+margin_bottom = 232.303
+text = "y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title8" type="Label" parent="Panel"]
+margin_left = 21.0
+margin_top = 163.368
+margin_right = 78.0
+margin_bottom = 183.368
+text = "Index"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title9" type="Label" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -36.2086
+margin_top = 140.0
+margin_right = -9.20862
+margin_bottom = 160.0
+grow_horizontal = 0
+rect_clip_content = true
+text = "0/0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title10" type="Label" parent="Panel"]
+margin_left = 21.1697
+margin_top = 116.434
+margin_right = 78.1697
+margin_bottom = 136.434
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Index" type="HSlider" parent="Panel"]
+anchor_right = 1.0
+margin_left = 69.0
+margin_top = 168.566
+margin_right = -118.0
+margin_bottom = 180.566
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="LineEdit" parent="Panel"]
+anchor_right = 1.0
+margin_left = 69.0
+margin_top = 116.434
+margin_right = -9.0
+margin_bottom = 136.434
+placeholder_text = "Idle"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Prefix" type="LineEdit" parent="Panel"]
+anchor_right = 1.0
+margin_left = 69.0
+margin_top = 140.0
+margin_right = -9.0
+margin_bottom = 160.0
+placeholder_text = "Idle Pose0"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SpritePath" type="LineEdit" parent="Panel"]
+anchor_right = 1.0
+margin_left = 69.0
+margin_top = 27.0
+margin_right = -9.0
+margin_bottom = 51.0
+placeholder_text = "res://icon.png"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SheetPath" type="LineEdit" parent="Panel"]
+anchor_right = 1.0
+margin_left = 69.0
+margin_top = 51.0
+margin_right = -9.0
+margin_bottom = 75.0
+placeholder_text = "res://icon.png"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="OffsetX" type="SpinBox" parent="Panel"]
+anchor_right = 1.0
+margin_left = 99.0
+margin_top = 187.566
+margin_right = -9.0
+margin_bottom = 207.566
+min_value = -1e+08
+max_value = 1e+08
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OffsetY" type="SpinBox" parent="Panel"]
+anchor_right = 1.0
+margin_left = 99.0
+margin_top = 212.566
+margin_right = -9.0
+margin_bottom = 232.566
+min_value = -1e+08
+max_value = 1e+08
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apply" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -123.745
+margin_top = 78.4757
+margin_right = -8.74475
+margin_bottom = 98.4757
+theme = ExtResource( 1 )
+text = "Apply Resources"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apply1" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -99.9852
+margin_top = 237.769
+margin_right = -54.9852
+margin_bottom = 257.769
+theme = ExtResource( 1 )
+text = "Apply"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.5823
+margin_top = 237.769
+margin_right = -8.58221
+margin_bottom = 257.769
+theme = ExtResource( 1 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FilePath" type="FileDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 150, 52.5 )
+theme = ExtResource( 1 )
+window_title = "Open a Directory"
+mode = 2
+show_hidden_files = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

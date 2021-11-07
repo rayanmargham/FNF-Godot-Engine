@@ -1,8 +1,58 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Menus/Splash.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/Backgrounds/Splash.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform vec4 bg_color: hint_color;
+
+float rand(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+void fragment() {
+	float size = 100.0;
+	float prob = 0.9;
+	vec2 pos = floor(1.0 / size * FRAGCOORD.xy);
+	float color = 0.0;
+	float starValue = rand(pos);
+
+	if (starValue > prob)
+	{
+		vec2 center = size * pos + vec2(size, size) * 0.5;
+		float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+		color = 1.0 - distance(FRAGCOORD.xy, center) / (0.5 * size);
+		color = color * t / (abs(FRAGCOORD.y - center.y)) * t / (abs(FRAGCOORD.x - center.x));
+	}
+	else if (rand(SCREEN_UV.xy / 20.0) > 0.996)
+	{
+		float r = rand(SCREEN_UV.xy);
+		color = r * (0.85 * sin(TIME * (r * 5.0) + 720.0 * r) + 0.95);
+	}
+	COLOR = vec4(vec3(color),1.0) + bg_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/bg_color = Color( 0.141176, 0.00392157, 0.14902, 1 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Splash"
@@ -72,6 +122,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.15, 1.98 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -150,6 +212,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../ColorRect:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -231,6 +305,8 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+material = SubResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -246,6 +322,7 @@ texture = ExtResource( 2 )
 
 [node name="Event_Anim" type="AnimationPlayer" parent="Splash"]
 autoplay = "Splash"
+anims/RESET = SubResource( 7 )
 anims/Splash = SubResource( 1 )
 anims/loadend = SubResource( 2 )
 anims/loadstart = SubResource( 3 )
@@ -255,13 +332,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -512.0
+margin_left = -47.5
 margin_top = -14.5
-margin_right = -416.999
+margin_right = 47.5001
 margin_bottom = 14.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
+text = "linux"
 align = 1
 valign = 1
 __meta__ = {
@@ -269,7 +347,7 @@ __meta__ = {
 }
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.2 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

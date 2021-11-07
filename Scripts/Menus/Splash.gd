@@ -19,7 +19,7 @@ func start_load():
 	var rand = RandomNumberGenerator.new()
 	rand.randomize()
 	var waittime = rand.randf_range(0.005, 0.020)
-	print(waittime)
+	Resources.loadResources()
 	while $ProgressBar.value != 100:
 		$ProgressBar.value += 5
 		# loading stuff for future
@@ -27,5 +27,6 @@ func start_load():
 	print("done")
 	$Splash/Event_Anim.play("loadend")
 func _ready():
+	Resources.loadResources()
 	if OS.window_fullscreen == true:
 		OS.window_fullscreen = false

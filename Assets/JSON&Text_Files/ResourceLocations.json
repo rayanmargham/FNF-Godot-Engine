@@ -1,0 +1,36 @@
+{
+    "Songs":
+        {
+            "FreakyMenu":
+                "res://Assets/Menus/Music&Sounds/freakyMenu.ogg"
+        },
+    "Sounds":
+        {
+            "cancelMenu":
+                "res://Assets/Menus/Music&Sounds/cancelMenu.wav",
+            "confirmMenu":
+                "res://Assets/Menus/Music&Sounds/confirmMenu.wav",
+            "intro3":
+                "res://Assets/Stages/RhythmSystem/countdown/intro3.ogg",
+            "intro2":
+                "res://Assets/Stages/RhythmSystem/countdown/intro2.ogg",
+            "intro1":
+                "res://Assets/Stages/RhythmSystem/countdown/intro1.ogg",
+            "LinuxSplash":
+                "res://Assets/Menus/Music&Sounds/LinuxSplash.wav",
+            "introGo":
+                "res://Assets/Stages/RhythmSystem/countdown/introGo.ogg",
+            "scrollMenu":
+                "res://Assets/Menus/Music&Sounds/scrollMenu.wav",
+            "SplashSound":
+                "res://Assets/Menus/Music&Sounds/SplashSound.wav",
+            "Alert":
+                "res://Assets/Menus/Music&Sounds/Alert.wav",
+            "first_button_hover":
+                "res://Misc/FirstUse/Sounds/ui_button_hover.wav",
+            "first_button_selected":
+                "res://Misc/FirstUse/Sounds/ui_button_selected.wav",
+            "first_done":
+                "res://Misc/FirstUse/Sounds/ui_done.wav"
+        }
+}

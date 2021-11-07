@@ -6,7 +6,7 @@ var prevent = false
 var rotateamount = 7
 func _ready():
 	if MusicController.playing == false:
-		var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
+		var freaky = Resources.FreakyMenu
 		MusicController.play_song(freaky, 102)
 func _process(_delta):
 	if MusicController.playing == true:

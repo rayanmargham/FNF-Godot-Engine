@@ -587,6 +587,7 @@ Mapper="*res://AutoLoads/Mapper.gd"
 ToolKit="*res://Scenes/DEBUG/ToolKit.tscn"
 PauseMenuController="*res://AutoLoads/PauseMenuController.tscn"
 WFC="*res://AutoLoads/WFC.tscn"
+Resources="*res://AutoLoads/Resources.gd"
 
 [display]
 

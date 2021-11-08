@@ -6,9 +6,7 @@ extends Control
 
 # Animation Triggers
 # warnings-disable
-func Play_Sound():
-	FpsCounter.HideCounter()
-	SoundController.Play_sound("SplashSound")
+
 func Switch_To_Into():
 	SoundController.Stop_sound()
 	var intro = load("res://Scenes/Menus/Intro.tscn")

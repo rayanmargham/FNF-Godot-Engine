@@ -5,6 +5,7 @@ extends Node
 # and easy sound playing.
 ########################################
 signal finished_sound
+# adding a smart thing
 #var search_num = 0
 func _ready():
 	$GarbageCollectionTimer.connect("timeout", self, "_Garbage_Collect")
@@ -62,6 +63,7 @@ func Play_sound(sound = "LinuxSplash"):
 		_:
 			print("ERROR: Could not play sound: ", sound)
 			return
+		
 	var new_sound = AudioStreamPlayer.new()
 	new_sound.stream = target
 	add_child(new_sound)
@@ -90,3 +92,10 @@ func _Garbage_Collect():
 				if i.playing != true:
 					i.queue_free()
 					print("Garbage Collection: Cleared Sound")
+func Search_for_sound(stream):
+	for i in get_children():
+		if i:
+			if i.name.begins_with("@"):
+				if i.stream == stream:
+					return i
+			

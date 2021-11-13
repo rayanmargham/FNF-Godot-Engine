@@ -279,13 +279,14 @@ func beat_process(delta):
 
 func song_finished_check():
 	if (!MusicStream.playing):
-		if get_tree().current_scene.name == "PlayState" and countingDown == false and h == false and menuSong == false:
-			h = true
-			MusicController.stop_song()
-			print("h")
-			SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
-			yield(SceneLoader, "done")
-			h = false
+		if Resources.StoryMode:
+			if get_tree().current_scene.name == "PlayState" and countingDown == false and h == false and menuSong == false:
+				h = true
+				MusicController.stop_song()
+				print("h")
+				SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
+				yield(SceneLoader, "done")
+				h = false
 func stop_song():
 	if (MusicStream.playing):
 		MusicStream.stop()

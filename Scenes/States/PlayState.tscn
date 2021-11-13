@@ -194,6 +194,7 @@ position = Vector2( 640, 462 )
 position = Vector2( 640, 360 )
 current = true
 zoom = Vector2( 1.1, 1.1 )
+smoothing_enabled = true
 
 [node name="Characters" type="Node2D" parent="."]
 

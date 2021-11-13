@@ -253,7 +253,7 @@ func on_hit(must_hit, note_type, timing):
 
 		if (must_hit && must_hit_section || !must_hit && !must_hit_section):
 			var offsetVector = character.camOffset
-			var intensity = 10
+			var intensity = 5
 			
 			match (note_type):
 				Note.Left:

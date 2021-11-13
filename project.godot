@@ -624,6 +624,12 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "res://addons/Sprite_Font_Generator/plugin.cfg" )
 
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false
+}
+
 [input]
 
 ui_accept={

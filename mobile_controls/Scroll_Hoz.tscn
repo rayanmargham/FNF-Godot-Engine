@@ -12,16 +12,16 @@ script = ExtResource( 5 )
 
 [node name="Left" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( 32, 383 )
-scale = Vector2( 0.123, 0.123 )
+position = Vector2( 0, 432 )
+scale = Vector2( 0.16, 0.16 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 2 )
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( 224, 383 )
-scale = Vector2( 0.123, 0.123 )
+position = Vector2( 272, 432 )
+scale = Vector2( 0.16, 0.16 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 4 )
 action = "ui_right"

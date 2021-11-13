@@ -1,7 +1,4093 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scripts/Promotional/Teaser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Intro.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Pro/Music&Sounds/KickBack.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0027.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0026.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0021.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0011.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0025.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0001.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0013.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0012.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0010.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0018.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0020.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0023.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0015.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0008.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0022.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0006.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0003.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0005.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0016.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0028.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0017.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0002.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0024.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0004.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0009.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0019.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0014.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0007.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0029.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/TitleScreenBumpin/Start Screen BG art0030.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0001.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0014.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0008.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0003.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0009.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0013.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0015.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0006.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0011.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0002.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0004.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0007.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0010.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0005.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/TitleScreen/logo bump/logo bumpin0012.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Pro/newgrounds.png" type="Texture" id=49]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 31 ), ExtResource( 17 ), ExtResource( 28 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 30 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 26 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 23 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, 327.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("THANKYOU:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("THANKYOU:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("LIST:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("THANKYOU:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, 327.5 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("LIST:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "HEXAR" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ColorRect:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ColorRect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("AnimatedSprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Camera2D:offset")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("LIST:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, 192 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("BumpinLogo:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("THANKYOU:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Label:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NewGrounds:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Trailer"
+length = 130.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("Kickback")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1.1, 1.5, 1.7, 1.9, 2.1, 2.4, 3, 3.2, 3.4, 3.7, 3.9, 4, 4.2, 4.5, 4.8, 5, 5.3, 5.7, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.3, 7.4, 7.5, 7.6, 7.8, 8.1, 8.3, 8.4, 8.7, 9.1, 9.5, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 11.4, 12.2, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9, 16, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 16.8, 16.9, 17, 17.1, 17.2, 17.3, 18, 18.3, 18.4, 18.5, 18.6, 18.7, 18.8, 18.9, 19, 19.1, 19.2, 19.3, 19.4, 19.5, 19.6, 19.7, 19.8, 19.9, 20, 20.1, 20.2, 20.3, 20.4, 20.5, 20.6, 20.7, 20.8, 20.9, 21, 21.1, 21.2, 21.3, 21.4, 21.5, 21.6, 21.7, 21.8, 21.9, 22, 22.1, 22.2, 22.3, 22.4, 22.5, 22.6, 22.7, 22.8, 22.9, 23, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 23.9, 24.4, 24.5, 24.6, 24.7, 24.8, 24.9, 25, 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 26, 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9, 27, 27.1, 27.2, 27.3, 27.9, 28.5, 29.3, 30, 30.4, 30.7, 31, 31.3, 31.6, 31.9, 32.2, 32.5, 32.7, 32.8, 33.1, 33.4, 33.7, 34, 34.3, 34.6, 34.8, 34.9, 35.2, 35.5, 35.8, 36.1, 36.5, 37.1, 37.3, 48, 103.3, 127.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "HELLO", "WELCOME", "GET READY FOR THE COOLEST", "ENGINE REVEAL", "EVER", "EVEr", "4VER", "EV4R", "SOMETHING THAT MIGHT", "S0METHING iHAT MIGHT", "S0METHING iHAI MIGHT", "S0METHING iHAI MIGhT", "S0METHiNG iHAI MIGhT", "SoMETHiNG THAT MIGHi", "SOMETHiNG THAT MIGHI", "SooMETHiNG THAT MIGHI", "SoooMETHiNG THAT MIGHI", "soooMETHiNG THAT MIGHI", "soooMETHiNG iHAT sMIGHI", "soooMETHinG iHAT sMIGHI", "MAKE YOU PEE YOUR PANTS", "MADE WITH LOVE", "MADE WITH L4VE", "MiDE WITH L4VE", "MiDE WiTH L4VE", "POWERED BY", "PowERED BY", "PowwwERED BY", "PowwwwERED BY", "PowwwwwERED BY", "PowwwwwwERED BY", "PowwwwwwwERED BY", "PowwwwwwwwERED BY", "PowwwwwwwwwERED BY", "GODOT", "THE BEST ENGINE", "THE FUNNY GEAR MAN", "WHEN IS THIS CRAP COMING OUT", "NOW", "", "NOW", "", "NOW", "", "YOOOOOOO", "MADE FOR NEWGROUNDS", "MADE FOR nEWGRoUNDS", "MADE FOR nEwGRoUNDS", "mADE FOR nEwGRoUNDS", "mADE FOR nEwGroUNDS", "mADE FOR nEwGRoUNDs", "MadE FOR nEwGROUNdS", "maDe FoR NeWGROUNdS", "maDe FoR NeWGROuNdS", "MadE foR NeWGROundS", "MadE For nEwGROundS", "MADE FOR nEwGRoUNDS", "mADE FOR nEwGRoUNDS", "mADE FOR nEwGroUNDS", "mADE FOR nEwGRoUNDs", "MadE FOR nEwGROUNdS", "maDe FoR NeWGROUNdS", "maDe FoR NeWGROuNdS", "MadE foR NeWGROundS", "MadE For nEwGROundS", "MaDE FoR NewGrounds", "MADE FoR NewGRounds", "MADE FOr NewGRounds", "MADE FOr nEWGRounds", "MADE FOr nEWGRoUnds", "MADE FOr nEWGROUNds", "MADE FOR nEWGROUNDS", "MADE FOR NEWGROUNDS", "ULTIMITE RHYTHM GAMING", "ULTIMITE RHYTHM GAMING (REAL)", "ULTIMITE RHYTHM GAMING (BEST)", "ULTIMITE RHYTHM GAMING (FUNNY)", "WLTIMITE RHYTHM GAMING (FUNNY)", "WHTIMITE RHYTHM GAMING (FUNNY)", "WHOIMITE RHYTHM GAMING (FUNNY)", "WHO MITE RHYTHM GAMING (FUNNY)", "WHO IITE RHYTHM GAMING (FUNNY)", "WHO ISTE RHYTHM GAMING (FUNNY)", "WHO IS E RHYTHM GAMING (FUNNY)", "WHO IS N RHYTHM GAMING (FUNNY)", "WHO IS NIHYTHM GAMING (FUNNY)", "WHO IS NIJYTHM GAMING (FUNNY)", "WHO IS NINJAM GAMING (FUNNY)", "WHO IS NINJA MAMING (FUNNY)", "WHO IS NINJA MUMING (FUNNY)", "WHO IS NINJA MUFING (FUNNY)", "WHO IS NINJA MUFFNG (FUNNY)", "WHO IS NINJA MUFFIG (FUNNY)", "WHO IS NINJA MUFFIN (FUNNY)", "WHO IS NINJA MUFFIN", "THE PROGRAMMER FOR FNF", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "WhO PROGRAMmeD ThE REMAKe", "WHO PROGRAMMED THE REMAKE", "WHO PRoGRAMMED THE REMAKe", "WHO PrOGRAMMED THE REMAKe", "WHO pROGRAMMEd THE REMAKe", "WHo pROGRAMMEd THE REMAKe", "WhO PROGRAMMeD THE REMAKe", "WhO PROGRAMmeD THE REMAKe", "LINUXMASTER", "MODDING SUPPORT?", "WOMEN SUPPORT?", "FNF JSONS SUPPORT", "FUNNY GEAR GUY SUPPORT?", "NINJAMUFFIN APPROVAL?", "MADE WITH A BROKEN C KEY?", "MADE ON LINUX? (kinda lmao)", "MADE WITH HYPNO SUPPORT?", "MADE WITH ONLINE SERVICES", "DESIGNED FOR MODDERS?", "REWRITTEN ARROW SYSTEM FROM", "CODEIST'S REMAKE", "MADE WITH ZERO EXP?", "MADE WITH REAL HARDWARE?", "MADE FROM SUSSY AMONG US", "MADE FROM SUSSY AMONG US (SUS)", "MADE FROM SUSSY AMONG US LAUGH", "INSPIRED BY NEWGROUNDS?", "MADE BY A 14 YEAR OLD?", "BAD CODE?", "BAD CODE? (AHEM WHO PUT THIS)", "OPEN SOURCE GOODNESS?", "EPIC GODOT FEATURES?", "EPIC CONDUCTER AUTOLOAD", "EPIC REDDIT?", "WEBM SUPPORT?", "WEBM SUPPORT WITHOUT CRASHS?", "GODOT 4 READYISH", "GODOT 4 READY ISH", "ALL", "ALL CHECKED", "ALL CHECKED OUT", "ALL CHECKED OUT NO", "ALL CHECKED OUT NO FEATURES LEFT", "DESIGNED WITH", "DESIGNED FOR", "MADE FOR", "HELD FOR", "KISSED FOR", "HIT FOR", "CRIED FOR", "LOST FOR", "NO REALLY WHERES MY FAMILY?", "CONTROLLED FOR", "SWEAT FOR", "I DIED FOR", "MY MENTAL HEALTH GONE FOR", "A THANK YOU LETTER FOR", "A GIFT FOR", "A GAME FOR", "THANK YOU FNF TEAM", "A LOVE LETTER FOR", "INSTALLED FOR", "WATCHED FOR", "TOOLS FOR", "YOU GUYS", "", "", "A THANK YOU FOR", "", "LAUNCHING TODAY", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.7, 5.8, 6, 6.2, 11.3, 11.6, 12, 66.1, 66.2, 66.5, 66.7, 71.3, 71.4, 72.1, 72.2, 72.7, 72.8, 78.2, 78.3, 78.6, 78.8, 81.4, 81.8, 82, 84.5, 84.9, 85.1, 90.2, 90.4, 91 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.7, 0.7 ), Vector2( 0.6, 0.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.7, 0.7 ), Vector2( 0.6, 0.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.7, 0.7 ), Vector2( 0.6, 0.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.8, 0.2 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.6, 0.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.9, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 36.7, 37.1, 103, 103.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 327.5 ), Vector2( 128, 327.5 ), Vector2( 128, 174.5 ), Vector2( 128, 174.5 ), Vector2( 128, 447.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("THANKYOU:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 37.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("THANKYOU:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 37.1, 40.7, 40.9, 41.1, 41.4, 41.6, 43, 44, 48, 48.6, 60.9, 61.2, 61.4, 61.6, 61.8, 62, 62.2, 62.4, 62.6, 62.8, 63, 63.2, 66.8, 78.8, 79, 79.2, 79.4, 79.6, 79.8, 80, 80.2, 80.4, 80.6, 80.8, 81, 81.2, 81.4, 81.6, 82.1, 82.4, 82.9, 83.2, 83.3, 83.4, 83.5, 83.6, 83.7, 83.8, 83.9, 84, 84.1, 84.2, 84.3, 84.4, 84.5, 84.6, 84.7, 84.8, 85.2, 85.3, 85.4, 85.5, 85.6, 85.7, 85.8, 85.9, 86, 86.1, 86.2, 86.3, 86.4, 86.5, 86.6, 86.7, 86.8, 89, 89.1, 89.2, 89.3, 89.4, 89.5, 89.6, 89.7, 89.8, 89.9, 90, 90.1, 90.2, 90.3, 90.4, 91, 103.3, 127.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "NINJAMUFFIN99", "KAWAII SPRITE", "PHANTOM ARCADE", "EVILSK8R", "AND EVERYONE ELSE", "FOR EVERYTHING", "I CANT STRESS THIS ENOUGH", "AND NOW FOR THE LIST", "THANKING", "NOW", "NOW", "NoW", "Now", "now", "Now", "NOw", "NOW", "NOw", "nOw", "nRw", "PREPARE FOR THE ULTIMITE FNF ENGINE", "", "", "MADE WITH LOVE", "MADE WITH PASSION", "MADE WITH SWEAT", "MADE WITH HARD WORK", "MADE WITH A DESIRE TO MOD", "MADE WITH MOTIVATION", "EMTIONAL SUPPORT BY HYPNO", "LOGOS AND ARTWORK BY DEMON", "WFC MUSIC BY GENUINE", "MADE WITH A DRIVE TO WORK", "NINJAMUFFIN SAW THIS : 0", "OPEN SOURCE GOODNESS", "GODOT 4 PORT COMING MAYBE", "BASED ON CODISTS ARROW SYSTEM", "HUGE THANKS TO HIM", "LIKE SERIOUSLY", "HIS ARROW SYSTEM IS VERY EPIC", "DIS ARROW SYSTEM IS VERY EPIC", "DO ARROW SYSTEM IS VERY EPIC", "DO YRROW SYSTEM IS VERY EPIC", "DO YOROW SYSTEM IS VERY EPOL", "DO YOUOW SYSTEM IS VERY EOOL", "DO YOU KNOW SYSTEM IS VERY COOL", "DO YOU KNOW WHOEM IS VERY COOL", "DO YOU KNOW WHO'S COOL", "DO YOU KNOW WHO'S COOL?", "DO YOU KNOW WHOO'S COOL?", "DO YOU KNOW WHOOO'S COOL?", "DO YOU KNOW WHOOOO'S COOL?", "DO YOU KNOW WHOOOOO'S COOL?", "DO YOU KNOW WHOOOOOO'S COOOL?", "DO YOU KNOW WHOOOOOOO'S COOOL?", "DO YOU KNOW WHOOOOOOO'S COOOOOL?", "YOU GUYS", "LETS TALK WFC PERKS", "LETS TALK WFC PEERKS", "LETS TALK WFC PEEERKS", "LETS TALK WFC PEEEERKS", "LETS TALK WFC PEEEEERKS", "LETS TALK WFC PEEEEEERKS", "FOURMS", "MUTIPLAYER", "CHAT ROOMS", "DOWNLOAD MODS FROM THE ENGINE", "AND A LOT LOT MORE", "AND A LOOT LOOT MORE", "AND A LOOOT LOOT MORE", "AND A LOOOT LOOT MOORE", "AND A LOOOOT LOOT MOORE", "AND A LOOOT LOOOT MORE", "AND A LOOOOT LOOOOT MORE", "NOW", "NOw", "nOW", "noW", "Now", "NOw", "nOW", "noW", "Now", "NOw", "nOW", "noW", "Now", "NOw", "LETS TALK ABOUT THE MODS COMING", "COMING SOON", "FNF: GODOT EDITION", "" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("LIST:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 48.6, 60.9, 91.1, 103.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("THANKYOU:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 47.9, 48.3, 60.8, 61.2, 78.8, 78.9, 81.8, 82.1, 82.3, 89, 89.3, 91, 91.2, 103.1, 103.3 ),
+"transitions": PoolRealArray( 1, 0.5, 2, 0.5, 2, 1, 1, 0.5, 2, 2, 2, 0.5, 0.5, 2, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 89.5, 327.5 ), Vector2( 89.5, 327.5 ), Vector2( 89.5, 93.5 ), Vector2( 89.5, 93.5 ), Vector2( 89.5, 327.5 ), Vector2( 89.5, 327.5 ), Vector2( 89.5, 490.5 ), Vector2( 89.5, 490.5 ), Vector2( 89.5, 419 ), Vector2( 89.5, 466 ), Vector2( 89.5, 466 ), Vector2( 89.5, 327.5 ), Vector2( 89.5, 327.5 ), Vector2( 89.5, 574.5 ), Vector2( 89.5, 574.5 ), Vector2( 89.5, 327.5 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("LIST:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 48.6, 48.8, 49, 49.2, 49.4, 49.6, 49.8, 50, 50.2, 50.4, 50.6, 50.8, 51, 51.2, 51.4, 51.6, 51.8, 52, 52.2, 52.4, 52.6, 52.8, 53, 53.2, 53.4, 53.6, 53.8, 54, 54.2, 54.4, 54.6, 54.8, 55, 55.2, 55.4, 55.6, 55.8, 56, 56.2, 56.4021, 56.6, 56.8, 57, 57.2, 57.4, 57.6, 57.8, 58, 58.2, 58.4, 58.6, 58.8, 59, 59.2, 59.4, 59.6, 59.8, 60, 60.2, 60.4, 60.6, 60.8, 91.1, 91.4, 91.6, 91.8, 92, 92.2, 92.4, 92.6, 92.8, 93, 93.2, 93.4, 93.6, 93.8, 94, 94.2, 94.4, 94.6, 94.8, 95, 95.2, 95.4, 95.6, 95.8, 96, 96.2, 96.4, 96.6, 96.8, 97, 97.2, 97.4, 97.6, 97.8, 98, 98.2, 98.4, 98.6, 98.8, 99, 99.2, 99.4, 99.6, 99.8, 100, 100.2, 100.4, 100.6, 100.8, 101, 101.2, 101.4, 101.6, 101.8, 102, 102.2, 102.4, 102.6, 102.8, 103 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "HEXAR", "HEXAR
+TAEYAI", "HEXAR
+TAEYAI
+BBPANZU", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT
+STARDUSTTUNES", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT
+STARDUSTTUNES
+KEKB", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT
+STARDUSTTUNES
+KEKB
+GENUINEMH", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT
+STARDUSTTUNES
+KEKB
+GENUINEMH
+DEMONHUNTER", "HEXAR
+TAEYAI
+BBPANZU
+KADEDEV
+HYPNODEV
+YINGYANG48
+SMC5
+BANBUDS
+ROZEBUDS
+M0R0
+TSU
+CODIST
+CELSHADER
+HAVLEY CONTROL
+BALOON
+THE ONLY VOLUME
+NONSENSE
+CLOWFOE
+FOXERU
+MANCE
+PHLOX
+PAPERKITTY
+TACTO
+BITTECH
+KENETH
+JULIEN
+IMCURIOUSYT
+THISISBENNYK
+EXPKING
+SECTOR
+REVAMPED
+RUINER
+CAMELLIA
+ARTCARROT
+VIDZ
+BREEZY
+JACK.EXE
+EUEHEHAI
+WILLOW
+CVAL
+JADS
+GWEBDEV
+ASH
+YOSHUBS
+AMORALTRA
+DPZ
+BOOMKITTY
+WILDY
+CERBERA
+THEMASKEDCHRIS
+VEVWEX
+THE INUENDO
+BRIGHTFYRE
+THE GODOT DEVS
+BUSTER
+M AND M
+SUNSPIRIT
+STARDUSTTUNES
+KEKB
+GENUINEMH
+DEMONHUNTER
+NIKLAVS", "", "VS HYPNO", "VS HYPNO
+VS NEXUS", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT
+VS SONIC PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT
+VS SONIC PORT
+VS STARVING ARTIST PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT
+VS SONIC PORT
+VS STARVING ARTIST PORT
+VS CYRIX PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT
+VS SONIC PORT
+VS STARVING ARTIST PORT
+VS CYRIX PORT
+FNF: SOFT PORT", "VS HYPNO
+VS NEXUS
+VS TRICKY PORT
+VS MATT PORT
+VS SHAGGY PORT
+VS BOB PORT
+VS BOB AND BOSIP PORT
+VS WHITTY PORT (WILL ASK PERM)
+VS CHARA PORT
+VS SANS
+VS INDIE CROSS PORT
+VS DOKI DOKI TAKEOVER PORT
+VS KAPI PORT
+VS KADE PORT
+VS HYPNO'S LULLABY PORT
+VS AGOTI PORT
+VS SPINEL PORT
+VS TORD PORT
+VS OSWALD PORT
+VS SPRINGTRAP PORT
+VS CHEEKY PORT
+VS TAEYAI PORT
+VS MID- FIGHT MASSES PORT
+VS HEX PORT
+VS TABI PORT
+VS GARCELLO PORT
+VS SKY PORT? (WILL ASK PERM)
+VS ARCH PORT
+FNF: NEO PORT
+VS STICKMAN PORT
+FNF: BSIDES PORT
+VS MIKU PORT
+VS ZARDY PORT
+FNF: MINUS PORT
+STARLIGHT MAYHEM PORT
+FNF: CG5 EDITION PORT
+VS SKETCHY PORT
+VS X EVENT PORT
+WHITTY AND CARL DATE WEEK PORT
+FNF HD PORT
+VS ANNIE PORT
+VS IMPOSTOR PORT
+FNF: STARCATCHER PORT
+SALTY SUNDAY NIGHT PORT
+VS TROLLGE PORT
+VS SUICIDE MOUSE PORT
+VS MATT WIIK 3 PORT
+VS FLIPPY PORT
+VS TREE PORT
+VS SUNDAY PORT
+BOB'S ONSLAUGHT PORT
+VS RON PORT
+VS ANDERS PORT
+VS BALDI PORT
+VS SONIC PORT
+VS STARVING ARTIST PORT
+VS CYRIX PORT
+FNF: SOFT PORT
+VS CAROL PORT" ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 66.1, 66.5, 66.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.305882, 0.305882, 0.305882, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("ColorRect:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 66.8, 89 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("AnimatedSprite:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 66.8, 89 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Camera2D:offset")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 71.3, 71.4, 72.1, 72.2, 72.7, 72.8, 81.4, 81.8, 82, 84.5, 84.9, 85.1, 90.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 280, -100 ), Vector2( 280, -100 ), Vector2( 280, 20 ), Vector2( 280, 20 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 150 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 135 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("LIST:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 91, 91.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 192 ), Vector2( 128, 192 ), Vector2( 128, 44 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("BumpinLogo:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 60.9, 103.2, 106.1, 127, 127.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("THANKYOU:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 103.1, 103.3, 106.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Label:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 103, 103.3, 126.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NewGrounds:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 127.1, 127.2, 130 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -15,7 +4101,47 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "SOON", "", "SOON", "", "SOON", "" ]
+"values": [ "NOW", "", "NOW", "", "NOW", "" ]
+}
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 34 ), ExtResource( 43 ), ExtResource( 37 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 46 ), ExtResource( 42 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "bump",
+"speed": 20.0
+} ]
+
+[sub_resource type="Animation" id=8]
+resource_name = "NewGrounds"
+length = 7.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Shader" id=2]
@@ -281,11 +4407,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 591.948, 318 )
+scale = Vector2( 1.02303, 1.02303 )
+frames = SubResource( 6 )
+frame = 27
+playing = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -308,12 +4444,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="THANKYOU" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -32.5
+margin_right = 589.0
+margin_bottom = 32.5003
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LIST" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -168.0
+margin_right = 512.0
+margin_bottom = 272.0
+custom_fonts/normal_font = ExtResource( 2 )
+text = "HEXAR"
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/Trailer = SubResource( 4 )
 anims/flash = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 301 )
+position = Vector2( 640, 361 )
 current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BumpinLogo" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 640, 174.5 )
+scale = Vector2( 0.545455, 0.545455 )
+frames = SubResource( 7 )
+animation = "bump"
+frame = 11
+playing = true
+
+[node name="NewGrounds" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 640, 327.5 )
+scale = Vector2( 0.319247, 0.319247 )
+texture = ExtResource( 49 )
+hframes = 8
+vframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NewGrounds"]
+autoplay = "NewGrounds"
+playback_speed = 3.0
+anims/NewGrounds = SubResource( 8 )
+anims/RESET = SubResource( 9 )
 
 [node name="CRT" type="ColorRect" parent="."]
 material = SubResource( 3 )
@@ -321,5 +4519,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Kickback" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

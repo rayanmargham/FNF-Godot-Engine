@@ -9,6 +9,26 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Scenes/Characters/Character.gd"
+}, {
+"base": "Node2D",
+"class": "ChoiceMenu",
+"language": "GDScript",
+"path": "res://Scripts/GamePlay/ARROWSYSTEM/PauseMenuScripts/ChoiceMenu.gd"
+}, {
+"base": "EditorProperty",
+"class": "SpriteFontGenButtonProp",
+"language": "GDScript",
+"path": "res://addons/Sprite_Font_Generator/ButtonProperty.gd"
+}, {
+"base": "EditorProperty",
+"class": "SpriteFontGenCharWidthProp",
+"language": "GDScript",
+"path": "res://addons/Sprite_Font_Generator/CharWidthProperty.gd"
+}, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeNoiseGeneric2d",
 "language": "GDScript",
@@ -470,6 +490,10 @@ _global_script_classes=[ {
 "path": "res://addons/shaderV/tools/vec2Compose.gd"
 } ]
 _global_script_class_icons={
+"Character": "",
+"ChoiceMenu": "",
+"SpriteFontGenButtonProp": "",
+"SpriteFontGenCharWidthProp": "",
 "VisualShaderNodeNoiseGeneric2d": "",
 "VisualShaderNodeNoiseGeneric2dFractal": "",
 "VisualShaderNodeNoisePerlin2d": "",
@@ -585,19 +609,20 @@ SceneLoader="*res://AutoLoads/SceneLoader.tscn"
 SoundController="*res://AutoLoads/SoundController.tscn"
 Mapper="*res://AutoLoads/Mapper.gd"
 ToolKit="*res://Scenes/DEBUG/ToolKit.tscn"
-PauseMenuController="*res://AutoLoads/PauseMenuController.tscn"
 WFC="*res://AutoLoads/WFC.tscn"
 Resources="*res://AutoLoads/Resources.gd"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/per_pixel_transparency/allowed=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/sparrowatlas_editor/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Sprite_Font_Generator/plugin.cfg" )
 
 [input]
 
@@ -618,25 +643,25 @@ J={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":74,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-note_up={
+up={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-note_down={
+down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-note_left={
+left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-note_right={
+right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
@@ -645,6 +670,16 @@ note_right={
 DEBUG_KEY={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":33554431,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+confirm={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+cancel={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

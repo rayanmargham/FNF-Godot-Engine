@@ -18,6 +18,33 @@ var Alert:Resource
 var first_button_hover:Resource
 var first_button_selected:Resource
 var first_done:Resource
+# Settings
+var botPlay = false # plays the players side automatically
+var ghostTapping = false # allows the player to press keys without the miss penalty
+var hitSounds = true # play a sound when the player hits a note
+
+var hudRatings = true # display ratings on the hud layer
+var hudRatingsOffset = Vector2(640, 360) # if its a hud rating, move it by this offset
+
+var middleScroll = false
+var middleScrollPreview = false
+var downScroll = false
+var StoryMode = false
+var StoryWeek = 0
+var Track = ""
+var Track_Number = 0
+var Track_Length = 2
+var show_menu = true
+var Week_Difficulty = "hard"
+
+func reset_resource_data():
+	Resources.StoryMode = false
+	Resources.show_menu = true
+	Resources.StoryWeek = 0
+	Resources.Track = ""
+	Resources.Track_Number = 0
+	Resources.Track_Length = 2
+	Resources.Week_Difficulty = "hard"
 
 func loadResources(JsonContainingLocations = "res://Assets/JSON&Text_Files/ResourceLocations.json"):
 	# you would do this in godot 4
@@ -36,6 +63,7 @@ func loadResources(JsonContainingLocations = "res://Assets/JSON&Text_Files/Resou
 	introGo = load(json_complete.Sounds.introGo)
 	scrollMenu = load(json_complete.Sounds.scrollMenu)
 	Alert = load(json_complete.Sounds.Alert)
+	FreakyMenu = load(json_complete.Songs.FreakyMenu)
 func loadRequiredResources(JsonContainingLocations = "res://Assets/JSON&Text_Files/ResourceLocations.json"):
 	var file = File.new()
 	file.open(JsonContainingLocations, File.READ)

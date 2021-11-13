@@ -10,8 +10,8 @@ script = ExtResource( 2 )
 
 [node name="Globe" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( 904, 264 )
-scale = Vector2( 0.147, 0.147 )
+position = Vector2( 1032, 164 )
+scale = Vector2( 0.24, 0.24 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 3 )
 action = "I"

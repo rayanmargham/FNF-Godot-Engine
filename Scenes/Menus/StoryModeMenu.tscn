@@ -191,7 +191,7 @@ animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 45 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 34 ), ExtResource( 8 ), ExtResource( 74 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 75 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 76 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 26 ), ExtResource( 78 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 24.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
@@ -219,8 +219,8 @@ __meta__ = {
 layer = -1
 
 [node name="BGBlack" type="ColorRect" parent="MainLayer"]
-margin_right = 1039.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,
@@ -228,14 +228,16 @@ __meta__ = {
 }
 
 [node name="TracksLabel" type="Label" parent="MainLayer"]
-margin_left = 104.0
+margin_left = 150.0
 margin_top = 412.0
-margin_right = 218.0
+margin_right = 264.0
 margin_bottom = 442.0
-custom_fonts/font = SubResource( 1 )
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "TRACKS"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -253,8 +255,8 @@ __meta__ = {
 [node name="Track1" type="Label" parent="MainLayer/TracksLabel/TrackList"]
 margin_right = 310.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Track1"
 align = 1
 valign = 1
@@ -267,8 +269,8 @@ __meta__ = {
 margin_top = 33.0
 margin_right = 310.0
 margin_bottom = 62.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Track2"
 align = 1
 valign = 1
@@ -281,8 +283,8 @@ __meta__ = {
 margin_top = 66.0
 margin_right = 310.0
 margin_bottom = 95.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.898039, 0.341176, 0.466667, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Track3"
 align = 1
 valign = 1
@@ -291,34 +293,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftArrow" type="AnimatedSprite" parent="MainLayer"]
+[node name="DifficultyNodes" type="Node2D" parent="MainLayer"]
+position = Vector2( 214, 0 )
+
+[node name="LeftArrow" type="AnimatedSprite" parent="MainLayer/DifficultyNodes"]
 position = Vector2( 703.5, 420.969 )
 scale = Vector2( 0.8125, 0.8125 )
 frames = SubResource( 2 )
 
-[node name="RightArrow" type="AnimatedSprite" parent="MainLayer"]
+[node name="RightArrow" type="AnimatedSprite" parent="MainLayer/DifficultyNodes"]
 position = Vector2( 995, 420 )
 scale = Vector2( 0.813, 0.813 )
 frames = SubResource( 3 )
 
-[node name="DIfficulty" type="AnimatedSprite" parent="MainLayer"]
+[node name="DIfficulty" type="AnimatedSprite" parent="MainLayer/DifficultyNodes"]
 position = Vector2( 852.909, 420 )
 scale = Vector2( 0.757576, 0.757576 )
 frames = SubResource( 4 )
 
-[node name="Hop" type="AnimationPlayer" parent="MainLayer/DIfficulty"]
+[node name="Hop" type="AnimationPlayer" parent="MainLayer/DifficultyNodes/DIfficulty"]
 anims/Hop = SubResource( 5 )
 
 [node name="Weeks" type="VBoxContainer" parent="MainLayer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -254.0
+margin_left = -221.0
 margin_top = 388.0
-margin_right = 159.0
+margin_right = 192.0
 margin_bottom = 1080.0
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -399,7 +403,7 @@ layer = -1
 [node name="BGYellow" type="ColorRect" parent="FrontLayer"]
 margin_left = 1.0
 margin_top = 44.0
-margin_right = 1039.0
+margin_right = 1282.0
 margin_bottom = 374.0
 color = Color( 1, 0.921569, 0.160784, 1 )
 __meta__ = {
@@ -408,43 +412,35 @@ __meta__ = {
 }
 
 [node name="Boyfriend" type="AnimatedSprite" parent="FrontLayer"]
-position = Vector2( 484.438, 209.435 )
+position = Vector2( 624, 216 )
 scale = Vector2( 0.733841, 0.733841 )
 frames = SubResource( 7 )
 frame = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Girlfriend" type="AnimatedSprite" parent="FrontLayer"]
-position = Vector2( 815, 187 )
+position = Vector2( 1015, 187 )
 scale = Vector2( 0.41821, 0.41821 )
 frames = SubResource( 8 )
-frame = 26
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Opponent" type="AnimatedSprite" parent="FrontLayer"]
-position = Vector2( 154.63, 214.296 )
+position = Vector2( 200, 216 )
 scale = Vector2( 0.361352, 0.361352 )
 frames = SubResource( 9 )
 animation = "dad"
 frame = 13
 speed_scale = 6.0
 playing = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LetterBlocker" type="ColorRect" parent="FrontLayer"]
-margin_left = 238.0
+margin_left = -48.0
 margin_top = -4.0
-margin_right = 703.0
+margin_right = 1282.0
 margin_bottom = 44.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -452,10 +448,10 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.698039 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -177.5
-margin_top = 4.0
-margin_right = 145.5
-margin_bottom = 33.0
+margin_left = -161.5
+margin_top = 6.0
+margin_right = 161.5
+margin_bottom = 35.0
 custom_fonts/font = SubResource( 10 )
 text = "DADDY DEAREST poo"
 align = 1

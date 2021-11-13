@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Inst.ogg-aee1ee3251132631af2863c7458e842a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/bopeebo/Inst.ogg"
+dest_files=[ "res://.import/Inst.ogg-aee1ee3251132631af2863c7458e842a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

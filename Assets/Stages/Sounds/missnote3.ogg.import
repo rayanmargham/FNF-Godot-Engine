@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/missnote3.ogg-5b12a605ef057d1619e441c0e0425305.oggstr"
+
+[deps]
+
+source_file="res://Assets/Stages/Sounds/missnote3.ogg"
+dest_files=[ "res://.import/missnote3.ogg-5b12a605ef057d1619e441c0e0425305.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

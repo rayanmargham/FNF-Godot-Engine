@@ -10,8 +10,8 @@ script = ExtResource( 2 )
 
 [node name="Enter" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( 816, 440 )
-scale = Vector2( 0.147, 0.147 )
+position = Vector2( 1032, 520 )
+scale = Vector2( 0.198, 0.198 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 3 )
 action = "ui_accept"

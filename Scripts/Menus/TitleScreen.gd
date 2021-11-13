@@ -6,13 +6,16 @@ var prevent = false
 var rotateamount = 7
 func _ready():
 	if MusicController.playing == false:
+		Resources.loadResources()
 		var freaky = Resources.FreakyMenu
 		MusicController.play_song(freaky, 102)
+	MusicController.connect("beat_hit", self, "_bump")
 func _process(_delta):
 	if MusicController.playing == true:
 		# Bumpin animation
-		$gflayer/gf.frame = round(MusicController.get_beat_time() * MAX_BUMPIN_FRAMES)
-		$logo.frame = round(MusicController.get_half_beat_time() * MAX_LOGO_FRAMES)
+#		$gflayer/gf.frame = round(MusicController.get_beat_time() * MAX_BUMPIN_FRAMES)
+#		$logo.frame = round(MusicController.get_half_beat_time() * MAX_LOGO_FRAMES)
+		pass
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
@@ -25,3 +28,6 @@ func _input(event):
 			SceneLoader.Load("res://Scenes/Menus/MainMenu.tscn")
 
 
+func _bump():
+	$logo.frame = 0
+	$logo.play()

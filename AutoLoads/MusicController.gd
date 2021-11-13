@@ -1,368 +1,309 @@
-#extends Node
-#
-#########################################
-## This Autoload is for managing music
-## and getting their BPM
-#########################################
-#
-##===============Variables===========
-#var FREAKY_BPM:int = 102
-#var Freaky_BPS = 60.0/float(FREAKY_BPM)
-# this code was written by me and it sucks
-#var playing = false # keeps track of if a song is being played
-#var curStep = 0 #Keeps track of the number of beats passed
-#var halfCurStep = 0# more accurate
-#var Beat_Time = 0 # Goes from 0 to 1, which is the length of a beat
-#var Half_Beat_Time = 0 # Goes from 0 to 1, which is the length of half a beat
-#var already_on_frame_beat = false
-#var already_on_half_frame_beat = false
-#
-##===============Signals===========
-#signal _on_one_Beat # Emitted on every beat
-#signal _on_half_Beat # Emitted on every half beat (runs two times on every beat)
-##warnings-disable
-##===============Public Functions===========
-#func Play_music(song = "freakyMenu", bpm = 102, position = 0, curstep = 0, halfcurstep = 0):
-#	#Type the sound you want and it will search it for you
-#
-#	var target = null
-#	match song:
-#		"freakyMenu":
-#			target = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		"Pro":
-#			target = load("res://Assets/Pro/Music&Sounds/KickBack.mp3")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		"Brushwhack":
-#			target = load("res://Assets/TestSongs/Brushwhack/Inst.ogg")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		"ERROR":
-#			target = load("res://Assets/Misc/ERROR/Audio/him.mp3")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		"Tutorial":
-#			target = load("res://Assets/Songs/Tutorial/Tutorial_Inst.ogg")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		"SynthLoop2":
-#			target = load("res://Assets/Menus/Music&Sounds/drumloop6.ogg")
-#			FREAKY_BPM = bpm
-#			Freaky_BPS = 60.0/float(FREAKY_BPM)
-#			curStep = 0
-#			halfCurStep = 0
-#			playing = true
-#		_:
-#			playing = false
-#			curStep = 0
-#			halfCurStep = 0
-#			print("ERROR: Could not play song: ", song)
-#			ErrorManager.HandleError(false, "Could Not Play Song!")
-#			return
-#	$Music.stream = target
-#	$Music.play()
-#
-#func Stop_music():
-#	playing = false
-#	$Music.stop()
-#	curStep = 0
-#	halfCurStep = 0
-#func get_playback_position():
-#	return $Music.get_playback_position()
-#
-## Getters
-#func GetBeatTime():
-#	return Beat_Time
-#func GetHalfBeatTime():
-#	return Half_Beat_Time
-#
-#func GetCurStep():
-#	return curStep
-#
-#func ChangeBPM(bpm):
-#	FREAKY_BPM = bpm
-#	Freaky_BPS = 60.0/float(FREAKY_BPM)
-#	return FREAKY_BPM
-#func IsPlaying():
-#	return playing
-##===============Private Functions===========
-#func _process(_delta):
-#	# Get an accurate playback position of the song to stay on beat
-#	var playback_pos = $Music.get_playback_position()
-#	var time_since_last_mix = AudioServer.get_time_since_last_mix()
-#	var latency = AudioServer.get_output_latency()
-#	var time = playback_pos + time_since_last_mix - latency
-#
-#	# Turns the playback position into a lerpable value from 0 to 1 for a beat
-#	Beat_Time = fmod((time+Freaky_BPS)/2, Freaky_BPS)/Freaky_BPS
-#	Half_Beat_Time = fmod((time+Freaky_BPS)*1, Freaky_BPS)/Freaky_BPS
-#
-#	# Emit signal on every beat
-#	if Beat_Time > 0.9 and already_on_frame_beat == false:
-#		emit_signal("_on_one_Beat")
-#		curStep += 1
-#		already_on_frame_beat = true
-#	if Beat_Time <= 0.9:
-#		already_on_frame_beat = false
-#
-#	# Emit signal on every half beat
-#	if Half_Beat_Time > 0.9 and already_on_half_frame_beat == false:
-#		emit_signal("_on_half_Beat")
-#		halfCurStep += 1
-#		already_on_half_frame_beat = true
-#	if Half_Beat_Time <= 0.9:
-#		already_on_half_frame_beat = false
-#
-#
-extends AudioStreamPlayer
+extends Node
 
-signal quarter_hit(quarter)
-signal eighth_hit(eighth)
-signal sixteenth_hit(sixteenth)
+signal beat_hit()
+signal half_beat_hit()
 
-enum Notes {QUARTER, EIGHTH, SIXTEENTH}
-enum Directions {LEFT, DOWN, UP, RIGHT}
+const SCROLL_DISTANCE = 1.6 # units
+const SCROLL_TIME = 6.80 # sec
 
-const SAFE_FRAMES = 10
-# SAFE_ZONE: the amount of time (in seconds, assuming 60 FPS)
-#			 before / after the note to be considered a valid hit.
-const SAFE_ZONE = (SAFE_FRAMES / 60.0) * 1000 # safe frames in ms
-# COUNTDOWN_CONSTANT: the # of beats before a level song plays
-#						(for the 321GO! sequence).
-const COUNTDOWN_CONSTANT = -4
+const COUNTDOWN_SOUNDS = [preload("res://Assets/Stages/RhythmSystem/countdown/intro3.ogg"),
+						preload("res://Assets/Stages/RhythmSystem/countdown/intro2.ogg"),
+						preload("res://Assets/Stages/RhythmSystem/countdown/intro1.ogg"),
+						preload("res://Assets/Stages/RhythmSystem/countdown/introGo.ogg")]
+						
+const PLAY_STATE = preload("res://Scenes/States/PlayState.tscn")
 
-onready var vocals = $Vocals
-onready var countdown_timer = $Countdown_Timer
-# code from fnf vr reewritten 
-var bpm: float = 60
-var beat_time = 0 # lerpable value
-var half_beat_time = 0 # lerpable value for a half beat
+var songData
+
+var songName
+var songDifficulty
+
+var bpm = 100.0
 var scroll_speed = 1
-var debug_bpm = false
-var crochet = ((60 / bpm) * 1000) # beats in ms
-var stepCrochet = crochet / 4 # steps in ms
+var song_speed = 1
+var h = false # needed so we dont die lmao
+var MusicStream
+var VocalStream
 
-var song_position: float = 0 # in seconds
-# time_begin: the exact timestamp (since engine launch / last pause in microseconds)
-#			  that the current song started playing at.
-var previous_frame_time: int = 0
-var last_reported_playhead_position: float = 0
-var counting_down = false
+var countingDown = false
+var countdown = 0
+var countdownState = 0
 
-# Assigned -1 to include 1st beat of the song
-var last_quarter   = -1
-var last_eighth    = -1
-var last_sixteenth = -1
+var useCountdown = false
 
-# Last time (in seconds) the BPM changed
-var last_bpm_change = 0
-var last_quarter_before_change   = 0
-var last_eighth_before_change    = 0
-var last_sixteenth_before_change = 0
+var beatCounter = 1
+var halfBeatCounter = 0
 
-#### (Re-)Initialization #####################
 
-var DEBUG = FpsCounter.debug
+var loaded = false
+var muteVocals = false
 
+var songPositionMulti = 0
+
+var noteThread
+var notesFinished = false
+
+var menuSong = false
 func _ready():
-	$BPM_Debug.visible = debug_bpm
-	set_process(false)
-	# template for how a song must be loaded
-	#var tut = load("res://Assets/Songs/Tutorial/Tutorial_Inst.ogg")
-	#play_song(tut, 100)
+	MusicStream = self
+	VocalStream = $Vocals
 
-func play_song(song, bpm_, vocals_ = null, scroll_speed_ = 1):
-	if playing:
-		stop_song()
+	noteThread = Thread.new()
+	noteThread.start(self, "create_notes")
 	
-	stream = song
-	bpm = bpm_
-	scroll_speed = scroll_speed_
-	crochet = ((60 / bpm) * 1000)
-	stepCrochet = crochet / 4
-	
-	if vocals:
-		vocals.stream = vocals_
-	vocals.volume_db = 0
-	
-	song_position = 0
 
-	last_quarter   = -1
-	last_eighth    = -1
-	last_sixteenth = -1
+func _scene_loaded():
+	loaded = true
+	print("loaded")
 	
-	last_bpm_change = 0
-	last_quarter_before_change   = 0
-	last_eighth_before_change    = 0
-	last_sixteenth_before_change = 0
-	
-	previous_frame_time = OS.get_ticks_usec()
-	last_reported_playhead_position = 0
-	
-	play()
-	if vocals_:
-		vocals.play()
-	
-	if FpsCounter.debug and debug_bpm:
-		$BPM_Debug/Label.text = str(bpm)
-	
-	set_process(true)
-
-func play_song_with_countdown(song, bpm_, vocals_ = null, scroll_speed_ = 1):
-	if playing:
-		stop_song()
-	
-	bpm = bpm_
-	
-	last_quarter   = COUNTDOWN_CONSTANT - 1
-	last_eighth    = COUNTDOWN_CONSTANT - 1
-	last_sixteenth = COUNTDOWN_CONSTANT - 1
-	
-	countdown_timer.start(-COUNTDOWN_CONSTANT * get_seconds_per_beat())
-	counting_down = true
-	set_process(true)
-	
-	# Countdown should be handled by game
-	var countdown_co = yield(self, "quarter_hit")
-	
-	while countdown_co < 0:
-		countdown_co = yield(self, "quarter_hit")
-	
-	counting_down = false
-	set_process(false)
-	# TODO: fucking scroll speed brokey
-#	play_song(song, bpm_, vocals_, scroll_speed_)
-	play_song(song, bpm_, vocals_)
-
-func stop_song():
-	stop()
-	vocals.stop()
-	set_process(false)
-
-#### Update Loop #####################
-
 func _process(delta):
-	update_time(delta)
-	beat_time = fmod((song_position+get_seconds_per_beat())/2, get_seconds_per_beat())/get_seconds_per_beat()
-	half_beat_time = fmod((song_position+get_seconds_per_beat()), get_seconds_per_beat())/get_seconds_per_beat()
-	for note_name in ["quarter", "eighth", "sixteenth"]:
-		var cur_beat = call("get_" + note_name, true)
-		var last_beat = get("last_" + note_name)
-		if cur_beat > last_beat:
-			emit_signal(note_name + "_hit", cur_beat)
-			set("last_" + note_name, cur_beat)
-			
-			if note_name == "quarter" && FpsCounter.debug && debug_bpm:
-				print(cur_beat)
-				$BPM_Debug/Tween.stop_all()
-				$BPM_Debug/Tween.interpolate_property($BPM_Debug/Polygon2D, "scale",
-													Vector2(70, 70), Vector2(60, 60), get_seconds_per_beat())
-				$BPM_Debug/Tween.start()
-
-# update_time: Gets precise playback position by obtaining the ticks since the engine started,
-# compensates for audio latency and previous time when paused, and accounts for if the song hasn't
-# started yet.
-func update_time(delta):
-	if counting_down:
-		song_position = -countdown_timer.time_left
+	if !(loaded):
+		return
+		
+	if (muteVocals):
+		VocalStream.volume_db = -80
 	else:
-		song_position = max(0, song_position + (OS.get_ticks_usec() - previous_frame_time) / 1000000.0)
-#		song_position += previous_frame_time - OS.get_ticks_usec() / 1000000.0
-		previous_frame_time = OS.get_ticks_usec()
+		VocalStream.volume_db = 0
+	
+	if (notesFinished):
+		beat_process(delta)
+
+		if (useCountdown):
+			countdown_process(delta)
+			
+		song_finished_check()
 		
-		if get_playback_position() != last_reported_playhead_position:
-			song_position = (song_position + get_playback_position()) / 2.0
-			last_reported_playhead_position = get_playback_position()
+	var countdownMulti = ((countdown / (bpm / 60)) * 2)
+	songPositionMulti = MusicStream.get_playback_position() - countdownMulti
+	if (menuSong):
+		beat_process(delta)
+		song_finished_check()
+	
+func _exit_tree():
+	noteThread.wait_to_finish()
+
+func play_song(song, newerBpm, speed = 1, _menuSong = true):
+	song_speed = speed
+	menuSong = _menuSong
+	notesFinished = false
+	change_bpm(newerBpm)
+	
+	if (song is Object):
+		MusicStream.stream = song
+	else:
+		MusicStream.stream = load(song)
+	MusicStream.pitch_scale = song_speed
+	MusicStream.play()
+	
+	VocalStream.stop()
+	
+	useCountdown = false
+
+func play_chart(song, difficulty, speed = 1):
+	songName = song
+	menuSong = false
+	var difExt = "-" + difficulty
+	
+	match difficulty:
+		"easy":
+			songDifficulty = 0
+		"normal":
+			songDifficulty = 0
+			difExt = ""
+		"hard":
+			songDifficulty = 0
+			
+	var songPath = "res://Assets/Songs/" + songName  + "/"
+	print(difExt)
+	songData = load_song_json(songName, difExt, songPath)
+	
+	song_speed = speed
+	change_bpm(songData["bpm"])
+	
+	if songData.has("speed"):
+		scroll_speed = songData["speed"]
+	else:
+		scroll_speed = 1 
 		
-#		print("sp: " + str(song_position) + ", ph: " + str(get_playback_position()))
-		#print(song_position)
-#		song_position = max(0, ((OS.get_ticks_usec() - previous_frame_time) / 1000000.0) + song_pos_at_pause - (AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()))
-
-#### Music Functions #################
-
-func get_seconds_per_beat():
-	return 60.0 / bpm
-
-func get_beat(note, floored):
-	var divisor = 1.0
-	var last_beat_name = "quarter"
+	create_notes()
 	
-	match note:
-		Notes.EIGHTH:
-			divisor = 2.0
-			last_beat_name = "eighth"
-		Notes.SIXTEENTH:
-			divisor = 4.0
-			last_beat_name = "sixteenth"
+	MusicStream.stream = load(songPath + "Inst.ogg")
+	MusicStream.pitch_scale = song_speed
 	
-	# Assumption: There are no BPM changes before the song starts
-	# (why would you even do that? that sounds like a dumbass idea)
-	if counting_down:
-		if floored:
-			return int(floor(song_position / (get_seconds_per_beat() / divisor)))
-		return song_position / (get_seconds_per_beat() / divisor)
+	if (songData["needsVoices"]):
+		VocalStream.stream = load(songPath + "/Voices.ogg")
+		VocalStream.pitch_scale = song_speed
 	
-	var last_beat_before_change = get("last_" + last_beat_name + "_before_change")
+	countdown = 2.8
+	useCountdown = true
 	
-	if floored:
-		return last_beat_before_change + int(floor((song_position - last_bpm_change) / (get_seconds_per_beat() / divisor)))
-	return last_beat_before_change + (song_position - last_bpm_change) / (get_seconds_per_beat() / divisor)
+	var countDownOffset = get_tree().current_scene.notes[0][0] - ((countdown / (bpm / 60)) * 2)
+	if (countDownOffset < 0):
+		countdown -= countDownOffset
 
-func is_beat(note, desired_beat):
-	return get_beat(note, false) >= desired_beat
-
-func get_quarter(floored):   return get_beat(Notes.QUARTER, floored)
-func get_eighth(floored):    return get_beat(Notes.EIGHTH, floored)
-func get_sixteenth(floored): return get_beat(Notes.SIXTEENTH, floored)
-
-func is_quarter(desired_quarter):     return is_beat(Notes.QUARTER, desired_quarter)
-func is_eighth(desired_eighth):       return is_beat(Notes.EIGHTH, desired_eighth)
-func is_sixteenth(desired_sixteenth): return is_beat(Notes.SIXTEENTH, desired_sixteenth)
-
-func get_quarter_length():   return get_seconds_per_beat()
-func get_eighth_length():    return get_seconds_per_beat() / 2.0
-func get_sixteenth_length(): return get_seconds_per_beat() / 4.0
-func get_beat_time(): return beat_time
-func get_half_beat_time(): return half_beat_time
-
-#### Level Functions #################
-
-func get_speed_difference(): return scroll_speed - 1.0
-func get_actual_scroll_speed(): return 1.0 + get_speed_difference() / 2.0
-
-# ASSUMPTION: BPM changes happen on quarters
-# i don't even wanna think about if it doesn't
-func change_bpm(bpm_):
-	# The reason we set the last beat changes BEFORE the BPM change is
-	# bc if we do it the other way around, the beat calculations get fucky wucky (scientific term)
-	# (we'd be calculating the last beats with the current BPM, which is wrong)
+func change_bpm(newBpm):
+	bpm = float(newBpm)
 	
-	last_quarter_before_change = int(round(get_quarter(false)))
-	last_eighth_before_change = int(round(get_eighth(false)))
-	last_sixteenth_before_change = int(round(get_sixteenth(false)))
+	beatCounter = 0
+	halfBeatCounter = 1
 	
-	last_bpm_change = song_position
+	beat_process(0)
+
+func create_notes():
+	notesFinished = false
 	
-	bpm = bpm_
-	crochet = ((60 / bpm) * 1000)
-	stepCrochet = crochet / 4
+	var playState = get_tree().current_scene
 	
-	if FpsCounter.debug && debug_bpm:
-		$BPM_Debug/Label.text = str(bpm)
+	var temp_array = []
+	var section_array = []
+	var last_note
+	
+	var sections = []
+	
+	for section in songData["notes"]:
+		var section_time = (((60 / bpm) / 4) * 16) * sections.size()
+		var sectionData = [section_time, section["mustHitSection"]]
+		
+		sections.append(sectionData)
+		
+		for note in section["sectionNotes"]:
+			var strum_time = note[0] / 1000
+			var sustain_length = int(note[2]) / 1000.0
+			var direction = int(note[1])
+
+			if (!section["mustHitSection"]):
+				if (direction <= 3):
+					direction += 4
+				else:
+					direction -= 4
+					
+			var noteData = [strum_time, direction, sustain_length]
+			
+			if (last_note != null):
+#				if (last_note[0] == strum_time):
+#					last_note[1] += 1
+#					section_array.append(last_note)
+				temp_array.append(last_note)
+				if (!section_array.empty()):
+					temp_array.append_array(section_array)
+					section_array = []
+				last_note = noteData
+			else:
+				last_note = noteData
+				
+	temp_array.append(last_note)
+	
+	var strum_times = []
+	
+	for tmp_note in temp_array:
+		strum_times.append(tmp_note[0])
+		
+	strum_times.sort()
+		
+	var notes = []
+		
+	while !temp_array.empty():
+		var index = 0
+		
+		while strum_times[0] != temp_array[index][0]:
+			index += 1
+		
+		notes.append(temp_array[index])
+		
+		strum_times.remove(0)
+		temp_array.remove(index)
+		
+	playState.notes = notes
+	playState.sections = sections
+	
+	notesFinished = true
+
+func countdown_process(delta):
+	var playState = get_tree().current_scene
+	var countdownSprite = playState.get_node("HUD/Countdown")
+	var stream = playState.get_node("Audio/CountdownStream")
+	
+	if (countdown > 0):
+		countingDown = true
+		countdown -= ((bpm / 60) / 2) * song_speed * delta
+	
+	if (countingDown):
+		countdownState = ceil((fmod(countdown / 5, countdown) * 10))
+		
+		match (str(countdownState)):
+			"4":
+				play_countdown_sound(stream, COUNTDOWN_SOUNDS[0])
+			"3":
+				play_countdown_sound(stream, COUNTDOWN_SOUNDS[1])
+				countdownSprite.frame = 0
+				countdownSprite.visible = true
+			"2":
+				play_countdown_sound(stream, COUNTDOWN_SOUNDS[2])
+				countdownSprite.frame = 1
+				countdownSprite.visible = true
+			"1":
+				play_countdown_sound(stream, COUNTDOWN_SOUNDS[3])
+				countdownSprite.frame = 2
+				countdownSprite.visible = true
+		
+		if (countdown <= 0):
+			start_song()
+			
+			countdownSprite.visible = false
+			
+			countingDown = false
+			countdown = 0
+			
+func start_song():
+	MusicStream.play()
+	VocalStream.play()
+	
+	change_bpm(bpm)
+
+func play_countdown_sound(stream, snd):
+	if (stream.stream != snd):
+		stream.stream = snd
+		stream.play()
+
+func beat_process(delta):
+	beatCounter -= ((bpm / 60) * song_speed) * delta
+	
+	if (beatCounter <= 0):
+		beatCounter = beatCounter + 1
+		halfBeatCounter += 1
+		emit_signal("beat_hit")
+		
+		if (halfBeatCounter >= 2):
+			emit_signal("half_beat_hit")
+			halfBeatCounter = 0
+
+func song_finished_check():
+	if (!MusicStream.playing):
+		if get_tree().current_scene.name == "PlayState" and countingDown == false and h == false and menuSong == false:
+			h = true
+			MusicController.stop_song()
+			print("h")
+			SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
+			yield(SceneLoader, "done")
+			h = false
+func stop_song():
+	if (MusicStream.playing):
+		MusicStream.stop()
+		VocalStream.stop()
+		VocalStream.stream = null
+		beat_process(0)
+func load_song_json(song, difExt="", songPath = null):
+	if (songPath == null):
+		songPath = "res://Assets/Songs/" + song  + "/"
+	
+	var file = File.new()
+	if file.file_exists(songPath + song + difExt + ".json"):
+		print("Yez")
+	else:
+		print("no")
+		print(songPath + song + difExt + ".json")
+	var o = file.open(songPath + song + difExt + ".json", File.READ)
+	if o != OK:
+		print("sad")
+	
+	return JSON.parse(file.get_as_text()).result["song"]

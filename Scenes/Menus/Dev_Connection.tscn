@@ -45,9 +45,9 @@ __meta__ = {
 }
 
 [node name="FG" type="Control" parent="Connection"]
-margin_left = 256.0
+margin_left = 448.0
 margin_top = 270.0
-margin_right = 768.0
+margin_right = 960.0
 margin_bottom = 472.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,10 +55,13 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Connection/FG"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -175.0
+margin_top = -101.0
 margin_right = 175.0
-margin_bottom = 202.0
+margin_bottom = 101.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "DEV MODE FUNKIN' WFC"
 __meta__ = {

@@ -8,7 +8,8 @@ var TitleMenu_scn = preload("res://Scenes/Menus/TitleScreen.tscn")
 # warnings-disable
 # Data
 var Quote:Array # 0 is top word, 1 is bottom word
-
+var quarter = 0
+var half_beat = 0
 #==========================Private Functions==========================
 func _ready():
 	randomize()
@@ -16,8 +17,7 @@ func _ready():
 	# Start music
 	var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
 	MusicController.play_song(freaky, 102)
-	MusicController.connect("quarter_hit", self, "_quarter")
-	MusicController.connect("eighth_hit", self, "_lol")
+	$Animation.play("Intro")
 
 func _input(event):
 	# Skip intro if pressed Enter
@@ -46,43 +46,9 @@ func _generateBottomWord():
 func _switchToTitleMenu():
 	get_tree().change_scene_to(TitleMenu_scn)
 
-func _quarter(quarter):
-	match quarter:
-		0:
-			print("ok")
-		3:
-			BottomLabel.set("custom_colors/font_color", Color(1, 1, 1, 1))
-			BottomLabel.text = "the linux team"
-		4:
-			reset_labels()
-		5:
-			TopLabel.text = "MADE IN"
-		7:
-			BottomLabel.text = "GODOT"
-			BottomLabel.set("custom_colors/font_color", Color(0.24, 0.58, 1, 1))
-		8:
-			reset_labels()
-		9:
-			_generateTopWord()
-		11:
-			_generateBottomWord()
-		12:
-			reset_labels()
-		13:
-			TopLabel.text = "F"
-		14:
-			TopLabel.text += "N"
-		15:
-			TopLabel.text += "F"
-		16:
-			_switchToTitleMenu()
-	#print(quarter)
+
 func reset_labels():
 	BottomLabel.text = ""
 	BottomLabel.set("custom_colors/font_color", Color(1, 1, 1, 1))
 	TopLabel.text = ""
 	TopLabel.set("custom_colors/font_color", Color(1, 1, 1, 1))
-func _lol(lol):
-	match lol:
-		31:
-			BottomLabel.text = "Godot Edition"

@@ -166,7 +166,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 400.5, 285.5 ) ]
+"values": [ Vector2( 528.5, 345.5 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../ProgressBar:modulate")
@@ -256,7 +256,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 464.5, 285.5 ) ]
+"values": [ Vector2( 592.5, 345.5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Label:rect_size")
@@ -346,7 +346,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 400.5, 285.5 ) ]
+"values": [ Vector2( 528.5, 345.5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Label:rect_size")
@@ -435,10 +435,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 188.0
-margin_top = -14.5
-margin_right = 411.0
-margin_bottom = 14.5
+margin_left = 700.0
+margin_top = 285.5
+margin_right = 923.0
+margin_bottom = 314.5
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )

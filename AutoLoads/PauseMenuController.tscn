@@ -1,18 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://AutoLoads/PauseMenuController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/Music&Sounds/breakfast.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Fonts/Intro.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Menus/Music&Sounds/fard.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/Nodes/ChoiceMenu.tscn" type="PackedScene" id=5]
 
-[node name="Control" type="Control"]
+[node name="PauseMenu" type="Node2D"]
 pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -20,52 +16,33 @@ stream = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="BG" type="ColorRect" parent="CanvasLayer"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.47451 )
+color = Color( 0, 0, 0, 0.368627 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG"]
-margin_top = 181.0
-margin_right = 314.0
-margin_bottom = 384.0
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 473.0
+margin_top = 13.0
+margin_right = 1012.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 3 )
+text = "SONG NAME
+HARD"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Continue" type="Label" parent="CanvasLayer/BG/VBoxContainer"]
-margin_right = 314.0
-margin_bottom = 65.0
-custom_fonts/font = ExtResource( 3 )
-text = "continue"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Restart" type="Label" parent="CanvasLayer/BG/VBoxContainer"]
-margin_top = 69.0
-margin_right = 314.0
-margin_bottom = 134.0
-custom_fonts/font = ExtResource( 3 )
-text = "restart song"
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Return" type="Label" parent="CanvasLayer/BG/VBoxContainer"]
-margin_top = 138.0
-margin_right = 314.0
-margin_bottom = 203.0
-custom_fonts/font = ExtResource( 3 )
-text = "return to menu"
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Options" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="fard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -1.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="option_selected" from="CanvasLayer/Options" to="." method="option_selected"]

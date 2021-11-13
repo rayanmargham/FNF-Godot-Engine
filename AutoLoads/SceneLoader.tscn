@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Menus/Backgrounds/blackslidescreen.png" type="Texture" id=1]
 [ext_resource path="res://AutoLoads/SceneLoader.gd" type="Script" id=2]
@@ -40,7 +40,22 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 0.5 ),
 "update": 0,
-"values": [ Vector2( 512, -640 ), Vector2( 512, 320 ) ]
+"values": [ Vector2( 640, -640 ), Vector2( 640, 380 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "in_playstate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.5 ),
+"update": 0,
+"values": [ Vector2( 640, -640 ), Vector2( 640, 380 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -87,7 +102,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( -2, 1 ),
 "update": 0,
-"values": [ Vector2( 512, 320 ), Vector2( 512, 1240 ) ]
+"values": [ Vector2( 640, 380 ), Vector2( 640, 1500 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -114,12 +129,13 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 anims/in = SubResource( 5 )
+anims/in_playstate = SubResource( 7 )
 anims/old_in = SubResource( 3 )
 anims/old_out = SubResource( 4 )
 anims/out = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 512, 1240 )
+position = Vector2( 640, -640 )
 texture = ExtResource( 1 )
 
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -13,15 +13,15 @@ script = ExtResource( 5 )
 [node name="Up" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( 128, 288 )
-scale = Vector2( 0.123, 0.123 )
+scale = Vector2( 0.17, 0.17 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 2 )
 action = "ui_up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( 128, 479 )
-scale = Vector2( 0.123, 0.123 )
+position = Vector2( 128, 576 )
+scale = Vector2( 0.17, 0.17 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 4 )
 action = "ui_down"

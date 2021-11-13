@@ -73,10 +73,10 @@ layer = -2
 [node name="Connection" type="CanvasLayer" parent="."]
 
 [node name="BF" type="AnimatedSprite" parent="Connection"]
-position = Vector2( 512, 400 )
+position = Vector2( 640, 456 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="BG" type="Control" parent="Connection"]
@@ -89,11 +89,13 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Connection"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -192.0
-margin_top = 216.0
+margin_top = -112.0
 margin_right = 192.0
-margin_bottom = 408.0
+margin_bottom = 80.0
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]CONNECTING

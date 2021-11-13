@@ -1,57 +1,58 @@
-extends Control
+extends Node2D
 
+var playState
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var h = false
-onready var BG = $CanvasLayer/BG
-onready var Inital_MenuItems_Container_Position = $CanvasLayer/BG/VBoxContainer.rect_position
-enum menuitems {
-	CONTINUE,
-	RESTART,
-	BACKTOMENU
-}
-var disabled = false
-var selected_menu_item = menuitems.CONTINUE
-# Called when the node enters the scene tree for the first time.
+var selectedDifficulty = 2
+var selectedSpeed = 1
+var difficultys = ["EASY", "NORMAL", "HARD"]
+
+var options = ["RESUME", "RESTART SONG", "TOGGLE BOTPLAY", "OPTIONS", "EXIT TO TITLE"]
+
 func _ready():
-	FpsCounter.pause_mode = FpsCounter.PAUSE_MODE_PROCESS
-func _input(event):
-		if SceneLoader.isweek == true and disabled == false:
-			if event.is_action_pressed("ui_accept"):
-				if h == false:
-					h = true
-					get_tree().paused = true
-					BG.visible = true
-					$AudioStreamPlayer.play()
-				else:
-					match selected_menu_item:
-						menuitems.CONTINUE:
-							h = false
-							BG.visible = false
-							$AudioStreamPlayer.stop()
-							get_tree().paused = false
-						menuitems.BACKTOMENU:
-							h = false
-							BG.visible = false
-							$AudioStreamPlayer.stop()
-							get_tree().paused = false
-							MusicController.stop_song()
-							SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
-						menuitems.RESTART:
-							$fard.play()
-			if event.is_action_pressed("ui_down") and h == true:
-				SoundController.Play_sound("scrollMenu")
-				selected_menu_item = posmod(selected_menu_item+1, 3)
-			if event.is_action_pressed("ui_up") and h == true:
-				SoundController.Play_sound("scrollMenu")
-				selected_menu_item = posmod(selected_menu_item-1, 3)
-			
+	#var _c_loaded = get_tree().current_scene.connect("scene_loaded", self, "_scene_loaded")
+	
+	playState = get_tree().current_scene
+	$CanvasLayer/Options.options = options
+	
+	var label = $CanvasLayer/Label
+	$Tween.interpolate_property(label, "rect_position:y", -100, label.rect_position.y, 1.6, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property(label, "modulate:a", 0, 1, 1.6, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.start()
+
 func _process(_delta):
-	for i in $CanvasLayer/BG/VBoxContainer.get_child_count():
-		if i == selected_menu_item:
-			$CanvasLayer/BG/VBoxContainer.get_child(i).modulate.a = 1
-		else:
-			$CanvasLayer/BG/VBoxContainer.get_child(i).modulate.a = 0.5
-	$CanvasLayer/BG/VBoxContainer.rect_position.y = lerp($CanvasLayer/BG/VBoxContainer.rect_position.y, Inital_MenuItems_Container_Position.y-selected_menu_item*37, 0.2)
+	if (get_tree().paused == false):
+		queue_free()
+		
+	if (Input.is_action_just_pressed("cancel")):
+		get_tree().paused = false
+		
+	pause_text_process()
+
+func option_selected(selected):
+	match (selected):
+		0:
+			get_tree().paused = false
+		1:
+			playState.restart_playstate()
+		2:
+			Resources.botPlay = !Resources.botPlay
+		4:
+			get_tree().paused = false
+			MusicController.stop_song()
+			Resources.reset_resource_data()
+			SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
+			
+func pause_text_process():
+	var pauseText = playState.song.capitalize() + "\n" + playState.difficulty.to_upper() + "\n" + str(playState.speed) + "x"
+	
+	match ($CanvasLayer/Options.selected):
+		2:
+			pauseText = str(Resources.botPlay).to_upper()
+	
+	$CanvasLayer/Label.text = pauseText
+
+# not sure what this does so ima just comment it out lmao
+#func _scene_loaded():
+#	get_tree().paused = false
+
+

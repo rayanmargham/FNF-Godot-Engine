@@ -61,6 +61,7 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 PlayerStrumPath = NodePath("HUD/PlayerStrumLine")
 EnemyStrumPath = NodePath("HUD/EnemyStrumLine")
+song = "dad-battle"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

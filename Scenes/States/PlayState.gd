@@ -496,5 +496,8 @@ func setup_packed_characters():
 	match json.player2:
 		"gf":
 			EnemyCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")
+		"dad":
+			EnemyCharacter = preload("res://Scenes/Characters/Dad.tscn")
+			GFCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")
 		_:
 			GFCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")

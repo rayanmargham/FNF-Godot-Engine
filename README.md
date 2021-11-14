@@ -7,3 +7,8 @@ Funkin' WFC is part of the WFC Online Network Service. Funkin' WFC provides Down
 # Any DOCS for the Rhythm System Yet.
 Nope not yet but me and my friend HypnoDev are working on writing DOCS for the rhythm system and how to use it.
 They will be in extreme detail and will teach some godot basics as well
+# ModChart Support?
+Kinda, we will have two versions of the engine.
+One will be without ModChart Support and can be opened in annu Godot Editor
+Another will have ModChart Support But will require you to build the Godot engine with a Lua
+Module (we will provide the source you just need to compile it)

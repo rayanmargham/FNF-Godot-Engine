@@ -51,9 +51,11 @@ var PlayerStrum
 var EnemyStrum
 
 var MusicStream # might replace this because its only used like once
+var event_change = {}
 
 func _ready():
 	# get the strums nodes
+	load_events()
 	setup_packed_characters()
 	yield(get_tree().create_timer(0.05), "timeout") # timer so we dont crash crap lol
 	set_process(true)
@@ -79,6 +81,7 @@ func _process(_delta):
 	
 	spawn_notes() # create the needed notes
 	get_section() # get the current section
+	hardcoded_events() # check for hardcoded events to perform
 	
 	# pause the game
 	if (Input.is_action_just_pressed("confirm")):
@@ -98,7 +101,9 @@ func player_input():
 	button_logic(PlayerStrum, Note.Down)
 	button_logic(PlayerStrum, Note.Up)
 	button_logic(PlayerStrum, Note.Right)
-
+func load_events():
+	var json = MusicController.load_song_json(song, "-" + difficulty)
+	event_change = json
 func button_logic(line, note):
 	
 	# get the buttons name and action
@@ -160,7 +165,11 @@ func button_logic(line, note):
 	# when the button is released, go back to the idle animation
 	if (Input.is_action_just_released(action)):
 		animation.play("idle")
-
+func hardcoded_events():
+	match event_change.song:
+		"Uprising":
+			if (round(MusicController.songPositionMulti) == 58):
+				MusicController.change_bpm(120, 2.8) # bpm change also changes scroll speed to 2.8
 func spawn_notes():
 	if (notes == null || notes.empty()):
 		return
@@ -176,7 +185,7 @@ func spawn_notes():
 		var sustain_length = note[2]
 		
 		spawn_note(direction, strum_time, sustain_length)
-		
+
 func get_section():
 	if (sections == null || sections.empty()):
 		return
@@ -483,7 +492,7 @@ func create_rating(rating):
 		$Ratings.add_child(ratingObj)
 	else:
 		ratingObj.position = Resources.hudRatingsOffset / 0.7
-		ratingObj.get_node("Sprite").scale = Vector2(1, 1)
+		ratingObj.scale = Vector2(2, 2)
 		$HUD.add_child(ratingObj)
 
 func restart_playstate():

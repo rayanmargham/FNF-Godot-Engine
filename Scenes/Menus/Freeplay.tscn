@@ -1,8 +1,31 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Nodes/ChoiceMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Menus/Freeplay.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Menus/Backgrounds/menuBGBlue.png" type="Texture" id=4]
+
+[node name="Freeplay" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 0.995334, 0.986301 )
+texture = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChoiceMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 729.0
+margin_top = 13.0
+margin_right = 1268.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 1 )
+text = "SONG NAME
+HARD"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

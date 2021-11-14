@@ -141,12 +141,13 @@ func play_chart(song, difficulty, speed = 1):
 	if (countDownOffset < 0):
 		countdown -= countDownOffset
 
-func change_bpm(newBpm):
+func change_bpm(newBpm, newScrollSpeed = null):
 	bpm = float(newBpm)
 	
 	beatCounter = 0
 	halfBeatCounter = 1
-	
+	if (newScrollSpeed != null):
+		scroll_speed = newScrollSpeed
 	beat_process(0)
 
 func create_notes():
@@ -285,6 +286,14 @@ func song_finished_check():
 				MusicController.stop_song()
 				print("h")
 				SceneLoader.Load("res://Scenes/Menus/StoryModeMenu.tscn")
+				yield(SceneLoader, "done")
+				h = false
+		else:
+			if get_tree().current_scene.name == "PlayState" and countingDown == false and h == false and menuSong == false:
+				h = true
+				MusicController.stop_song()
+				print("going to freeplay")
+				SceneLoader.Load("res://Scenes/Menus/Freeplay.tscn")
 				yield(SceneLoader, "done")
 				h = false
 func stop_song():

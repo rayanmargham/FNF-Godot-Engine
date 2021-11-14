@@ -188,7 +188,7 @@ position = Vector2( 241, 640 )
 position = Vector2( 640, 462 )
 
 [node name="Rating" type="Position2D" parent="Positions"]
-position = Vector2( 640, 462 )
+position = Vector2( 704, 384 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )

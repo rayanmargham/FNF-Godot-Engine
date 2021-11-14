@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Stages/Backgrounds/Tutorial_BG/stagefront.png" type="Texture" id=189]
 
 [node name="PlayState" instance=ExtResource( 1 )]
+song = "fresh-bf-remix"
 
 [node name="Background" type="ParallaxBackground" parent="." index="3"]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Inst.ogg-1b940113ccacf29b10fafd416c33bfd3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/uprising/Inst.ogg"
+dest_files=[ "res://.import/Inst.ogg-1b940113ccacf29b10fafd416c33bfd3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

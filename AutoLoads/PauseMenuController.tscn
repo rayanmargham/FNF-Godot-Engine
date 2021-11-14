@@ -25,9 +25,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 473.0
+margin_left = 729.0
 margin_top = 13.0
-margin_right = 1012.0
+margin_right = 1268.0
 margin_bottom = 124.0
 custom_fonts/font = ExtResource( 3 )
 text = "SONG NAME

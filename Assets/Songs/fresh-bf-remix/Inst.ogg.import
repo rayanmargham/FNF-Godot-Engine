@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Inst.ogg-7a47234a2a96df36da5febbfa1440c1e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/fresh-bf-remix/Inst.ogg"
+dest_files=[ "res://.import/Inst.ogg-7a47234a2a96df36da5febbfa1440c1e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

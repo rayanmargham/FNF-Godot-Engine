@@ -21,6 +21,10 @@ func _ready():
 	$Tween.start()
 	
 	$CanvasLayer/OptionsMenu.enabled = false
+	$launchbox.play()
+	while $launchbox.volume_db < 0:
+		$launchbox.volume_db += 1
+		yield(get_tree().create_timer(0.3), "timeout")
 
 func _process(_delta):
 	if (get_tree().paused == false):
@@ -40,6 +44,8 @@ func option_selected(selected):
 			get_tree().paused = false
 		1:
 			playState.restart_playstate()
+			$fard.play()
+			get_tree().paused = false
 		2:
 			toggleOptions(true)
 		3:

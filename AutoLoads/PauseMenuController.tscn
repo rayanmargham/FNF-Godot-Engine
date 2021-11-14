@@ -59,6 +59,7 @@ layer = 5
 
 [node name="launchbox" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -30.0
 
 [node name="fard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

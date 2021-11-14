@@ -167,12 +167,19 @@ func button_logic(line, note):
 	# when the button is released, go back to the idle animation
 	if (Input.is_action_just_released(action)):
 		animation.play("idle")
-
+var stop = true
 func hardcoded_events():
 	match event_change.song:
 		"Uprising":
-			if (round(MusicController.songPositionMulti) == 58):
-				MusicController.change_bpm(120, 2.8) # bpm change also changes scroll speed to 2.8
+			if (round(MusicController.songPositionMulti) == 59):
+				if (stop):
+					stop = !stop # we dont want to stink ourseleves do we?
+					MusicController.change_bpm(120, 2.8) # bpm change also changes scroll speed to 2.8
+					EnemyCharacter = preload("res://Scenes/Characters/Dad.tscn") # changes the character to "dad"
+					setup_enemycharacter()
+					#yield(get_tree().create_timer(1), "timeout")
+					#stop = !stop 
+					# code above is if we wanna run the event mutiple times lol
 func spawn_notes():
 	if (notes == null || notes.empty()):
 		return
@@ -424,9 +431,21 @@ func get_letter_rating(accuracy):
 	
 	return chosenRating
 
-func icon_bop():
+func icon_bop(): # extra function that justs setups the enemy character
 	$HUD/HealthBar/Icons/AnimationPlayer.play("Bop")
-
+func setup_enemycharacter():
+	if (EnemyCharacter != null):
+		EnemyCharacter = EnemyCharacter.instance()
+		$Characters.add_child(EnemyCharacter)
+		
+		if (EnemyCharacter.girlfriendPosition):
+			EnemyCharacter.position = $Positions/Girlfriend.position
+		else:
+			EnemyCharacter.position = $Positions/Enemy.position
+			EnemyCharacter.flipX = !EnemyCharacter.flipX
+		
+		setup_icon($HUD/HealthBar/Icons/Enemy, EnemyCharacter)
+		$HUD/HealthBar.tint_under = EnemyCharacter.characterColor 
 func setup_characters():
 	if (GFCharacter != null):
 		GFCharacter = GFCharacter.instance()

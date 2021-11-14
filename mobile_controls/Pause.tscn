@@ -8,6 +8,7 @@
 script = ExtResource( 3 )
 
 [node name="confirm" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 24, 24 )
 scale = Vector2( 0.104167, 0.104167 )
 normal = ExtResource( 1 )

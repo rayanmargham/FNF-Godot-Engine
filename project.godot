@@ -611,6 +611,7 @@ Mapper="*res://AutoLoads/Mapper.gd"
 ToolKit="*res://Scenes/DEBUG/ToolKit.tscn"
 WFC="*res://AutoLoads/WFC.tscn"
 Resources="*res://AutoLoads/Resources.gd"
+Settings="*res://AutoLoads/Settings.gd"
 
 [display]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Voices.ogg-2532829c8839cf545a8280338c15584d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/spookeez/Voices.ogg"
+dest_files=[ "res://.import/Voices.ogg-2532829c8839cf545a8280338c15584d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

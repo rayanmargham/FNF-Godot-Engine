@@ -4,7 +4,7 @@ signal beat_hit()
 signal half_beat_hit()
 
 const SCROLL_DISTANCE = 1.6 # units
-const SCROLL_TIME = 6.80 # sec
+const SCROLL_TIME = 5.50 # sec
 
 const COUNTDOWN_SOUNDS = [preload("res://Assets/Stages/RhythmSystem/countdown/intro3.ogg"),
 						preload("res://Assets/Stages/RhythmSystem/countdown/intro2.ogg"),
@@ -75,7 +75,7 @@ func _process(delta):
 		
 	var countdownMulti = ((countdown / (bpm / 60)) * 2)
 	songPositionMulti = MusicStream.get_playback_position() - countdownMulti
-	if (menuSong):
+	if (menuSong and MusicController.playing):
 		beat_process(delta)
 		song_finished_check()
 	
@@ -133,6 +133,8 @@ func play_chart(song, difficulty, speed = 1):
 	if (songData["needsVoices"]):
 		VocalStream.stream = load(songPath + "/Voices.ogg")
 		VocalStream.pitch_scale = song_speed
+	else:
+		VocalStream.stream = null
 	
 	countdown = 2.8
 	useCountdown = true
@@ -144,11 +146,9 @@ func play_chart(song, difficulty, speed = 1):
 func change_bpm(newBpm, newScrollSpeed = null):
 	bpm = float(newBpm)
 	
-	beatCounter = 0
-	halfBeatCounter = 1
+	beatCounter = 1
 	if (newScrollSpeed != null):
 		scroll_speed = newScrollSpeed
-	beat_process(0)
 
 func create_notes():
 	notesFinished = false
@@ -168,7 +168,7 @@ func create_notes():
 		sections.append(sectionData)
 		
 		for note in section["sectionNotes"]:
-			var strum_time = note[0] / 1000
+			var strum_time = (note[0] + Settings.offset) / 1000
 			var sustain_length = int(note[2]) / 1000.0
 			var direction = int(note[1])
 
@@ -236,16 +236,16 @@ func countdown_process(delta):
 				play_countdown_sound(stream, COUNTDOWN_SOUNDS[0])
 			"3":
 				play_countdown_sound(stream, COUNTDOWN_SOUNDS[1])
-				countdownSprite.frame = 0
 				countdownSprite.visible = true
+				countdownSprite.frame = 0
 			"2":
 				play_countdown_sound(stream, COUNTDOWN_SOUNDS[2])
-				countdownSprite.frame = 1
 				countdownSprite.visible = true
+				countdownSprite.frame = 1
 			"1":
 				play_countdown_sound(stream, COUNTDOWN_SOUNDS[3])
-				countdownSprite.frame = 2
 				countdownSprite.visible = true
+				countdownSprite.frame = 2
 		
 		if (countdown <= 0):
 			start_song()
@@ -262,9 +262,10 @@ func start_song():
 	change_bpm(bpm)
 
 func play_countdown_sound(stream, snd):
-	if (stream.stream != snd):
-		stream.stream = snd
-		stream.play()
+	if (stream != null or snd != null):
+		if (stream.stream != snd):
+			stream.stream = snd
+			stream.play()
 
 func beat_process(delta):
 	beatCounter -= ((bpm / 60) * song_speed) * delta
@@ -279,7 +280,7 @@ func beat_process(delta):
 			halfBeatCounter = 0
 
 func song_finished_check():
-	if (!MusicStream.playing):
+	if (MusicStream.get_playback_position() >= MusicStream.stream.get_length()	):
 		if Resources.StoryMode:
 			if get_tree().current_scene.name == "PlayState" and countingDown == false and h == false and menuSong == false:
 				h = true
@@ -301,19 +302,14 @@ func stop_song():
 		MusicStream.stop()
 		VocalStream.stop()
 		VocalStream.stream = null
+		menuSong = false
+		useCountdown = false
 		beat_process(0)
 func load_song_json(song, difExt="", songPath = null):
 	if (songPath == null):
 		songPath = "res://Assets/Songs/" + song  + "/"
 	
 	var file = File.new()
-	if file.file_exists(songPath + song + difExt + ".json"):
-		print("Yez")
-	else:
-		print("no")
-		print(songPath + song + difExt + ".json")
-	var o = file.open(songPath + song + difExt + ".json", File.READ)
-	if o != OK:
-		print("sad")
+	file.open(songPath + song + difExt + ".json", File.READ)
 	
 	return JSON.parse(file.get_as_text()).result["song"]

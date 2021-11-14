@@ -36,6 +36,7 @@ export (float) var speed = 1
 var health = 50
 var score = 0
 var misses = 0
+var realMisses = 0
 var combo = 0
 
 var hitNotesArray = [] # all hit note timings
@@ -56,8 +57,8 @@ var event_change = {}
 func _ready():
 	# get the strums nodes
 	load_events()
-	setup_packed_characters()
-	yield(get_tree().create_timer(0.05), "timeout") # timer so we dont crash crap lol
+	yield(get_tree().create_timer(0.05), "timeout")
+	check_tutorial() # timer so we dont crash crap lol
 	set_process(true)
 	PlayerStrum = get_node(PlayerStrumPath)
 	EnemyStrum = get_node(EnemyStrumPath)
@@ -65,6 +66,7 @@ func _ready():
 	MusicStream = MusicController # get the music streams nodes
 	
 	setup_characters() # setup the characters positions and icons
+	check_offsets()
 	setup_strums() # setup the positions and stuff for strums
 	
 	rng.randomize() # randomize the rng variable's seed
@@ -93,7 +95,7 @@ func _process(_delta):
 	health_bar_process()
 
 func player_input():
-	if (PlayerStrum == null || Resources.botPlay):
+	if (PlayerStrum == null || Settings.botPlay):
 		return
 	
 	# ah
@@ -143,7 +145,7 @@ func button_logic(line, note):
 		
 		# if there is a note, play the hitsound and hit the note
 		if (curNote != null):
-			if (Resources.hitSounds):
+			if (Settings.hitSounds):
 				$Audio/HitsoundStream.play()
 			
 			curNote.note_hit(distance)
@@ -158,13 +160,14 @@ func button_logic(line, note):
 		# miss if pressed when there is no note
 		# also play the pressed animation
 		if (animation.assigned_animation == "idle"):
-			if (!Resources.ghostTapping):
+			if (!Settings.ghostTapping):
 				on_miss(true, note)
 			animation.play("pressed")
 	
 	# when the button is released, go back to the idle animation
 	if (Input.is_action_just_released(action)):
 		animation.play("idle")
+
 func hardcoded_events():
 	match event_change.song:
 		"Uprising":
@@ -185,7 +188,7 @@ func spawn_notes():
 		var sustain_length = note[2]
 		
 		spawn_note(direction, strum_time, sustain_length)
-
+		
 func get_section():
 	if (sections == null || sections.empty()):
 		return
@@ -259,31 +262,32 @@ func on_hit(must_hit, note_type, timing):
 	if (character != null):
 		var animName = player_sprite(note_type, "")
 		character.play(animName)
+		
+		if (Settings.cameraMovement):
+			if (must_hit && must_hit_section || !must_hit && !must_hit_section):
+				var offsetVector = character.camOffset
+				var intensity = 10
+				
+				match (note_type):
+					Note.Left:
+						if (character.flipX):
+							offsetVector.x += -intensity
+						else:
+							offsetVector.x += intensity
+					Note.Right:
+						if (character.flipX):
+							offsetVector.x += intensity
+						else:
+							offsetVector.x += -intensity
+					Note.Down:
+						offsetVector.y += intensity
+					Note.Up:
+						offsetVector.y += -intensity
 
-		if (must_hit && must_hit_section || !must_hit && !must_hit_section):
-			var offsetVector = character.camOffset
-			var intensity = 5
-			
-			match (note_type):
-				Note.Left:
-					if (character.flipX):
-						offsetVector.x += -intensity
-					else:
-						offsetVector.x += intensity
-				Note.Right:
-					if (character.flipX):
-						offsetVector.x += intensity
-					else:
-						offsetVector.x += -intensity
-				Note.Down:
-					offsetVector.y += intensity
-				Note.Up:
-					offsetVector.y += -intensity
-
-			if (character.flipX):
-				$Camera.position = character.position + Vector2(offsetVector.x, offsetVector.y)
-			else:
-				$Camera.position = character.position + Vector2(-offsetVector.x, offsetVector.y)
+				if (character.flipX):
+					$Camera.position = character.position + Vector2(offsetVector.x, offsetVector.y)
+				else:
+					$Camera.position = character.position + Vector2(-offsetVector.x, offsetVector.y)
 			
 	if (must_hit):
 		var rating = get_rating(timing)
@@ -319,10 +323,11 @@ func on_miss(must_hit, note_type, passed = false):
 	health -= 5.0
 	if (!passed):
 		score -= 10
-	misses += 1
+		misses += 1
+	else:
+		realMisses += 1
+		MusicController.muteVocals = true
 	combo = 0
-	print("miss")
-	MusicController.muteVocals = true
 
 func get_rating(timing):
 	# get the last rating in the array and set it to the default (the last rating is the best)
@@ -393,19 +398,21 @@ func health_bar_process():
 	var accuracyString = "N/A"
 	var letterRating = ""
 	if (!hitNotesArray.empty()):
-		var totalNotes = float(hitNotesArray.size() + misses)
+		var totalNotes = float(hitNotesArray.size() + realMisses)
 		var accuracy = round((float(hitNotesArray.size()) / totalNotes) * 100)
 		
 		accuracyString = str(accuracy) + "%"
 		letterRating = " [" + get_letter_rating(accuracy) + "]"
 	
-	$HUD/TextBar.text = "Health: " + str(health) + "% | Score: " + str(score) + " | Misses: " + str(misses) + " | " + accuracyString + letterRating
+	$HUD/TextBar.text = "Health: " + str(health) + "% | Score: " + str(score) + " | Misses: " + str(misses + realMisses) + " | " + accuracyString + letterRating
 	$HUD/Debug/Rating.text = str(combo)
-		
+	
+	$HUD/Background.color.a = Settings.backgroundOpacity
+			
 func get_letter_rating(accuracy):
 	var letterRatings = {"A+": 95, "A": 85, "B+": 77.5, "B": 72.5, "C+": 67.5, "C": 62.5, "D+": 57.5, "D": 52.5, "E": 45, "F": 20}
 	
-	if (misses == 0):
+	if (realMisses == 0):
 		return "FC"
 	
 	var chosenRating = letterRatings.keys()[letterRatings.keys().size()-1]
@@ -424,6 +431,7 @@ func setup_characters():
 	if (GFCharacter != null):
 		GFCharacter = GFCharacter.instance()
 		$Characters.add_child(GFCharacter)
+		
 		GFCharacter.position = $Positions/Girlfriend.position
 	
 	if (EnemyCharacter != null):
@@ -458,7 +466,7 @@ func setup_icon(node, character):
 	node.hframes = frames
 	
 func setup_strums():
-	if (Resources.downScroll):
+	if (Settings.downScroll):
 		PlayerStrum.position.y = 890
 		PlayerStrum.scale.y = -PlayerStrum.scale.y
 		
@@ -470,11 +478,11 @@ func setup_strums():
 		
 		$HUD/Debug.position.y += 50
 		
-	if (Resources.middleScroll):
+	if (Settings.middleScroll):
 		PlayerStrum.position.x = 675
 		
-		if (Resources.middleScrollPreview):
-			if (!Resources.downScroll):
+		if (Settings.middleScrollPreview):
+			if (!Settings.downScroll):
 				EnemyStrum.position = Vector2(145, 300)
 			else:
 				EnemyStrum.position = Vector2(145, 730)
@@ -482,31 +490,34 @@ func setup_strums():
 			EnemyStrum.scale = EnemyStrum.scale * 0.5
 		else:
 			EnemyStrum.visible = false
+	
+	for button in EnemyStrum.get_node("Buttons").get_children():
+		button.enemyStrum = true
 
 func create_rating(rating):
 	var ratingObj = RATING_SCENE.instance()
 	ratingObj.get_node("Sprite").frame = rating
 	
-	if (!Resources.hudRatings):
+	if (!Settings.hudRatings):
 		ratingObj.position = $Positions/Rating.position
 		$Ratings.add_child(ratingObj)
 	else:
-		ratingObj.position = Resources.hudRatingsOffset / 0.7
-		ratingObj.scale = Vector2(2, 2)
+		ratingObj.position = Settings.hudRatingsOffset / 0.7
+		ratingObj.get_node("Sprite").scale = Vector2(1, 1)
 		$HUD.add_child(ratingObj)
 
 func restart_playstate():
 	SceneLoader.change_playstate(song, difficulty, speed)
-func setup_packed_characters():
-	var json = MusicController.load_song_json(song, "-" + difficulty)
-	match json.player1:
-		"bf":
-			PlayerCharacter = preload("res://Scenes/Characters/Boyfriend.tscn")
-	match json.player2:
-		"gf":
-			EnemyCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")
-		"dad":
-			EnemyCharacter = preload("res://Scenes/Characters/Dad.tscn")
-			GFCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")
-		_:
-			GFCharacter = preload("res://Scenes/Characters/Girlfriend.tscn")
+func check_tutorial():
+	var temp = EnemyCharacter.instance()
+	match temp.name:
+		"Girlfriend":
+			GFCharacter = null
+			print("angry")
+	temp.queue_free()
+func check_offsets():
+	for i in $Characters.get_children():
+		match event_change.player2:
+			"spooky":
+				if i.name == "Girlfriend":
+					i.camOffset = Vector2(0, -200) # changes gf's offset to -200 cause shes off in spooky stage

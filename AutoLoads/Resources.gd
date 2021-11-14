@@ -18,17 +18,7 @@ var Alert:Resource
 var first_button_hover:Resource
 var first_button_selected:Resource
 var first_done:Resource
-# Settings
-var botPlay = false # plays the players side automatically
-var ghostTapping = false # allows the player to press keys without the miss penalty
-var hitSounds = true # play a sound when the player hits a note
 
-var hudRatings = false # display ratings on the hud layer
-var hudRatingsOffset = Vector2(640, 360) # if its a hud rating, move it by this offset
-
-var middleScroll = false
-var middleScrollPreview = false
-var downScroll = false
 var StoryMode = false
 var StoryWeek = 0
 var Track = ""
@@ -45,6 +35,7 @@ func reset_resource_data():
 	Resources.Track_Number = 0
 	Resources.Track_Length = 2
 	Resources.Week_Difficulty = "hard"
+
 
 func loadResources(JsonContainingLocations = "res://Assets/JSON&Text_Files/ResourceLocations.json"):
 	# you would do this in godot 4

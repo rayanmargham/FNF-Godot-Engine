@@ -31,10 +31,10 @@ func _process(delta):
 				lineedit.text = ""
 				command = "PRINT"
 				lineedit.placeholder_text = "PRINT WHAT?"
-			"LOADWEEK":
+			"LOADPLAYSTATE":
 				lineedit.text = ""
-				command = "SCENE"
-				lineedit.placeholder_text = "SCENE TO LOAD?"
+				command = "LOADPLAYSTATE"
+				lineedit.placeholder_text = "Song,Difficulty (No Spaces)"
 			"FUN IS INFINITE":
 				command = "FUN"
 				lineedit.text = ""
@@ -50,27 +50,32 @@ func _process(delta):
 				command = "WFC"
 				lineedit.text = ""
 				lineedit.placeholder_text = "PASSWORD?"
-
+func split(s: String, delimeters, allow_empty: bool = true) -> Array:
+	var parts := []
+	
+	var start := 0
+	var i := 0
+	
+	while i < s.length():
+		if s[i] in delimeters:
+			if allow_empty or start < i:
+				parts.push_back(s.substr(start, i - start))
+			start = i + 1
+		i += 1
+	
+	if allow_empty or start < i:
+		parts.push_back(s.substr(start, i - start))
+	
+	return parts
 
 func _on_LineEdit_text_entered(new_text):
 	match command:
-		"SCENE":
-			match lineedit.text:
-				"WEEK0":
-					SceneLoader.Load_Week(lineedit.text)
-					isup = false
-					animationplayer.play("down")
-					lineedit.placeholder_text = "LOADED SCENE"
-					lineedit.text = ""
-					yield(get_tree().create_timer(1), "timeout")
-					lineedit.placeholder_text = ""
-					command = ""
-			if SceneLoader.failed == true:
-				print("FAILED")
-				lineedit.placeholder_text = "FAILED TO LOAD THAT SCENE"
-				lineedit.text = ""
-				yield(get_tree().create_timer(1), "timeout")
+		"LOADPLAYSTATE":
+				SceneLoader.change_playstate(split(lineedit.text, ",", false)[0], split(lineedit.text, ",", false)[1])
+				isup = false
+				animationplayer.play("down")
 				lineedit.placeholder_text = ""
+				lineedit.text = ""
 				command = ""
 		"PRINT":
 			print(lineedit.text)

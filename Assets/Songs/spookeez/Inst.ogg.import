@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Inst.ogg-0f73667610c5c1bb3c31ba2fd0ee82b6.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/spookeez/Inst.ogg"
+dest_files=[ "res://.import/Inst.ogg-0f73667610c5c1bb3c31ba2fd0ee82b6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

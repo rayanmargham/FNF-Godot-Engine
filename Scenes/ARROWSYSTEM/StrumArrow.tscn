@@ -74,12 +74,11 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 hframes = 6
 vframes = 4
-frame = 5
 region_rect = Rect2( 310, 234, 153, 157 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-autoplay = "hit"
+autoplay = "idle"
 anims/RESET = SubResource( 2 )
 anims/hit = SubResource( 3 )
 anims/idle = SubResource( 1 )

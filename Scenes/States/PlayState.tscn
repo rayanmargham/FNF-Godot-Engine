@@ -61,9 +61,17 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 PlayerStrumPath = NodePath("HUD/PlayerStrumLine")
 EnemyStrumPath = NodePath("HUD/EnemyStrumLine")
-song = "dad-battle"
+song = "fresh-bf-remix"
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Ratings" type="Node" parent="HUD"]
 
@@ -193,7 +201,6 @@ position = Vector2( 704, 384 )
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
 current = true
-zoom = Vector2( 1.1, 1.1 )
 smoothing_enabled = true
 
 [node name="Characters" type="Node2D" parent="."]

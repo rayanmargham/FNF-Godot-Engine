@@ -53,4 +53,4 @@ func _on_ExitTimer_timeout():
 		1:
 			SceneLoader.Load("res://Scenes/Menus/Freeplay.tscn")
 		2:
-			SceneLoader.Load("res://Scenes/Menus/Options.tscn")
+			SceneLoader.Load("res://Scenes/States/OptionsState.tscn")

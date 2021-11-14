@@ -57,20 +57,35 @@ func idle_dance():
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play(get_idle_anim())
 	else:
-		var bpmSpeed = 1
-		if (idleDanceSpeed):
-			bpmSpeed = (MusicController.bpm / 150)
-		
-		if (lastIdleDance == "danceLEFT"):
-			$AnimationPlayer.play("danceRIGHT", -1, bpmSpeed)
-		elif (lastIdleDance == "danceRIGHT"):
-			$AnimationPlayer.play("danceLEFT", -1, bpmSpeed)
+		if ($AnimationPlayer.assigned_animation == "danceLEFT" || $AnimationPlayer.assigned_animation == "danceRIGHT"):
+			var bpmSpeed = 1
+			if (idleDanceSpeed):
+				bpmSpeed = (MusicController.bpm * MusicController.song_speed) / 120
 			
-		lastIdleDance = $AnimationPlayer.assigned_animation
+			if (lastIdleDance == "danceLEFT"):
+				$AnimationPlayer.play("danceRIGHT", -1, bpmSpeed)
+			elif (lastIdleDance == "danceRIGHT"):
+				$AnimationPlayer.play("danceLEFT", -1, bpmSpeed)
+				
+			lastIdleDance = $AnimationPlayer.assigned_animation
 			
 func _on_AnimationPlayer_animation_finished(anim_name):
+	if Engine.editor_hint:
+		return
+	
 	if (anim_name != get_idle_anim()):
-		$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
+		if (get_idle_anim() == "idle"):
+			$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
+		else:
+			match (anim_name):
+				"singRIGHT":
+					$AnimationPlayer.play("danceRIGHT")
+					lastIdleDance = "danceLEFT"
+				"singLEFT":
+					$AnimationPlayer.play("danceLEFT")
+					lastIdleDance = "danceRIGHT"
+				_:
+					$AnimationPlayer.play(lastIdleDance)
 
 func get_idle_anim():
 	if (idleDance):

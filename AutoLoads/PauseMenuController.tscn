@@ -1,17 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://AutoLoads/PauseMenuController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/Music&Sounds/breakfast.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Menus/Music&Sounds/fard.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/Nodes/ChoiceMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Nodes/OptionsMenu.tscn" type="PackedScene" id=6]
 
 [node name="PauseMenu" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -24,7 +22,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="PauseMenu" type="Node2D" parent="CanvasLayer"]
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu"]
 margin_left = 729.0
 margin_top = 13.0
 margin_right = 1268.0
@@ -37,7 +37,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" parent="CanvasLayer" instance=ExtResource( 5 )]
+[node name="Options" parent="CanvasLayer/PauseMenu" instance=ExtResource( 5 )]
+
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="launchbox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [node name="fard" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -45,4 +51,4 @@ volume_db = -1.0
 
 [node name="Tween" type="Tween" parent="."]
 
-[connection signal="option_selected" from="CanvasLayer/Options" to="." method="option_selected"]
+[connection signal="option_selected" from="CanvasLayer/PauseMenu/Options" to="." method="option_selected"]

@@ -133,7 +133,7 @@ position = Vector2( 640, 142 )
 scale = Vector2( 1.1, 1.1 )
 z_index = -3
 frames = SubResource( 3 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Freeplay" type="AnimatedSprite" parent="."]
@@ -141,7 +141,7 @@ position = Vector2( 640, 359 )
 scale = Vector2( 1.1, 1.1 )
 z_index = -3
 frames = SubResource( 4 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="options" type="AnimatedSprite" parent="."]
@@ -149,6 +149,7 @@ position = Vector2( 640, 600 )
 scale = Vector2( 1.1, 1.1 )
 z_index = -3
 frames = SubResource( 5 )
+frame = 7
 playing = true
 
 [node name="ExitTimer" type="Timer" parent="."]

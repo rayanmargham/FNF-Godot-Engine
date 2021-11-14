@@ -30,7 +30,7 @@ func _on_Tween_tween_completed(_object, _key):
 		if (missed):
 			note_miss(true)
 		
-		if (!must_hit || Resources.botPlay):
+		if (!must_hit || Settings.botPlay):
 			note_hit(0)
 		else:
 			missed = true
@@ -48,7 +48,7 @@ func note_hit(timing):
 	
 func note_miss(passed):
 	playState.on_miss(must_hit, note_type, passed)
-	print("miss lmao")
+	
 	queue_free()
 
 func _process(_delta):
@@ -56,7 +56,7 @@ func _process(_delta):
 		$Tween.remove_all()
 		note_miss(true)
 	
-	if (Resources.downScroll):
+	if (Settings.downScroll):
 		scale.y = -1
 	
 	$Sprite.frame = note_type * 2

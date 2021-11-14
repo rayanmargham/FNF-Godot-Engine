@@ -10,41 +10,29 @@ export var optionOffset = Vector2(20, 145)
 
 export var enabled = true
 
-onready var moveStream = AudioStreamPlayer.new()
 
 var selected = 0
 var optionsOffset = Vector2(0, 0)
 var offset = Vector2.ZERO
 
-func _ready():
-	add_child(moveStream)
-	SoundController.Play_sound("scrollMenu")
+
 
 func _process(_delta):
 	update()
 	
 	if (enabled):
-		var move = int(Input.is_action_just_pressed("down")) - int(Input.is_action_just_pressed("up"))
-		selected += move
-		
-		if (selected > options.size() - 1):
-			selected = 0
-			move = -move
-		elif (selected < 0):
-			selected = options.size() - 1
-			move = -move
-			
-		if (move != 0):
-			offset = Vector2(optionsOffset.x * move, optionsOffset.y * move)
-			moveStream.play()
+		move_option()
 			
 		if (Input.is_action_just_pressed("confirm")):
 			emit_signal("option_selected", selected)
 	
-	offset = lerp(offset, Vector2.ZERO, 0.2)
-	optionsOffset = lerp(optionsOffset, optionOffset, 0.1)
+	offset = lerp(offset, Vector2.ZERO, 20 * _delta)
+	optionsOffset = lerp(optionsOffset, optionOffset, 10 * _delta)
 	
 func _draw():
+	draw_options()
+
+func draw_options():
 	var idx = 0
 	for option in options:
 		var sIdx = idx - selected
@@ -57,3 +45,18 @@ func _draw():
 		
 		draw_string(FONT, position + Vector2((sIdx * optionsOffset.x) + 70, (sIdx * optionsOffset.y) + 320) + offset, option.to_upper(), color)
 		idx += 1
+
+func move_option():
+	var move = int(Input.is_action_just_pressed("down")) - int(Input.is_action_just_pressed("up"))
+	selected += move
+	
+	if (selected > options.size() - 1):
+		selected = 0
+		move = -move
+	elif (selected < 0):
+		selected = options.size() - 1
+		move = -move
+		
+	if (move != 0):
+		offset = Vector2(optionsOffset.x * move, optionsOffset.y * move)
+		SoundController.Play_sound("scrollMenu")

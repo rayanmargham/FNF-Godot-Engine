@@ -4,42 +4,27 @@ extends Control
 enum week {
 	TUTORIAL,
 	WEEK1,
-	WEEK2,
-	WEEK3,
-	WEEK4,
-	WEEK5,
-	WEEK6,
-	WEEK7
+	WEEK2
 }
 var week_strings = [
 	"Tutorial",
 	"Week1",
-	"Week2",
-	"Week3",
-	"Week4",
-	"Week5",
-	"Week6",
-	"Week7"
+	"Week2"
 ]
 var week_Tracks = [
 	["TUTORIAL", "", ""],
 	["BOPEEBO", "FRESH", "DAD-BATTLE"],
-	["SPOOKEEZ", "SOUTH", "MONSTER"],
-	["PICO", "PHILLY", "BLAMMED"],
-	["SATIN-PANTIES", "HIGH", "MILF"],
-	["COCOA", "EGGNOG", "WINTER-HORRORLAND"],
-	["SENPAI", "ROSES", "THORNS"],
-	["CUM", "CUM", "CUM"]
+	["SPOOKEEZ", "SOUTH", ""]
+]
+var week_sizes = [
+	1,
+	3,
+	2
 ]
 var week_Titles = [
 	["Tutorial"],
 	["Daddy Dearest"],
-	["Skid and Pump"],
-	["Pico"],
-	["Mummy Mearest"],
-	["Red Snow"],
-	["Hate Simulator"],
-	["Tankman's Cum Session"]
+	["Skid n' Pump"]
 ]
 enum difficulty {
 	EASY,
@@ -83,11 +68,11 @@ func _input(event):
 	if event.is_action_pressed("ui_up"):
 		if lock == false:
 			SoundController.Play_sound("scrollMenu")
-			Selected_Week = posmod(Selected_Week-1, 8)
+			Selected_Week = posmod(Selected_Week-1, 3)
 	if event.is_action_pressed("ui_down"):
 		if lock == false:
 			SoundController.Play_sound("scrollMenu")
-			Selected_Week = posmod(Selected_Week+1, 8)
+			Selected_Week = posmod(Selected_Week+1, 3)
 
 	# Enter and Cancel
 	if event.is_action_pressed("ui_cancel"):
@@ -109,7 +94,7 @@ func _input(event):
 			Resources.StoryWeek = Selected_Week
 			Resources.Track = week_Tracks[Selected_Week][0]
 			Resources.Track_Number = 0
-			Resources.Track_Length = week_Tracks[Selected_Week].size() - 1
+			Resources.Track_Length = week_sizes[Selected_Week] - 1
 			print("Week Track Amount: " + str(Resources.Track_Length))
 			Resources.show_menu = false
 
@@ -147,8 +132,10 @@ func _process(_delta):
 			$"FrontLayer/Track Title".text = week_Titles[0][0]
 		1:
 			$FrontLayer/Opponent.show()
+			$FrontLayer/Opponent.animation = "dad"
 			$"FrontLayer/Track Title".text = week_Titles[1][0]
 		2:
+			$FrontLayer/Opponent.animation = "spooky"
 			$"FrontLayer/Track Title".text = week_Titles[2][0]
 		3:
 			$"FrontLayer/Track Title".text = week_Titles[3][0]
@@ -187,11 +174,11 @@ func _ready():
 					Resources.Track_Number = 0
 					Resources.show_menu = true
 	if Resources.show_menu:
-		if not MusicController.playing:
+		Resources.StoryMode = false
+		if not MusicController.playing or MusicController.stream != Resources.FreakyMenu:
 			MusicController.stop_song()
 			var freaky = load("res://Assets/Menus/Music&Sounds/freakyMenu.ogg")
 			MusicController.play_song(freaky, 102)
-			Resources.StoryMode = false
 			#MusicController.play_song(freaky, 102)
 		MusicController.connect("beat_hit", self, "_beat_hit")
 		MusicController.connect("half_beat_hit", self, "_half_beat")

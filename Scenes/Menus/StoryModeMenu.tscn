@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://Scripts/Menus/StoryModeMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/arrow push left/arrow push left.png" type="Texture" id=2]
@@ -98,6 +98,22 @@
 [ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=96]
 [ext_resource path="res://mobile_controls/Scroll.tscn" type="PackedScene" id=97]
 [ext_resource path="res://mobile_controls/GoBack.tscn" type="PackedScene" id=98]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0003.png" type="Texture" id=99]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0008.png" type="Texture" id=100]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0004.png" type="Texture" id=101]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0010.png" type="Texture" id=102]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0011.png" type="Texture" id=103]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0013.png" type="Texture" id=104]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0007.png" type="Texture" id=105]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0014.png" type="Texture" id=106]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0012.png" type="Texture" id=107]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0001.png" type="Texture" id=108]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0015.png" type="Texture" id=109]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0005.png" type="Texture" id=110]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0016.png" type="Texture" id=111]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0002.png" type="Texture" id=112]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0006.png" type="Texture" id=113]
+[ext_resource path="res://Assets/Menus/AnimatedSprites/Kade Engine sussy stuff/spooky_ui/spookydance0009.png" type="Texture" id=114]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -196,6 +212,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ ExtResource( 108 ), ExtResource( 112 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 110 ), ExtResource( 113 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 114 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 107 ), ExtResource( 104 ), ExtResource( 106 ), ExtResource( 109 ), ExtResource( 111 ) ],
+"loop": false,
+"name": "spooky",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 85 ), ExtResource( 87 ), ExtResource( 81 ), ExtResource( 92 ), ExtResource( 94 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 86 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 93 ), ExtResource( 82 ), ExtResource( 83 ) ],
 "loop": false,
 "name": "dad",
@@ -352,51 +373,6 @@ text = "WEEK 2"
 align = 1
 valign = 1
 
-[node name="Week3" type="Label" parent="MainLayer/Weeks"]
-margin_top = 261.0
-margin_right = 413.0
-margin_bottom = 344.0
-custom_fonts/font = SubResource( 6 )
-text = "WEEK 3"
-align = 1
-valign = 1
-
-[node name="Week4" type="Label" parent="MainLayer/Weeks"]
-margin_top = 348.0
-margin_right = 413.0
-margin_bottom = 431.0
-custom_fonts/font = SubResource( 6 )
-text = "WEEK 4"
-align = 1
-valign = 1
-
-[node name="Week5" type="Label" parent="MainLayer/Weeks"]
-margin_top = 435.0
-margin_right = 413.0
-margin_bottom = 518.0
-custom_fonts/font = SubResource( 6 )
-text = "WEEK 5"
-align = 1
-valign = 1
-
-[node name="Week6" type="Label" parent="MainLayer/Weeks"]
-margin_top = 522.0
-margin_right = 413.0
-margin_bottom = 605.0
-custom_fonts/font = SubResource( 6 )
-text = "WEEK 6"
-align = 1
-valign = 1
-
-[node name="Week7" type="Label" parent="MainLayer/Weeks"]
-margin_top = 609.0
-margin_right = 413.0
-margin_bottom = 692.0
-custom_fonts/font = SubResource( 6 )
-text = "WEEK 7"
-align = 1
-valign = 1
-
 [node name="FrontLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -430,9 +406,7 @@ position = Vector2( 200, 216 )
 scale = Vector2( 0.361352, 0.361352 )
 frames = SubResource( 9 )
 animation = "dad"
-frame = 13
 speed_scale = 6.0
-playing = true
 
 [node name="LetterBlocker" type="ColorRect" parent="FrontLayer"]
 margin_left = -48.0

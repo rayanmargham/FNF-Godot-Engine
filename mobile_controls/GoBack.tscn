@@ -5,10 +5,10 @@
 [ext_resource path="res://Assets/mobile_icons/Pressed Icons/door.png" type="Texture" id=3]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-layer = 2
+layer = 3
 script = ExtResource( 2 )
 
-[node name="GoBack" type="TouchScreenButton" parent="."]
+[node name="cancel" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( 32, 32 )
 scale = Vector2( 0.083, 0.083 )

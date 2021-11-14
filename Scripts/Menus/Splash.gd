@@ -9,7 +9,7 @@ extends Control
 
 func Switch_To_Into():
 	SoundController.Stop_sound()
-	var intro = load("res://Scenes/Menus/Intro.tscn")
+	var intro = preload("res://Scenes/Menus/Intro.tscn")
 	get_tree().change_scene_to(intro)
 func transition_to_start():
 	$Splash/Event_Anim.play("loadstart")
@@ -26,5 +26,11 @@ func start_load():
 	$Splash/Event_Anim.play("loadend")
 func _ready():
 	Resources.loadResources()
+	if (Settings.Splash):
+		$Splash/Event_Anim.play("Splash")
+	else:
+		yield(get_tree().create_timer(1), "timeout")
+		var intro = preload("res://Scenes/Menus/Intro.tscn")
+		get_tree().change_scene_to(intro)
 	if OS.window_fullscreen == true:
 		OS.window_fullscreen = false

@@ -10,7 +10,7 @@
 layer = 2
 script = ExtResource( 5 )
 
-[node name="Up" type="TouchScreenButton" parent="."]
+[node name="up" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( 128, 288 )
 scale = Vector2( 0.17, 0.17 )
@@ -18,7 +18,7 @@ normal = ExtResource( 3 )
 pressed = ExtResource( 2 )
 action = "ui_up"
 
-[node name="Down" type="TouchScreenButton" parent="."]
+[node name="down" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( 128, 576 )
 scale = Vector2( 0.17, 0.17 )

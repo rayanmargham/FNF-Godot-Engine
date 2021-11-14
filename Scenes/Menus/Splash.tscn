@@ -424,7 +424,6 @@ scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 2 )
 
 [node name="Event_Anim" type="AnimationPlayer" parent="Splash"]
-autoplay = "Splash"
 anims/RESET = SubResource( 7 )
 anims/Splash = SubResource( 1 )
 anims/loadend = SubResource( 2 )

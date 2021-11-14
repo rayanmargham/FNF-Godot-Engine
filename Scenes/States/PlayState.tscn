@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/States/PlayState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Stages/Characters/Icons/icon-bf.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Stages/RhythmSystem/UI/ready_set_go_sheet.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/ARROWSYSTEM/StrumLine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://mobile_controls/Arrow_Controls.tscn" type="PackedScene" id=8]
+[ext_resource path="res://mobile_controls/Pause.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Bop"
@@ -175,6 +177,10 @@ position = Vector2( 640, 360 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 6 )
 hframes = 3
+
+[node name="Arrow_Controls" parent="HUD" instance=ExtResource( 8 )]
+
+[node name="Pause" parent="HUD" instance=ExtResource( 9 )]
 
 [node name="Audio" type="Node2D" parent="."]
 

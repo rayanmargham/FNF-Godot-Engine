@@ -509,12 +509,13 @@ func create_rating(rating):
 func restart_playstate():
 	SceneLoader.change_playstate(song, difficulty, speed)
 func check_tutorial():
-	var temp = EnemyCharacter.instance()
-	match temp.name:
-		"Girlfriend":
-			GFCharacter = null
-			print("angry")
-	temp.queue_free()
+	if EnemyCharacter != null:
+		var temp = EnemyCharacter.instance()
+		match temp.name:
+			"Girlfriend":
+				GFCharacter = null
+				print("angry")
+		temp.queue_free()
 func check_offsets():
 	for i in $Characters.get_children():
 		match event_change.player2:

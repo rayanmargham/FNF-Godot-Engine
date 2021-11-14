@@ -12,6 +12,7 @@ var options = {
 		"DOWNSCROLL": ["downScroll", "Makes the notes move down instead of up.", false],
 		"MIDDLESCROLL": ["middleScroll", "Moves your strumline to the middle.", false],
 		"ENEMY MIDDLESCROLL": ["middleScrollPreview", "Shows a smaller version of the enemys side on the left.", false],
+		"LINUX SPLASH": ["Splash", "Disables the Splash at start-up.", true],
 	},
 	"APPEARENCE": {
 		"HUD RATINGS": ["hudRatings", "Show the ratings on the HUD layer instead of the GAME layer.", true],

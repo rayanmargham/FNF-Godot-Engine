@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Nodes/ChoiceMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Menus/Freeplay.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBGBlue.png" type="Texture" id=4]
+[ext_resource path="res://mobile_controls/Scroll_Hoz.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mobile_controls/Scroll.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mobile_controls/GoBack.tscn" type="PackedScene" id=7]
+[ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=8]
 
 [node name="Freeplay" type="Node2D"]
 script = ExtResource( 3 )
@@ -16,6 +20,14 @@ texture = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ChoiceMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="CanvasLayer" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="CanvasLayer2" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="CanvasLayer3" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="CanvasLayer4" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_left = 729.0

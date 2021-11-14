@@ -11,6 +11,9 @@ func _ready():
 	if OS.get_name() == "Android":
 		OS.request_permissions()
 		for i in get_children():
-			if get_tree().current_scene.name == "PlayState" or get_tree().current_scene.name == "Freeplay":
-				i.action = i.name
-			i.visible = true
+			if i.name in ["left", "down", "up", "right"]:
+				i.visible = true
+				i.connect("pressed", self, "_pressed")
+func _pressed():
+	$AnimationPlayer.stop(true)
+	$AnimationPlayer.play("hit")

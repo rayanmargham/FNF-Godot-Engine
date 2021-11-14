@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/mobile_icons/Icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://Assets/mobile_icons/Pressed Icons/pause.png" type="Texture" id=2]
+[ext_resource path="res://mobile_controls/Handler.gd" type="Script" id=3]
+
+[node name="Pause" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="confirm" type="TouchScreenButton" parent="."]
+position = Vector2( 24, 24 )
+scale = Vector2( 0.104167, 0.104167 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "confirm"

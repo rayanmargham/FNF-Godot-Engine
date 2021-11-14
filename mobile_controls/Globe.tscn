@@ -8,7 +8,7 @@
 layer = 2
 script = ExtResource( 2 )
 
-[node name="Globe" type="TouchScreenButton" parent="."]
+[node name="I" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( 1032, 164 )
 scale = Vector2( 0.24, 0.24 )

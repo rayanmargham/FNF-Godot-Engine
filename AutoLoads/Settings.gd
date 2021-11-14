@@ -11,6 +11,7 @@ var backgroundOpacity = 0
 var middleScroll = false
 var middleScrollPreview = false
 var downScroll = false
+var Splash = true
 
 var cameraMovement = true
 

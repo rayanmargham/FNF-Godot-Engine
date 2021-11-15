@@ -22,6 +22,7 @@ In a Song Folder there should be Inst.ogg, Vocals.ogg, song-name-easy.json, song
 Pretty Simple Right?
 
 Here's what a Song Folder should look like: ![Image2](Image2.png)
+
 Ignore the .Import Files Godot automatically adds those.
 
 Once you add your Song it should show up in FreePlay and play normally.

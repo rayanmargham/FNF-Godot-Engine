@@ -186,13 +186,13 @@ func hardcoded_events():
 			if (round(MusicController.songPositionMulti) == 143):
 				print("yra")
 				if (stop):
-					stop = !stop
-					h.dialog_text = "she can't do anything"
-					h.window_title = "you heard her"
-					$HUD.add_child(h)
-					h.popup_centered()
-			elif (round(MusicController.songPositionMulti) == 144):
-				h.queue_free()
+					for i in $Characters.get_children():
+						if i.name == "TaeYai":
+							i.get_node("AnimatedSprite").stop()
+							i.get_node("AnimatedSprite").frame = 0
+							i.get_node("AnimatedSprite").play("ido")
+			elif (round(MusicController.songPositionMulti) == 146):
+				h.hide()
 func spawn_notes():
 	if (notes == null || notes.empty()):
 		return

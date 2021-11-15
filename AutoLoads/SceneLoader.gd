@@ -19,7 +19,8 @@ const CHARACTERS = {
 	"gf": preload("res://Scenes/Characters/Girlfriend.tscn"),
 	"dad": preload("res://Scenes/Characters/Dad.tscn"),
 	"spooky": preload("res://Scenes/Characters/Spooky_Kids.tscn"),
-	"taeyai": preload("res://Scenes/Characters/TaeYai.tscn")
+	"taeyai": preload("res://Scenes/Characters/Mods/TaeYai.tscn"),
+	"taeyai-evil": preload("res://Scenes/Characters/Mods/TaeYai-evil.tscn")
 }
 var difficultys = ["EASY", "NORMAL", "HARD"]
 func _ready():

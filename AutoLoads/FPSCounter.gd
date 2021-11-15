@@ -20,17 +20,7 @@ func _process(_delta: float) -> void:
 
 	# Display FPS in the label
 	$CanvasLayer/RichTextLabel.bbcode_text = "FPS: " + str(fps)
-func _unhandled_input(event):
-	if event.is_action_pressed("J"):
-		if SceneLoader.isweek == false:
-			SceneLoader.ResetGame()
-		else:
-			if debug == false:
-				print("DEBUG IS NOW ON")
-				debug = true
-			else:
-				print("DEBUG IS NOW OFF")
-				debug = false
+
 func HideCounter():
 	if $CanvasLayer/Tween.is_active() == false:
 		$CanvasLayer/Tween.interpolate_property($CanvasLayer/RichTextLabel, "modulate:a", 1, 0, 0.3, Tween.TRANS_QUAD, Tween.EASE_IN)

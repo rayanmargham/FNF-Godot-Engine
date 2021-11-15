@@ -12,8 +12,8 @@ animations = [ {
 
 [node name="XML_To_SpriteFrames" type="Node2D"]
 script = ExtResource( 1 )
-load_path = "res://Assets/Stages/Characters/TaeYai/Taeyai"
-save_path = "res://Assets/Stages/Characters/TaeYai/"
+load_path = "res://Assets/Stages/Characters/TaeYai-evil/Taeyai_fly"
+save_path = "res://Assets/Stages/Characters/TaeYai-evil/"
 optimize = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

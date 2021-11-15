@@ -8,15 +8,12 @@ export (bool) var idleDance = false
 export (bool) var idleDanceSpeed = false
 export (Vector2) var camOffset = Vector2(0, 0)
 export (bool) var girlfriendPosition = false
-
 export (Resource) var iconSheet = preload("res://Assets/Stages/Characters/Icons/icon-face.png")
 export (Color) var characterColor = Color.yellow
 
 var lastIdleDance = null
 
 func _ready():
-	Resources.loadResources()
-	MusicController.play_song(Resources.FreakyMenu, 158, 1, true)
 	if Engine.editor_hint:
 		return
 	
@@ -28,6 +25,7 @@ func _ready():
 		
 	if (flipX):
 		camOffset.x = -camOffset.x
+	
 
 func _process(_delta):
 	if (flipX):
@@ -40,6 +38,7 @@ func _process(_delta):
 
 func play(animName):
 	$AnimatedSprite.stop()
+	$AnimatedSprite.frame = 0
 	if (flipX):
 		match (animName):
 			"singLEFT":
@@ -56,6 +55,7 @@ func idle_dance():
 	if (get_idle_anim() == "idle"):
 		if ($AnimatedSprite.animation == get_idle_anim()):
 			$AnimatedSprite.stop()
+			$AnimatedSprite.frame = 0
 			$AnimatedSprite.play(get_idle_anim())
 	else:
 		if ($AnimatedSprite.animation == "danceLEFT" || $AnimatedSprite.animation == "danceRIGHT"):

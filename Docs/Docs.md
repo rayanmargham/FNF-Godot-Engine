@@ -45,7 +45,7 @@ Character Scenes are located in Scenes/Characters, They look like this.
 
 The Scenes end in the .tscn format the .gd Files are scripts.
 
-to Create a Charater Right-Click on Either Characters or Characters/Mods and Click "Create New Scene"
+to Create a Character Right-Click on Either Characters or Characters/Mods and Click "Create New Scene"
 
 a New Scene Should be Created.
 

@@ -39,6 +39,7 @@ var misses = 0
 var realMisses = 0
 var combo = 0
 
+
 var hitNotesArray = [] # all hit note timings
 
 # arrays holding the waiting for notes and sections
@@ -80,7 +81,7 @@ func _ready():
 
 func _process(_delta):
 	player_input() # handle the players input
-	
+	print("Song Pos: " + str(MusicController.songPositionMulti))
 	spawn_notes() # create the needed notes
 	get_section() # get the current section
 	hardcoded_events() # check for hardcoded events to perform
@@ -168,6 +169,7 @@ func button_logic(line, note):
 	if (Input.is_action_just_released(action)):
 		animation.play("idle")
 var stop = true
+var h = AcceptDialog.new()
 func hardcoded_events():
 	match event_change.song:
 		"Uprising":
@@ -180,6 +182,17 @@ func hardcoded_events():
 					#yield(get_tree().create_timer(1), "timeout")
 					#stop = !stop 
 					# code above is if we wanna run the event mutiple times lol
+		"Last-Hope":
+			if (round(MusicController.songPositionMulti) == 143):
+				print("yra")
+				if (stop):
+					stop = !stop
+					h.dialog_text = "she can't do anything"
+					h.window_title = "you heard her"
+					$HUD.add_child(h)
+					h.popup_centered()
+			elif (round(MusicController.songPositionMulti) == 144):
+				h.queue_free()
 func spawn_notes():
 	if (notes == null || notes.empty()):
 		return
@@ -199,15 +212,16 @@ func spawn_notes():
 func get_section():
 	if (sections == null || sections.empty()):
 		return
-	
 	var section = sections[0]
-	
 	if MusicStream.get_playback_position() >= section[0]:
 		if (sections.has(section)):
 			sections.erase(section)
-			
+#		if bpmData != 0:
+#			if bpmData != event_change.bpm:
+#				event_change.bpm = bpmData
+#				print("New bpm change BUDDY")
+#				MusicController.change_bpm(bpmData)
 		var character
-		
 		must_hit_section = section[1]
 		if (must_hit_section):
 			if (PlayerCharacter != null):
@@ -215,7 +229,6 @@ func get_section():
 		else:
 			if (EnemyCharacter != null):
 				character = EnemyCharacter
-		
 		if (character != null):
 			if (character.flipX):
 				$Camera.position = character.position + character.camOffset
@@ -486,14 +499,14 @@ func setup_icon(node, character):
 	
 func setup_strums():
 	if (Settings.downScroll):
-		PlayerStrum.position.y = 890
+		PlayerStrum.position.y = 650
 		PlayerStrum.scale.y = -PlayerStrum.scale.y
 		
-		EnemyStrum.position.y = 890
+		EnemyStrum.position.y = 650
 		EnemyStrum.scale.y = -EnemyStrum.scale.y
 		
 		$HUD/HealthBar.rect_position.y = 100
-		$HUD/TextBar.rect_position.y = 50
+		$HUD/TextBar.rect_position.y = 10
 		
 		$HUD/Debug.position.y += 50
 		
@@ -512,7 +525,8 @@ func setup_strums():
 	
 	for button in EnemyStrum.get_node("Buttons").get_children():
 		button.enemyStrum = true
-
+#func events():
+#	if event_change.bpm
 func create_rating(rating):
 	var ratingObj = RATING_SCENE.instance()
 	ratingObj.get_node("Sprite").frame = rating
@@ -541,3 +555,7 @@ func check_offsets():
 			"spooky":
 				if i.name == "Girlfriend":
 					i.camOffset = Vector2(0, -200) # changes gf's offset to -200 cause shes off in spooky stage
+			"taeyai-evil":
+				if i.name == "Girlfriend":
+					GFCharacter = null
+					i.queue_free()

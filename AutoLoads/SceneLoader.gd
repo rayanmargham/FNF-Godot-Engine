@@ -10,14 +10,16 @@ onready var animationplayer = $CanvasLayer/AnimationPlayer
 # warnings-disable
 const STAGES = {
 	"stage": preload("res://Scenes/Stages/Week0.tscn"),
-	"halloween": preload("res://Scenes/Stages/Spooky.tscn")
+	"halloween": preload("res://Scenes/Stages/Spooky.tscn"),
+	"lastroom": preload("res://Scenes/Stages/Mods/CyberFinal.tscn")
 }
 const CHARACTERS = {
 #	"test": preload("res://Scenes/Objects/Character.tscn"),
 	"bf": preload("res://Scenes/Characters/Boyfriend.tscn"),
 	"gf": preload("res://Scenes/Characters/Girlfriend.tscn"),
 	"dad": preload("res://Scenes/Characters/Dad.tscn"),
-	"spooky": preload("res://Scenes/Characters/Spooky_Kids.tscn")
+	"spooky": preload("res://Scenes/Characters/Spooky_Kids.tscn"),
+	"taeyai": preload("res://Scenes/Characters/TaeYai.tscn")
 }
 var difficultys = ["EASY", "NORMAL", "HARD"]
 func _ready():

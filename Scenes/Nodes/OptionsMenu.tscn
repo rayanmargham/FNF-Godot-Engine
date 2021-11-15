@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Nodes/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Nodes/ChoiceMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/font_alphabet.tres" type="BitmapFont" id=3]
 [ext_resource path="res://Assets/Fonts/vcr.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scenes/Nodes/ValueEdit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Nodes/OptionsChoiceMenu.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -16,6 +17,9 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="ChoiceMenu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 60 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 6 )
 
 [node name="TopBar" type="Node2D" parent="."]
 

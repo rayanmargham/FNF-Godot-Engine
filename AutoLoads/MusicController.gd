@@ -158,13 +158,11 @@ func create_notes():
 	var temp_array = []
 	var section_array = []
 	var last_note
-	
 	var sections = []
 	
 	for section in songData["notes"]:
 		var section_time = (((60 / bpm) / 4) * 16) * sections.size()
 		var sectionData = [section_time, section["mustHitSection"]]
-		
 		sections.append(sectionData)
 		
 		for note in section["sectionNotes"]:
@@ -213,7 +211,6 @@ func create_notes():
 		
 		strum_times.remove(0)
 		temp_array.remove(index)
-		
 	playState.notes = notes
 	playState.sections = sections
 	

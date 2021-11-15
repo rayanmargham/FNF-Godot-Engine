@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Tools/XML_To_SpriteFrames.gd" type="Script" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="XML_To_SpriteFrames" type="Node2D"]
+script = ExtResource( 1 )
+load_path = "res://Assets/Stages/Characters/TaeYai/Taeyai"
+save_path = "res://Assets/Stages/Characters/TaeYai/"
+optimize = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )

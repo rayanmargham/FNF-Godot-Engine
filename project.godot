@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "Animated_Character",
+"language": "GDScript",
+"path": "res://Scenes/Characters/AnimatedSpriteCharacter.gd"
+}, {
+"base": "Node2D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://Scenes/Characters/Character.gd"
@@ -490,6 +495,7 @@ _global_script_classes=[ {
 "path": "res://addons/shaderV/tools/vec2Compose.gd"
 } ]
 _global_script_class_icons={
+"Animated_Character": "",
 "Character": "",
 "ChoiceMenu": "",
 "SpriteFontGenButtonProp": "",

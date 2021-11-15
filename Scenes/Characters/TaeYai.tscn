@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Characters/AnimatedSpriteCharacter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Stages/Characters/TaeYai/TaeYai.res" type="SpriteFrames" id=2]
+
+[node name="TaeYai" type="Node2D"]
+scale = Vector2( -1, 1 )
+script = ExtResource( 1 )
+flipX = true
+idleDance = true
+camOffset = Vector2( 100, -400 )
+characterColor = Color( 0, 1, 0.905882, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "idle"
+offset = Vector2( 0, -300 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

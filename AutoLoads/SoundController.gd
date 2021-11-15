@@ -49,8 +49,8 @@ func Play_sound(sound = "LinuxSplash"):
 			target = Resources.SplashSound
 		"Alert":
 			target = Resources.Alert
-			# go on 30
-			volume = 30
+			# go on 20
+			volume = 20
 		"first_button_hover":
 			
 			target = Resources.first_button_hover
@@ -66,6 +66,7 @@ func Play_sound(sound = "LinuxSplash"):
 		
 	var new_sound = AudioStreamPlayer.new()
 	new_sound.stream = target
+	new_sound.volume_db = volume
 	add_child(new_sound)
 	new_sound.play()
 	yield(new_sound, "finished")

@@ -6,12 +6,9 @@ extends Node2D
 export(String) var load_path = "res://"
 export(String) var save_path = "res://"
 export(bool) var optimize = false
-
+signal finished
 onready var anim_sprite = $AnimatedSprite
-
-func _ready():
-	set_process(false)
-	yield(get_tree(), "idle_frame")
+func do_it():
 	
 	var xml_parser = XMLParser.new()
 	xml_parser.open(load_path + ".xml")
@@ -31,6 +28,7 @@ func _ready():
 				var loaded_anim_name: String = xml_parser.get_named_attribute_value("name")
 				loaded_anim_name = loaded_anim_name.left(len(loaded_anim_name) - 4)
 				print("loaded name: " + loaded_anim_name)
+				$Panel/Label2.text = "Loaded\n" + loaded_anim_name
 				
 				if cur_anim_name != loaded_anim_name:
 					frames.add_animation(loaded_anim_name)
@@ -60,7 +58,7 @@ func _ready():
 					new_frame.filter_clip = true
 					
 					frames.add_frame(cur_anim_name, new_frame)
-		
+				$AnimatedSprite.play(loaded_anim_name)
 		yield(get_tree().create_timer(0.01), "timeout")
 		err = xml_parser.read()
 	
@@ -69,4 +67,31 @@ func _ready():
 	frames.remove_animation("default")
 	ResourceSaver.save(save_path + ".res", frames, ResourceSaver.FLAG_COMPRESS)
 	
-	print("saved, restart the project to unfuck up the sheet")
+	emit_signal("finished")
+func _ready():
+	set_process(false)
+	
+	yield(get_tree(), "idle_frame")
+	
+var bunce = false
+func _input(event):
+	if event.is_action_pressed("confirm"):
+		if bunce == false:
+			bunce = true
+			save_path = $Panel/savepath.text
+			load_path = $Panel/loadpath.text
+			$Panel/savepath.hide()
+			$Panel/loadpath.hide()
+			do_it()
+			yield(self, "finished")
+			$Panel/Label2.text = ""
+			$Panel/Label.text = "SPRITE CONVERTED"
+			Resources.loadResources()
+			SoundController.Play_sound("Alert")
+			$AnimatedSprite.hide()
+			$Panel/loadpath.text = ""
+			$Panel/savepath.text = ""
+			$Panel/loadpath.placeholder_text = ""
+			$Panel/savepath.placeholder_text = ""
+		
+	

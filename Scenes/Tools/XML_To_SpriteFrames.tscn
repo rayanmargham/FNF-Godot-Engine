@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Tools/XML_To_SpriteFrames.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/font_alphabet.tres" type="BitmapFont" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -12,9 +20,85 @@ animations = [ {
 
 [node name="XML_To_SpriteFrames" type="Node2D"]
 script = ExtResource( 1 )
-load_path = "res://Assets/Stages/Characters/TaeYai-evil/Taeyai_fly"
-save_path = "res://Assets/Stages/Characters/TaeYai-evil/"
+load_path = ""
+save_path = ""
 optimize = true
 
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 312.0
+margin_top = 167.0
+margin_right = 968.0
+margin_bottom = 552.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -328.0
+margin_top = 23.0
+margin_right = 765.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+text = "SPRITE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -331.0
+margin_top = 138.0
+margin_right = 975.0
+margin_bottom = 378.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+text = "LOADED"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loadpath" type="LineEdit" parent="Panel"]
+margin_left = 13.0
+margin_top = 214.0
+margin_right = 638.0
+margin_bottom = 254.0
+placeholder_text = "Load XML and PNG From? (EX:res://Assets/Stages/Characters/TestSheet/DADDY_DEAREST"
+
+[node name="savepath" type="LineEdit" parent="Panel"]
+margin_left = 13.0
+margin_top = 289.0
+margin_right = 638.0
+margin_bottom = 329.0
+placeholder_text = "Save converted to?"
+
+[node name="Label3" type="Label" parent="Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 223.0
+margin_top = -54.0
+margin_right = 267.0
+margin_bottom = 33.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 2 )
+text = "ENTER TO START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 3 )
+offset = Vector2( 100, 400 )

@@ -4,6 +4,8 @@ Hello, Welcome to my repo of my Friday Night Funkin' Remake in the Godot Engine.
 to Build the game just open the project.godot file in your favourite Godot 3.4+ Editor and Hit Export then select your desired platform.
 # TF is a WFC
 Funkin' WFC is part of the WFC Online Network Service. Funkin' WFC provides Downloading of Mods via the internet inside the Game, Chatrooms, Mutiplayer Online Sessions, forums, and much much more.
+
+WFC Is in development and will probs be out by version 2.0.
 # Any DOCS for the Rhythm System Yet.
 Yep, It's in the Docs Folder.
 # ModChart Support?

@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/States/OptionsState.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/Backgrounds/menuBGwhite.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Nodes/OptionsMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://mobile_controls/Scroll_Hoz.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mobile_controls/Enter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mobile_controls/Scroll.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mobile_controls/GoBack.tscn" type="PackedScene" id=7]
 
 [node name="OptionsState" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,3 +17,11 @@ position = Vector2( 643, 365 )
 texture = ExtResource( 2 )
 
 [node name="OptionsMenu" parent="." instance=ExtResource( 3 )]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 4 )]
+
+[node name="CanvasLayer3" parent="." instance=ExtResource( 5 )]
+
+[node name="CanvasLayer4" parent="." instance=ExtResource( 7 )]

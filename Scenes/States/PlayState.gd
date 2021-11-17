@@ -78,7 +78,7 @@ func _ready():
 	MusicController.play_chart(song, difficulty, speed)
 	
 	var _c_beat = MusicController.connect("beat_hit", self, "icon_bop") # connect the beat hit signal to the icon bop
-
+	print("b")
 func _process(_delta):
 	player_input() # handle the players input
 	print("Song Pos: " + str(MusicController.songPositionMulti))
@@ -176,9 +176,14 @@ func hardcoded_events():
 			if (round(MusicController.songPositionMulti) == 59):
 				if (stop):
 					stop = !stop # we dont want to stink ourseleves do we?
+					
 					MusicController.change_bpm(120, 2.8) # bpm change also changes scroll speed to 2.8
 					EnemyCharacter = preload("res://Scenes/Characters/Dad.tscn") # changes the character to "dad"
 					setup_enemycharacter()
+					for i in $Characters.get_children():
+						if i.name == "Bogus":
+							i.queue_free()
+					
 					#yield(get_tree().create_timer(1), "timeout")
 					#stop = !stop 
 					# code above is if we wanna run the event mutiple times lol

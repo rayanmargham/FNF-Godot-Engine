@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Bogus.png"><SubTexture name="Bogus Bogus idle0000" x="0" y="0" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus idle0001" x="582" y="0" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus down0000" x="1164" y="0" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus down0001" x="1746" y="0" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus down0002" x="0" y="691" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus down0003" x="582" y="691" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus left0000" x="1164" y="691" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus left0001" x="1746" y="691" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus left0002" x="0" y="1382" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus left0003" x="582" y="1382" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus right0000" x="1164" y="1382" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus right0001" x="1746" y="1382" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus right0002" x="0" y="2073" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus right0003" x="582" y="2073" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus up0000" x="1164" y="2073" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus up0001" x="1746" y="2073" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus up0002" x="0" y="2764" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus up0003" x="582" y="2764" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus angry0000" x="1164" y="2764" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus angry0001" x="1746" y="2764" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus rose0000" x="0" y="3455" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus rose0001" x="582" y="3455" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus rose0002" x="1164" y="3455" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+<SubTexture name="Bogus Bogus rose0003" x="1746" y="3455" width="582" height="691" frameX="0" frameY="0" frameWidth="582" frameHeight="691" />
+</TextureAtlas>

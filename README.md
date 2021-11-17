@@ -2,7 +2,7 @@
 Hello, Welcome to my repo of my Friday Night Funkin' Remake in the Godot Engine.
 
 Ultimate Rhythm Game Excellence
-<iframe  title="YouTube video player" width="480" height="390" src="https://www.youtube.com/watch?v=xDq9DiVd5Rw" frameborder="0" allowfullscreen></iframe>
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/xDq9DiVd5Rw/0.jpg)](http://www.youtube.com/watch?v=xDq9DiVd5Rw "FNF Godot Edition Release Trailer")
 
 
 # Building

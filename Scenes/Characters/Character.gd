@@ -13,6 +13,7 @@ export (Resource) var iconSheet = preload("res://Assets/Stages/Characters/Icons/
 export (Color) var characterColor = Color.yellow
 
 var lastIdleDance = null
+var idleTimer = 0
 
 func _ready():
 	if Engine.editor_hint:
@@ -35,6 +36,9 @@ func _process(_delta):
 	
 	if Engine.editor_hint:
 		return
+		
+	if (idleTimer > 0):
+		idleTimer -= 1 * _delta
 
 func play(animName):
 	$AnimationPlayer.stop()
@@ -53,7 +57,7 @@ func play(animName):
 	
 func idle_dance():
 	if (get_idle_anim() == "idle"):
-		if ($AnimationPlayer.assigned_animation == get_idle_anim()):
+		if (idleTimer <= 0):
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play(get_idle_anim())
 	else:
@@ -74,9 +78,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		return
 	
 	if (anim_name != get_idle_anim()):
-		if (get_idle_anim() == "idle"):
-			$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
-		else:
+#		if (get_idle_anim() == "idle"):
+#			$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
+#		else:
+		if (get_idle_anim() != "idle"):
 			match (anim_name):
 				"singRIGHT":
 					$AnimationPlayer.play("danceRIGHT")

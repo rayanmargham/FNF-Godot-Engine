@@ -5,7 +5,14 @@ var lastSelected = -1
 var selectedDifficulty = 2
 var selectedSpeed = 1
 
-var difficultys = ["EASY", "NORMAL", "HARD"]
+var songData
+
+var character1
+var character2
+
+var loadedJsons = {}
+var loadedSongs = {}
+var cur_name = "HE"
 
 func _ready():
 	get_songs()
@@ -13,6 +20,8 @@ func _ready():
 	var songsMenu = $CanvasLayer/ChoiceMenu
 	songsMenu.optionOffset.y = 120
 	songsMenu.connect("option_selected", self, "song_chosen")
+	
+	song_selected(0)
 
 func _process(_delta):
 	if (Input.is_action_just_pressed("cancel")):
@@ -24,15 +33,15 @@ func _process(_delta):
 		selectedSpeed += move * 0.1
 	else:
 		selectedDifficulty += move
-	
-	selectedDifficulty = clamp(selectedDifficulty, 0, difficultys.size()-1)
+		
+	selectedDifficulty = clamp(selectedDifficulty, 0, SceneLoader.difficultys.size()-1)
 		
 	if ($CanvasLayer/ChoiceMenu.selected != lastSelected):
 		song_selected($CanvasLayer/ChoiceMenu.selected)
 		
 	lastSelected = $CanvasLayer/ChoiceMenu.selected
 	
-	$CanvasLayer/Label.text = difficultys[selectedDifficulty] + "\n" + str(selectedSpeed) + "x"
+	$CanvasLayer/SettingsBox/Label.text = "< " + SceneLoader.difficultys[selectedDifficulty] + " >\n" + cur_name + "x"
 
 func get_songs():
 	var songsMenu = $CanvasLayer/ChoiceMenu
@@ -49,18 +58,59 @@ func get_songs():
 			break
 		elif not file.begins_with("."):
 			songsMenu.options.append(file)
+			if load("res://Assets/Songs/" + file + "/Inst.ogg") != null:
+				
+				loadedSongs[file] = load("res://Assets/Songs/" + file + "/Inst.ogg")
+			loadedJsons[file] = MusicController.load_song_json(file)
 			
 	songsMenu.options.sort()
+	
+func setup_song_info():
+	
+	var infoString = ""
+	if (songData.has("song")):
+		infoString += str(songData["song"]) + "\n"
+	if (songData.has("bpm")):
+		infoString += "BPM: " + str(songData["bpm"]) + "\n"
+	if (songData.has("speed")):
+		infoString += "SPD: " + str(songData["speed"]) + "\n"
+	
+	infoString += "\n"	
+	
+	if (songData.has("stage")):
+		infoString += "STG: " + str(songData["stage"]) + "\n"
+	if (songData.has("player1")):
+		infoString += "PLR: " + str(songData["player1"]) + "\n"
+	if (songData.has("player2")):
+		infoString += "ENMY: " + str(songData["player2"]) + "\n"
+		
 
 func song_selected(option):
 	var songName = $CanvasLayer/ChoiceMenu.options[option]
-	print(songName)
-	var json = MusicController.load_song_json(songName)
+	songData = loadedJsons[songName]
+	cur_name = songName
+	MusicController.play_song(loadedSongs[songName], songData["bpm"])
 	
-	MusicController.play_song("res://Assets/Songs/" + songName + "/Inst.ogg", json["bpm"], 1, false)
+	var player1 = "test"
+	var player2 = "test"
+	
+	if (songData.has("player1") && SceneLoader.CHARACTERS.has(songData["player1"])):
+		player1 = songData["player1"]
+	if (songData.has("player2") && SceneLoader.CHARACTERS.has(songData["player2"])):
+		player2 = songData["player2"]
+	
+	if (character1 != null):
+		character1.queue_free()
+	character1 = SceneLoader.CHARACTERS[player1].instance()
+	
+	if (character2 != null):
+		character2.queue_free()
+	character2 = SceneLoader.CHARACTERS[player2].instance()
+	
+	setup_song_info()
 
 func song_chosen(option):
 	var songName = $CanvasLayer/ChoiceMenu.options[option]
-	var difficulty = difficultys[selectedDifficulty].to_lower()
-	print(difficulty)
+	var difficulty = SceneLoader.difficultys[selectedDifficulty].to_lower()
+	
 	SceneLoader.change_playstate(songName, difficulty, selectedSpeed)

@@ -9,7 +9,7 @@ signal done
 onready var animationplayer = $CanvasLayer/AnimationPlayer
 # warnings-disable
 const STAGES = {
-	"stage": preload("res://Scenes/Stages/Week0.tscn"),
+	"stage": preload("res://Scenes/Stages/WEEK0.tscn"),
 	"halloween": preload("res://Scenes/Stages/Spooky.tscn"),
 	"lastroom": preload("res://Scenes/Stages/Mods/CyberFinal.tscn")
 }

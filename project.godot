@@ -24,16 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GamePlay/ARROWSYSTEM/PauseMenuScripts/ChoiceMenu.gd"
 }, {
-"base": "EditorProperty",
-"class": "SpriteFontGenButtonProp",
-"language": "GDScript",
-"path": "res://addons/Sprite_Font_Generator/ButtonProperty.gd"
-}, {
-"base": "EditorProperty",
-"class": "SpriteFontGenCharWidthProp",
-"language": "GDScript",
-"path": "res://addons/Sprite_Font_Generator/CharWidthProperty.gd"
-}, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodeNoiseGeneric2d",
 "language": "GDScript",
@@ -498,8 +488,6 @@ _global_script_class_icons={
 "Animated_Character": "",
 "Character": "",
 "ChoiceMenu": "",
-"SpriteFontGenButtonProp": "",
-"SpriteFontGenCharWidthProp": "",
 "VisualShaderNodeNoiseGeneric2d": "",
 "VisualShaderNodeNoiseGeneric2dFractal": "",
 "VisualShaderNodeNoisePerlin2d": "",
@@ -629,7 +617,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Sprite_Font_Generator/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 

@@ -59,7 +59,6 @@ func _ready():
 	# get the strums nodes
 	load_events()
 	yield(get_tree().create_timer(0.05), "timeout")
-	check_tutorial() # timer so we dont crash crap lol
 	set_process(true)
 	PlayerStrum = get_node(PlayerStrumPath)
 	EnemyStrum = get_node(EnemyStrumPath)
@@ -127,6 +126,11 @@ func button_logic(line, note):
 	var button = line.get_node("Buttons/" + buttonName)
 	var animation = button.get_node("AnimationPlayer")
 	
+	if (Input.is_action_pressed(action)):
+		if (PlayerCharacter != null && PlayerCharacter.get_node("AnimationPlayer").assigned_animation != PlayerCharacter.get_idle_anim()):
+			if (PlayerCharacter.idleTimer <= 0.05):
+				PlayerCharacter.idleTimer = 0.05
+		
 	# check if the action is pressed
 	if (Input.is_action_just_pressed(action)):
 		# check each note to make for the closest one
@@ -154,6 +158,8 @@ func button_logic(line, note):
 			# shubs duped note check thing
 			# (thanks shubs you are awesome)
 			for dupedNote in activeNotes:
+				if (dupedNote == curNote):
+					continue
 				if (dupedNote.note_type == curNote.note_type):
 					if (dupedNote.strum_time <= curNote.strum_time + 0.01):
 						dupedNote.queue_free()
@@ -266,7 +272,6 @@ func spawn_note(dir, strum_time, sustain_length):
 			Note.Right:
 				spawn_lane = strumLine.get_node("Buttons/Right")
 		
-		strumLine.get_node("Notes").add_child(note)
 		
 		note.position.x = spawn_lane.position.x
 		note.position.y = 1280
@@ -278,6 +283,7 @@ func spawn_note(dir, strum_time, sustain_length):
 		
 		if (strumLine == PlayerStrum):
 			note.must_hit = true
+		strumLine.get_node("Notes").add_child(note)
 
 func on_hit(must_hit, note_type, timing):
 	var character = EnemyCharacter
@@ -287,6 +293,7 @@ func on_hit(must_hit, note_type, timing):
 	if (character != null):
 		var animName = player_sprite(note_type, "")
 		character.play(animName)
+		character.idleTimer = 0.5
 		
 		if (Settings.cameraMovement):
 			if (must_hit && must_hit_section || !must_hit && !must_hit_section):
@@ -495,6 +502,8 @@ func setup_characters():
 		
 		setup_icon($HUD/HealthBar/Icons/Player, PlayerCharacter)
 		$HUD/HealthBar.tint_progress = PlayerCharacter.characterColor
+	if (PlayerCharacter.girlfriendPosition || EnemyCharacter.girlfriendPosition):
+		GFCharacter.queue_free()
 
 func setup_icon(node, character):
 	var frames = character.iconSheet.get_width() / 150
@@ -546,14 +555,7 @@ func create_rating(rating):
 
 func restart_playstate():
 	SceneLoader.change_playstate(song, difficulty, speed)
-func check_tutorial():
-	if EnemyCharacter != null:
-		var temp = EnemyCharacter.instance()
-		match temp.name:
-			"Girlfriend":
-				GFCharacter = null
-				print("angry")
-		temp.queue_free()
+
 func check_offsets():
 	for i in $Characters.get_children():
 		match event_change.player2:

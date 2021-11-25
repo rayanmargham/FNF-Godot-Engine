@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Stages/RhythmSystem/UI/Note_Sprites.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GamePlay/ARROWSYSTEM/Note.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Stages/RhythmSystem/UI/Holds/left_line.png" type="Texture" id=3]
 
 [node name="Note" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 50.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 3 )
+texture_mode = 1
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-hframes = 2
 vframes = 4
 
 [node name="Tween" type="Tween" parent="."]

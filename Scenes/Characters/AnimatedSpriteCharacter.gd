@@ -12,7 +12,8 @@ export (Resource) var iconSheet = preload("res://Assets/Stages/Characters/Icons/
 export (Color) var characterColor = Color.yellow
 
 var lastIdleDance = null
-
+var idleTimer = 0
+var MAXFRAMES = 0
 func _ready():
 	if Engine.editor_hint:
 		return
@@ -35,6 +36,8 @@ func _process(_delta):
 	
 	if Engine.editor_hint:
 		return
+	if idleTimer > 0:
+		idleTimer -= 1 * _delta
 
 func play(animName):
 	$AnimatedSprite.stop()
@@ -53,7 +56,7 @@ func play(animName):
 	
 func idle_dance():
 	if (get_idle_anim() == "idle"):
-		if ($AnimatedSprite.animation == get_idle_anim()):
+		if (idleTimer <= 0):
 			$AnimatedSprite.stop()
 			$AnimatedSprite.frame = 0
 			$AnimatedSprite.play(get_idle_anim())
@@ -75,20 +78,20 @@ func idle_dance():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if Engine.editor_hint:
 		return
-	
 	if (anim_name != get_idle_anim()):
 		if (get_idle_anim() == "idle"):
 			$AnimatedSprite.play(get_idle_anim())
 		else:
-			match (anim_name):
-				"singRIGHT":
-					$AnimatedSprite.play("danceRIGHT")
-					lastIdleDance = "danceLEFT"
-				"singLEFT":
-					$AnimatedSprite.play("danceLEFT")
-					lastIdleDance = "danceRIGHT"
-				_:
-					$AnimatedSprite.play(lastIdleDance)
+			if (get_idle_anim() != "idle"):
+					match (anim_name):
+						"singRIGHT":
+							$AnimatedSprite.play("danceRIGHT")
+							lastIdleDance = "danceLEFT"
+						"singLEFT":
+							$AnimatedSprite.play("danceLEFT")
+							lastIdleDance = "danceRIGHT"
+						_:
+							$AnimatedSprite.play(lastIdleDance)
 
 func get_idle_anim():
 	
@@ -98,11 +101,11 @@ func get_idle_anim():
 func _on_AnimatedSprite_animation_finished():
 	if Engine.editor_hint:
 		return
-	
 	if ($AnimatedSprite.animation != get_idle_anim()):
-		if (get_idle_anim() == "idle"):
-			$AnimatedSprite.play(get_idle_anim())
-		else:
+#		if (get_idle_anim() == "idle"):
+#			$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
+#		else:
+		if (get_idle_anim() != "idle"):
 			match ($AnimatedSprite.animation):
 				"singRIGHT":
 					$AnimatedSprite.play("danceRIGHT")

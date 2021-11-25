@@ -41,7 +41,7 @@ func _process(_delta):
 		
 	lastSelected = $CanvasLayer/ChoiceMenu.selected
 	
-	$CanvasLayer/SettingsBox/Label.text = "< " + SceneLoader.difficultys[selectedDifficulty] + " >\n" + cur_name + "x"
+	$CanvasLayer/SettingsBox/Label.text = "< " + SceneLoader.difficultys[selectedDifficulty] + " >\n" + cur_name
 
 func get_songs():
 	var songsMenu = $CanvasLayer/ChoiceMenu

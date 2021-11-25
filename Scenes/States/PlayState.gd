@@ -502,8 +502,8 @@ func setup_characters():
 		
 		setup_icon($HUD/HealthBar/Icons/Player, PlayerCharacter)
 		$HUD/HealthBar.tint_progress = PlayerCharacter.characterColor
-	if (PlayerCharacter.girlfriendPosition || EnemyCharacter.girlfriendPosition):
-		GFCharacter.queue_free()
+		if (PlayerCharacter.girlfriendPosition || EnemyCharacter.girlfriendPosition):
+			GFCharacter.queue_free()
 
 func setup_icon(node, character):
 	var frames = character.iconSheet.get_width() / 150

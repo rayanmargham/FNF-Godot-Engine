@@ -120,22 +120,22 @@ func _process(_delta):
 			queue_free()
 			
 		position.y = strum_lane.position.y
-		
 		var character = playState.EnemyCharacter
-		if (must_hit):
-			character = playState.PlayerCharacter
+		if character != null:
+			if (must_hit):
+				character = playState.PlayerCharacter
 			
-		character.idleTimer = 0.2
+			character.idleTimer = 0.2
 		
-		var animName = playState.player_sprite(note_type, "")
-		if (character.has_node("AnimationPlayer")):
-			if (character.get_node("AnimationPlayer").get_current_animation_position() >= 0.15):
-				character.play(animName)
-		elif (character.get_node("AnimatedSprite").frame == character.get_node("AnimatedSprite").frames.get_frame_count(animName)):
-			character.get_node("AnimatedSprite").stop()
-			character.get_node("AnimatedSprite").frame = character.get_node("AnimatedSprite").frames.get_frame_count(animName)
-			print(character.get_node("AnimatedSprite").frames.get_frame_count(animName))
-			character.get_node("AnimatedSprite").play(animName)
+			var animName = playState.player_sprite(note_type, "")
+			if (character.has_node("AnimationPlayer")):
+				if (character.get_node("AnimationPlayer").get_current_animation_position() >= 0.15):
+					character.play(animName)
+			elif (character.get_node("AnimatedSprite").frame == character.get_node("AnimatedSprite").frames.get_frame_count(animName)):
+				character.get_node("AnimatedSprite").stop()
+				character.get_node("AnimatedSprite").frame = character.get_node("AnimatedSprite").frames.get_frame_count(animName)
+				print(character.get_node("AnimatedSprite").frames.get_frame_count(animName))
+				character.get_node("AnimatedSprite").play(animName)
 		
 		if (must_hit && !Settings.botPlay):
 			if (!Input.is_action_pressed(key)):

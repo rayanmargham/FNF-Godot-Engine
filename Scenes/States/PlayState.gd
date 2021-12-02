@@ -104,7 +104,13 @@ func player_input():
 	button_logic(PlayerStrum, Note.Up)
 	button_logic(PlayerStrum, Note.Right)
 func load_events():
-	var json = MusicController.load_song_json(song, "-" + difficulty)
+	var json = null
+	
+	if difficulty != "normal":
+		json = MusicController.load_song_json(song, "-" + difficulty)
+	else:
+		json = MusicController.load_song_json(song)
+	
 	event_change = json
 func button_logic(line, note):
 	

@@ -176,7 +176,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 camOffset = Vector2( 200, -200 )
 iconSheet = ExtResource( 1 )
-characterColor = Color( 0.4, 1, 0.2, 1 )
+characterColor = Color( 0.192157, 0.690196, 0.819608, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -152 )

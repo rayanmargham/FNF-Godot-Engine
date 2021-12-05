@@ -99,12 +99,22 @@ func _process(_delta):
 		
 	if (holdNote):
 		var multi = 1
+		
 		if (Settings.downScroll):
 			multi = -1
 		
 		# awesome hold note math magic by Scarlett
-		var lineY = (sustain_length * (SCROLL_DISTANCE * MusicController.scroll_speed * MusicController.scroll_speed / SCROLL_TIME) * multi) - holdSprs[key][1].get_height()
-		if (lineY <= 0):
+		var lineY = 0
+		
+		if !Settings.downScroll:
+			lineY = (sustain_length * (SCROLL_DISTANCE * MusicController.scroll_speed * MusicController.scroll_speed / SCROLL_TIME) * multi) - holdSprs[key][1].get_height()
+		else:
+			lineY = (sustain_length * (SCROLL_DISTANCE * MusicController.scroll_speed * MusicController.scroll_speed / SCROLL_TIME) * multi) + holdSprs[key][1].get_height()
+		
+		if lineY <= 0 and !Settings.downScroll:
+			lineY = 0
+			
+		if lineY >= 0 and Settings.downScroll:
 			lineY = 0
 		
 		$Line2D.points[1] = Vector2(0, lineY)
@@ -147,9 +157,19 @@ func _process(_delta):
 
 func _draw():
 	if (holdNote):
-		var pos = Vector2($Line2D.points[1].x - 25, $Line2D.points[1].y)
+		var pos = Vector2(0,0)
 		
-		var lineHeight = clamp($Line2D.points[1].y, 0, holdSprs[key][1].get_height())
+		var lineHeight = 0
+		
+		if !Settings.downScroll:
+			lineHeight = clamp($Line2D.points[1].y, 0, holdSprs[key][1].get_height())
+		else:
+			lineHeight = clamp($Line2D.points[1].y, -holdSprs[key][1].get_height(), 0)
+		
+		if !Settings.downScroll:
+			pos = Vector2($Line2D.points[1].x - 25, $Line2D.points[1].y)
+		else:
+			pos = Vector2($Line2D.points[1].x - 25, $Line2D.points[1].y + lineHeight)
 		
 		var size = Vector2(holdSprs[key][1].get_size().x, lineHeight)
 		var rect = Rect2(pos, size)

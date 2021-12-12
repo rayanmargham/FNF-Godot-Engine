@@ -20,6 +20,7 @@ texture = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ChoiceMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
+iconsEnabled = true
 
 [node name="SettingsBox" type="ColorRect" parent="CanvasLayer"]
 margin_left = 843.0

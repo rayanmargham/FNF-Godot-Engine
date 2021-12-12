@@ -135,7 +135,6 @@ func _process(_delta):
 			$FrontLayer/Opponent.animation = "dad"
 			$"FrontLayer/Track Title".text = week_Titles[1][0]
 		2:
-			$FrontLayer/Opponent.show()
 			$FrontLayer/Opponent.animation = "spooky"
 			$"FrontLayer/Track Title".text = week_Titles[2][0]
 		3:

@@ -133,9 +133,15 @@ func button_logic(line, note):
 	var animation = button.get_node("AnimationPlayer")
 	
 	if (Input.is_action_pressed(action)):
-		if (PlayerCharacter != null && PlayerCharacter.get_node("AnimationPlayer").assigned_animation != PlayerCharacter.get_idle_anim()):
-			if (PlayerCharacter.idleTimer <= 0.05):
-				PlayerCharacter.idleTimer = 0.05
+		if PlayerCharacter != null:
+			if PlayerCharacter.has_node("AnimationPlayer"):
+				if PlayerCharacter.get_node("AnimationPlayer").assigned_animation != PlayerCharacter.get_idle_anim():
+					if (PlayerCharacter.idleTimer <= 0.05):
+						PlayerCharacter.idleTimer = 0.05
+			else:
+				if PlayerCharacter.get_node("AnimatedSprite").animation != PlayerCharacter.get_idle_anim():
+					if (PlayerCharacter.idleTimer <= 0.05):
+						PlayerCharacter.idleTimer = 0.05
 		
 	# check if the action is pressed
 	if (Input.is_action_just_pressed(action)):

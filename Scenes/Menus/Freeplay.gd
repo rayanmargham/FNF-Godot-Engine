@@ -29,6 +29,7 @@ func _process(_delta):
 		SceneLoader.Load("res://Scenes/Menus/MainMenu.tscn")
 		
 	var move = int(Input.is_action_just_pressed("right")) - int(Input.is_action_just_pressed("left"))
+	
 	if (Input.is_key_pressed(KEY_SHIFT)):
 		selectedSpeed += move * 0.1
 	else:
@@ -41,7 +42,7 @@ func _process(_delta):
 		
 	lastSelected = $CanvasLayer/ChoiceMenu.selected
 	
-	$CanvasLayer/SettingsBox/Label.text = "< " + SceneLoader.difficultys[selectedDifficulty] + " >\n" + cur_name
+	$CanvasLayer/SettingsBox/Label.text = "< " + SceneLoader.difficultys[selectedDifficulty] + " >\n" + cur_name.to_upper()
 
 func get_songs():
 	var songsMenu = $CanvasLayer/ChoiceMenu
@@ -52,22 +53,34 @@ func get_songs():
 	dir.open("res://Assets/Songs/")
 	
 	dir.list_dir_begin()
+	
 	while true:
 		var file = dir.get_next()
+		
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			songsMenu.options.append(file)
 			if load("res://Assets/Songs/" + file + "/Inst.ogg") != null:
-				
 				loadedSongs[file] = load("res://Assets/Songs/" + file + "/Inst.ogg")
+				
 			loadedJsons[file] = MusicController.load_song_json(file)
+			
+			songsMenu.options.append(file)
+			
+			var icon = loadedJsons[file]["player2"].to_lower()
+			songsMenu.optionIcons.append(icon)
+			
+			var character = SceneLoader.CHARACTERS[loadedJsons[file]["player2"]].instance()
+			
+			songsMenu.iconSprs[loadedJsons[file]["player2"]] = character.iconSheet
+			
+			character.queue_free()
 			
 	songsMenu.options.sort()
 	
 func setup_song_info():
-	
 	var infoString = ""
+	
 	if (songData.has("song")):
 		infoString += str(songData["song"]) + "\n"
 	if (songData.has("bpm")):
@@ -89,6 +102,7 @@ func song_selected(option):
 	var songName = $CanvasLayer/ChoiceMenu.options[option]
 	songData = loadedJsons[songName]
 	cur_name = songName
+	
 	MusicController.play_song(loadedSongs[songName], songData["bpm"])
 	
 	var player1 = "test"

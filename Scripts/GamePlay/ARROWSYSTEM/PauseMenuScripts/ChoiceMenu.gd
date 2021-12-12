@@ -7,6 +7,7 @@ const FONT = preload("res://Assets/Fonts/font_alphabet.tres")
 
 export var options = ["OPTION1", "OPTION2", "OPTION3"]
 export var optionIcons = [] ## basically freeplay shit lol
+export var iconsEnabled = false
 
 export var iconSprs = {}
 
@@ -51,7 +52,7 @@ func draw_options():
 		
 		draw_string(FONT, textPos, option.to_upper(), color)
 		
-		if optionIcons.size() >= idx - 1:
+		if optionIcons.size() >= idx - 1 and iconsEnabled:
 			var iconTex = iconSprs[optionIcons[idx]]
 			
 			var frames = iconTex.get_width() / 150

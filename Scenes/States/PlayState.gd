@@ -80,7 +80,6 @@ func _ready():
 	print("b")
 func _process(_delta):
 	player_input() # handle the players input
-	print("Song Pos: " + str(MusicController.songPositionMulti))
 	spawn_notes() # create the needed notes
 	get_section() # get the current section
 	hardcoded_events() # check for hardcoded events to perform

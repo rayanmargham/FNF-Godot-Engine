@@ -537,13 +537,13 @@ func setup_strums():
 		$HUD/Debug.position.y += 50
 		
 	if (Settings.middleScroll):
-		PlayerStrum.position.x = 675
+		PlayerStrum.position.x = 450
 		
 		if (Settings.middleScrollPreview):
 			if (!Settings.downScroll):
-				EnemyStrum.position = Vector2(145, 300)
+				EnemyStrum.position = Vector2(100, 150)
 			else:
-				EnemyStrum.position = Vector2(145, 730)
+				EnemyStrum.position = Vector2(100, 600)
 			
 			EnemyStrum.scale = EnemyStrum.scale * 0.5
 		else:

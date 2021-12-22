@@ -32,12 +32,21 @@ func _ready():
 	WFC.connect("connected", self, "connected_to_server")
 	WFC.connect("failed", self, "failed_to_connect")
 func connected_to_server():
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
+	chords_player.stop()
+	bass_player.stop()
 	$Connection/RichTextLabel.bbcode_text = "[center]CONNECTED"
 	$Connection/RichTextLabel/AnimationPlayer.play("Connected")
+	$"3D/Camera/AnimationPlayer".play("Whoosh")
 
 func failed_to_connect():
 	yield(get_tree().create_timer(1), "timeout")
 	$Connection/RichTextLabel.bbcode_text = "[center]FAILED"
 func _on_Control_tree_exiting():
 	WFC.Disconnect_From_WFC()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Whoosh":
+		print("Going to: WFC Menu 1")
+		get_tree().change_scene_to(preload("res://Scenes/Menus/WFCMenu1.tscn"))

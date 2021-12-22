@@ -1,30 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Menus/Connection.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0010.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0002.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0011.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0003.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0009.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0013.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0007.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0005.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0001.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0012.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0014.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0006.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0008.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Stages/Characters/Boyfriend/idle/BF idle dance0004.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Menus/bfsprite.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Assets/Menus/Music&Sounds/whoosh.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Menus/Connection_ENV.tres" type="Environment" id=16]
 [ext_resource path="res://Assets/Fonts/FridayNightFunkin-Regular.ttf" type="DynamicFontData" id=17]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 24.0
-} ]
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -32,7 +12,6 @@ font_data = ExtResource( 17 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Connected"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -40,10 +19,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.9, 1.5 ),
-"transitions": PoolRealArray( 0.5, 0.5, -2, 2 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( -2, 0.5, -0.5 ),
 "update": 0,
-"values": [ Vector2( 320, 216 ), Vector2( 320, 216 ), Vector2( 220, 216 ), Vector2( 1020, 216 ) ]
+"values": [ Vector2( 448, 264 ), Vector2( 248, 264 ), Vector2( 1500, 264 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 448, 264 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -61,6 +55,51 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.826981, 0.388064 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Whoosh"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, -2, -0.5 ),
+"update": 0,
+"values": [ Vector3( 0, -0.826981, 0.388064 ), Vector3( 0, -0.826981, 0.388064 ), Vector3( 0, -0.826981, -11.2607 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("../../Audio/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
 [node name="Control" type="Spatial"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -72,13 +111,6 @@ layer = -2
 
 [node name="Connection" type="CanvasLayer" parent="."]
 
-[node name="BF" type="AnimatedSprite" parent="Connection"]
-position = Vector2( 640, 456 )
-scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 1 )
-frame = 2
-playing = true
-
 [node name="BG" type="Control" parent="Connection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -88,14 +120,15 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Connection"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -192.0
-margin_top = -112.0
-margin_right = 192.0
-margin_bottom = 80.0
+margin_top = -96.0
+margin_right = 191.999
+margin_bottom = 96.0
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]CONNECTING
@@ -108,7 +141,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Connection/RichTextLabel"]
+autoplay = "Start"
 anims/Connected = SubResource( 3 )
+anims/RESET = SubResource( 7 )
 anims/Start = SubResource( 4 )
 
 [node name="3D" type="Spatial" parent="."]
@@ -117,6 +152,10 @@ anims/Start = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 0.999793, -0.0203317, 0, 0.0203317, 0.999793, 0, -0.826981, 0.388064 )
 environment = ExtResource( 16 )
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D/Camera"]
+anims/RESET = SubResource( 5 )
+anims/Whoosh = SubResource( 6 )
 
 [node name="CSGBox" type="CSGBox" parent="3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065434, -2.49215, -2.57656 )
@@ -127,3 +166,17 @@ depth = 5.70689
 transform = Transform( 1, 0, 0, 0, -0.0643581, 0.997927, 0, -0.997927, -0.0643581, 0, 0.613451, -2.76986 )
 light_color = Color( 0.843137, 0.729412, 0.423529, 1 )
 spot_range = 2.9
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="3D"]
+transform = Transform( 0.178454, 0, -0.451501, 0, 0.2, 0, 0.0903001, 0, 0.892271, 0.67706, -1.08991, -1.54135 )
+use_in_baked_light = true
+frames = ExtResource( 2 )
+frame = 8
+playing = true
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 3 )
+
+[connection signal="animation_finished" from="3D/Camera/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

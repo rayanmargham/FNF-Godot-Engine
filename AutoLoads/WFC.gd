@@ -5,7 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 var network = NetworkedMultiplayerENet.new()
-var ip = "192.168.68.100"
+var ip = "127.0.0.1"
 var port = 1909
 signal connected
 signal failed

@@ -14,6 +14,7 @@ export (Color) var characterColor = Color.yellow
 var lastIdleDance = null
 var idleTimer = 0
 var MAXFRAMES = 0
+
 func _ready():
 	if Engine.editor_hint:
 		return
@@ -61,17 +62,18 @@ func idle_dance():
 			$AnimatedSprite.frame = 0
 			$AnimatedSprite.play(get_idle_anim())
 	else:
-		if ($AnimatedSprite.animation == "danceLEFT" || $AnimatedSprite.animation == "danceRIGHT"):
+		if (idleTimer <= 0):
 			var bpmSpeed = 1
+			
 			if (idleDanceSpeed):
 				bpmSpeed = (MusicController.bpm * MusicController.song_speed) / 120
 			
 			if (lastIdleDance == "danceLEFT"):
 				$AnimatedSprite.speed_scale = bpmSpeed
-				$AnimatedSprite.play("danceRIGHT", -1, bpmSpeed)
+				$AnimatedSprite.play("danceRIGHT", -1)
 			elif (lastIdleDance == "danceRIGHT"):
 				$AnimatedSprite.speed_scale = bpmSpeed
-				$AnimatedSprite.play("danceLEFT", -1, bpmSpeed)
+				$AnimatedSprite.play("danceLEFT", -1)
 				
 			lastIdleDance = $AnimatedSprite.animation
 			
@@ -94,6 +96,15 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 							$AnimatedSprite.play(lastIdleDance)
 
 func get_idle_anim():
+	if (idleDance):
+		var doesDanceLeftLol = false
+		
+		for anim in $AnimatedSprite.frames.get_animation_names():
+			if anim == "danceLEFT":
+				doesDanceLeftLol = true
+		
+		if (doesDanceLeftLol):
+			return "danceLEFT"
 	
 	return "idle"
 
@@ -101,17 +112,17 @@ func get_idle_anim():
 func _on_AnimatedSprite_animation_finished():
 	if Engine.editor_hint:
 		return
-	if ($AnimatedSprite.animation != get_idle_anim()):
+	#if ($AnimatedSprite.animation != get_idle_anim()):
 #		if (get_idle_anim() == "idle"):
 #			$AnimationPlayer.play(get_idle_anim(), -1, 1, true)
 #		else:
-		if (get_idle_anim() != "idle"):
-			match ($AnimatedSprite.animation):
-				"singRIGHT":
-					$AnimatedSprite.play("danceRIGHT")
-					lastIdleDance = "danceLEFT"
-				"singLEFT":
-					$AnimatedSprite.play("danceLEFT")
-					lastIdleDance = "danceRIGHT"
-				_:
-					$AnimatedSprite.play(lastIdleDance)
+		#if (get_idle_anim() != "idle"):
+		#	match ($AnimatedSprite.animation):
+		#		"singRIGHT":
+		#			$AnimatedSprite.play("danceRIGHT")
+		#			lastIdleDance = "danceLEFT"
+		#		"singLEFT":
+		#			$AnimatedSprite.play("danceLEFT")
+		#			lastIdleDance = "danceRIGHT"
+		#		_:
+		#			$AnimatedSprite.play(lastIdleDance)

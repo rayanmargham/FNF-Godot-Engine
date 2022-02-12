@@ -1,5 +1,7 @@
 # FNF-Godot-Engine
 Hello, Welcome to my repo of my Friday Night Funkin' Remake in the Godot Engine.
+[Edit]
+New update will come on my birthday (14th of march)
 
 Ultimate Rhythm Game Excellence
 

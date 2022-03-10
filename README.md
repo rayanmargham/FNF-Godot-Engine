@@ -21,7 +21,8 @@ Kinda, we will have two versions of the engine.
 One will be without ModChart Support and can be opened in any Godot Editor.
 Another will have ModChart Support But will require you to build the Godot engine with a Lua
 Module (we will provide the source you just need to compile it)
-# Quick Thing
-When WFC is finished development you might notice that the servers are quite slow/might go down for a few hours this is because i'd be running them on my laptop as servers cost money
-Feel free to donate so i can cover those costs when WFC is launched: paypal- pleasedoit122@outlook.com
-You don't have to but It would be REALLY nice if you did.
+# I'm Done.
+
+Listen it's been a fun ride these past months but as you can tell I don't have the time nor motivation to keep doing this so I'm suspending the project till I know what to do with it. Obviously I will be still accepting Pull Requests You guys make but i won't be adding any updates for a bit. theres no knowing how long the project will be suspending till but we'll see, Think of it as merly me taking a break til I can decide on what to do on it.
+
+Thank YOU!

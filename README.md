@@ -1,3 +1,6 @@
+# Something is coming ????
+Prepare...
+
 # FNF-Godot-Engine
 Hello, Welcome to my repo of my Friday Night Funkin' Remake in the Godot Engine.
 
@@ -21,8 +24,3 @@ Kinda, we will have two versions of the engine.
 One will be without ModChart Support and can be opened in any Godot Editor.
 Another will have ModChart Support But will require you to build the Godot engine with a Lua
 Module (we will provide the source you just need to compile it)
-# I'm Done.
-
-Listen it's been a fun ride these past months but as you can tell I don't have the time nor motivation to keep doing this so I'm suspending the project till I know what to do with it. Obviously I will be still accepting Pull Requests You guys make but i won't be adding any updates for a bit. theres no knowing how long the project will be suspending till but we'll see, Think of it as merly me taking a break til I can decide on what to do on it.
-
-Thank YOU!

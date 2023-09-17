@@ -1,6 +1,8 @@
 # Don't use this engine
 Something better is coming...
 
+Just Wait I swear something better is coming seriously...
+
 # FNF-Godot-Engine
 Hello, Welcome to my repo of my Friday Night Funkin' Remake in the Godot Engine.
 
